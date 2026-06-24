@@ -1,0 +1,4445 @@
+{
+  "stg_crm_client": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "client_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "client_name",
+        "type": "STRING"
+      },
+      {
+        "name": "industry",
+        "type": "STRING"
+      },
+      {
+        "name": "hq_country",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      },
+      {
+        "name": "created_ts",
+        "type": "BIGINT"
+      },
+      {
+        "name": "updated_ts",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_crm_client_contact": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "contact_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "client_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "full_name",
+        "type": "STRING"
+      },
+      {
+        "name": "email",
+        "type": "STRING"
+      },
+      {
+        "name": "phone",
+        "type": "STRING"
+      },
+      {
+        "name": "role",
+        "type": "STRING"
+      },
+      {
+        "name": "is_primary",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "created_ts",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_crm_program": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "client_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_code",
+        "type": "STRING"
+      },
+      {
+        "name": "program_name",
+        "type": "STRING"
+      },
+      {
+        "name": "line_of_business",
+        "type": "STRING"
+      },
+      {
+        "name": "channel_mix",
+        "type": "STRING"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      },
+      {
+        "name": "go_live_ts",
+        "type": "BIGINT"
+      },
+      {
+        "name": "updated_ts",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_crm_contract": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "contract_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "client_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "contract_no",
+        "type": "STRING"
+      },
+      {
+        "name": "start_dt",
+        "type": "STRING"
+      },
+      {
+        "name": "end_dt",
+        "type": "STRING"
+      },
+      {
+        "name": "billing_model",
+        "type": "STRING"
+      },
+      {
+        "name": "currency",
+        "type": "STRING"
+      },
+      {
+        "name": "signed_dt",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_crm_contract_line": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "contract_line_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "contract_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "line_no",
+        "type": "INT"
+      },
+      {
+        "name": "service_code",
+        "type": "STRING"
+      },
+      {
+        "name": "uom",
+        "type": "STRING"
+      },
+      {
+        "name": "unit_rate",
+        "type": "DECIMAL(12,4)"
+      },
+      {
+        "name": "min_commit",
+        "type": "DECIMAL(12,2)"
+      },
+      {
+        "name": "effective_dt",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_crm_sla_target": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "sla_target_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "queue_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "metric_code",
+        "type": "STRING"
+      },
+      {
+        "name": "target_value",
+        "type": "DECIMAL(10,4)"
+      },
+      {
+        "name": "penalty_pct",
+        "type": "DECIMAL(5,2)"
+      },
+      {
+        "name": "effective_ts",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_hr_agent": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "employee_no",
+        "type": "STRING"
+      },
+      {
+        "name": "first_name",
+        "type": "STRING"
+      },
+      {
+        "name": "last_name",
+        "type": "STRING"
+      },
+      {
+        "name": "email",
+        "type": "STRING"
+      },
+      {
+        "name": "org_unit_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "job_grade",
+        "type": "STRING"
+      },
+      {
+        "name": "employment_type",
+        "type": "STRING"
+      },
+      {
+        "name": "hire_ts",
+        "type": "BIGINT"
+      },
+      {
+        "name": "term_ts",
+        "type": "BIGINT"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_hr_org_unit": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "org_unit_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "parent_unit_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "unit_code",
+        "type": "STRING"
+      },
+      {
+        "name": "unit_name",
+        "type": "STRING"
+      },
+      {
+        "name": "unit_type",
+        "type": "STRING"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      },
+      {
+        "name": "cost_center",
+        "type": "STRING"
+      },
+      {
+        "name": "created_ts",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_hr_employment_event": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "event_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "event_type",
+        "type": "STRING"
+      },
+      {
+        "name": "event_ts",
+        "type": "BIGINT"
+      },
+      {
+        "name": "from_org_unit_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "to_org_unit_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "reason_code",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_hr_skill": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "skill_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "skill_code",
+        "type": "STRING"
+      },
+      {
+        "name": "skill_name",
+        "type": "STRING"
+      },
+      {
+        "name": "skill_family",
+        "type": "STRING"
+      },
+      {
+        "name": "created_ts",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_hr_agent_skill": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "agent_skill_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "skill_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "proficiency",
+        "type": "INT"
+      },
+      {
+        "name": "certified",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "effective_ts",
+        "type": "BIGINT"
+      },
+      {
+        "name": "expiry_ts",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_wfm_shift": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "shift_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "shift_code",
+        "type": "STRING"
+      },
+      {
+        "name": "shift_name",
+        "type": "STRING"
+      },
+      {
+        "name": "start_hhmm",
+        "type": "STRING"
+      },
+      {
+        "name": "end_hhmm",
+        "type": "STRING"
+      },
+      {
+        "name": "overnight_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      },
+      {
+        "name": "created_epoch",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_wfm_schedule": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "schedule_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "shift_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "sched_date",
+        "type": "STRING"
+      },
+      {
+        "name": "start_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "end_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "paid_minutes",
+        "type": "INT"
+      },
+      {
+        "name": "activity_code",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_wfm_adherence_event": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "adherence_event_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "schedule_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "exception_type",
+        "type": "STRING"
+      },
+      {
+        "name": "start_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "end_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "approved_flag",
+        "type": "BOOLEAN"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_wfm_forecast": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "forecast_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "queue_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "interval_start_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "forecast_volume",
+        "type": "INT"
+      },
+      {
+        "name": "forecast_aht_sec",
+        "type": "INT"
+      },
+      {
+        "name": "required_fte",
+        "type": "DECIMAL(8,2)"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_wfm_timeoff_request": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "timeoff_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "request_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "start_date",
+        "type": "STRING"
+      },
+      {
+        "name": "end_date",
+        "type": "STRING"
+      },
+      {
+        "name": "timeoff_type",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_tel_call": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "call_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "ani",
+        "type": "STRING"
+      },
+      {
+        "name": "dnis",
+        "type": "STRING"
+      },
+      {
+        "name": "queue_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "start_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "answer_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "end_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "disposition_code",
+        "type": "STRING"
+      },
+      {
+        "name": "direction",
+        "type": "STRING"
+      },
+      {
+        "name": "recording_id",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_tel_call_segment": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "segment_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "call_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "segment_no",
+        "type": "INT"
+      },
+      {
+        "name": "segment_type",
+        "type": "STRING"
+      },
+      {
+        "name": "start_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "end_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_tel_queue": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "queue_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "queue_code",
+        "type": "STRING"
+      },
+      {
+        "name": "queue_name",
+        "type": "STRING"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "media_type",
+        "type": "STRING"
+      },
+      {
+        "name": "priority",
+        "type": "INT"
+      },
+      {
+        "name": "created_epoch",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_tel_agent_state_event": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "state_event_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "state_code",
+        "type": "STRING"
+      },
+      {
+        "name": "start_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "end_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "reason_code",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_tel_disposition_code": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "disposition_code",
+        "type": "STRING"
+      },
+      {
+        "name": "disposition_desc",
+        "type": "STRING"
+      },
+      {
+        "name": "category",
+        "type": "STRING"
+      },
+      {
+        "name": "billable_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "created_epoch",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_tkt_ticket": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "ticket_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "ticket_no",
+        "type": "STRING"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "category_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "opened_by_agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "assigned_agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "interaction_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "priority",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      },
+      {
+        "name": "created_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "updated_ms",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_tkt_ticket_event": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "ticket_event_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "ticket_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "event_type",
+        "type": "STRING"
+      },
+      {
+        "name": "event_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "actor_agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "old_value",
+        "type": "STRING"
+      },
+      {
+        "name": "new_value",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_tkt_category": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "category_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "category_code",
+        "type": "STRING"
+      },
+      {
+        "name": "category_name",
+        "type": "STRING"
+      },
+      {
+        "name": "sla_hours",
+        "type": "INT"
+      },
+      {
+        "name": "created_ms",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_fin_invoice": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "invoice_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "invoice_no",
+        "type": "STRING"
+      },
+      {
+        "name": "client_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "period_month",
+        "type": "STRING"
+      },
+      {
+        "name": "issued_ts_sec",
+        "type": "BIGINT"
+      },
+      {
+        "name": "due_ts_sec",
+        "type": "BIGINT"
+      },
+      {
+        "name": "currency",
+        "type": "STRING"
+      },
+      {
+        "name": "total_amount",
+        "type": "DECIMAL(14,2)"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_fin_invoice_line": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "invoice_line_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "invoice_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "contract_line_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "qty",
+        "type": "DECIMAL(12,2)"
+      },
+      {
+        "name": "unit_rate",
+        "type": "DECIMAL(12,4)"
+      },
+      {
+        "name": "line_amount",
+        "type": "DECIMAL(14,2)"
+      },
+      {
+        "name": "adjustment_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "created_ms",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_fin_rate_card": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "rate_card_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "service_code",
+        "type": "STRING"
+      },
+      {
+        "name": "rate",
+        "type": "DECIMAL(12,4)"
+      },
+      {
+        "name": "currency",
+        "type": "STRING"
+      },
+      {
+        "name": "effective_ts",
+        "type": "BIGINT"
+      },
+      {
+        "name": "expiry_ts",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "load_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_fin_timesheet_delta": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "timesheet_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "work_date",
+        "type": "STRING"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "billable_minutes",
+        "type": "INT"
+      },
+      {
+        "name": "nonbillable_minutes",
+        "type": "INT"
+      },
+      {
+        "name": "approved_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "op",
+        "type": "STRING"
+      },
+      {
+        "name": "change_ms",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "extract_ts",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_fin_payroll_adj_delta": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "adjustment_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "period_month",
+        "type": "STRING"
+      },
+      {
+        "name": "adj_type",
+        "type": "STRING"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(12,2)"
+      },
+      {
+        "name": "op",
+        "type": "STRING"
+      },
+      {
+        "name": "change_ms",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "extract_ts",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_crm_sla_credit_delta": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "sla_credit_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "sla_target_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "period_month",
+        "type": "STRING"
+      },
+      {
+        "name": "credit_amount",
+        "type": "DECIMAL(12,2)"
+      },
+      {
+        "name": "reason",
+        "type": "STRING"
+      },
+      {
+        "name": "op",
+        "type": "STRING"
+      },
+      {
+        "name": "change_ms",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "extract_ts",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_tel_callback_request_delta": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "callback_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "call_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "queue_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "requested_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "scheduled_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "completed_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "op",
+        "type": "STRING"
+      },
+      {
+        "name": "change_ms",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "extract_ts",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_wfm_shift_swap_delta": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "swap_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "requesting_agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "accepting_agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "schedule_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "swap_date",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      },
+      {
+        "name": "op",
+        "type": "STRING"
+      },
+      {
+        "name": "change_ms",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "extract_ts",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_tkt_worklog_delta": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "worklog_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "ticket_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "minutes_logged",
+        "type": "INT"
+      },
+      {
+        "name": "log_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "note",
+        "type": "STRING"
+      },
+      {
+        "name": "op",
+        "type": "STRING"
+      },
+      {
+        "name": "change_ms",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "extract_ts",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_hr_attrition_event_delta": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "attrition_event_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "notice_epoch",
+        "type": "BIGINT"
+      },
+      {
+        "name": "last_day",
+        "type": "STRING"
+      },
+      {
+        "name": "attrition_type",
+        "type": "STRING"
+      },
+      {
+        "name": "reason_code",
+        "type": "STRING"
+      },
+      {
+        "name": "regrettable_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "op",
+        "type": "STRING"
+      },
+      {
+        "name": "change_ms",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "extract_ts",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_fin_rate_card_change_delta": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "rate_change_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "rate_card_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "old_rate",
+        "type": "DECIMAL(12,4)"
+      },
+      {
+        "name": "new_rate",
+        "type": "DECIMAL(12,4)"
+      },
+      {
+        "name": "change_reason",
+        "type": "STRING"
+      },
+      {
+        "name": "op",
+        "type": "STRING"
+      },
+      {
+        "name": "change_ms",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "extract_ts",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_file_interaction_export": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "interaction_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "channel",
+        "type": "STRING"
+      },
+      {
+        "name": "client_interaction_id",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_email",
+        "type": "STRING"
+      },
+      {
+        "name": "start_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "end_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "outcome",
+        "type": "STRING"
+      },
+      {
+        "name": "customer_ref",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "feed_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_file_survey_csat": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "survey_id",
+        "type": "STRING"
+      },
+      {
+        "name": "interaction_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "survey_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "csat_score",
+        "type": "INT"
+      },
+      {
+        "name": "nps_score",
+        "type": "INT"
+      },
+      {
+        "name": "fcr_claimed",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "verbatim",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "feed_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_file_qa_forms": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "qa_form_id",
+        "type": "STRING"
+      },
+      {
+        "name": "interaction_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "evaluator_email",
+        "type": "STRING"
+      },
+      {
+        "name": "evaluated_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "form_version",
+        "type": "STRING"
+      },
+      {
+        "name": "auto_fail",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "overall_pct",
+        "type": "DECIMAL(5,2)"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "feed_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_file_ivr_logs": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "event_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "session_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "menu_path",
+        "type": "STRING"
+      },
+      {
+        "name": "key_pressed",
+        "type": "STRING"
+      },
+      {
+        "name": "raw_tail",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "feed_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_file_chat_transcripts": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "chat_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "queue_code",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_email",
+        "type": "STRING"
+      },
+      {
+        "name": "started_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "ended_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "metadata",
+        "type": "MAP<STRING,STRING>"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "feed_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_file_roster": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "employee_no",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_email",
+        "type": "STRING"
+      },
+      {
+        "name": "client_login",
+        "type": "STRING"
+      },
+      {
+        "name": "role_on_program",
+        "type": "STRING"
+      },
+      {
+        "name": "active_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "as_of_ms",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "feed_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_file_telco_invoice": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "telco_invoice_id",
+        "type": "STRING"
+      },
+      {
+        "name": "carrier",
+        "type": "STRING"
+      },
+      {
+        "name": "circuit_id",
+        "type": "STRING"
+      },
+      {
+        "name": "usage_minutes",
+        "type": "BIGINT"
+      },
+      {
+        "name": "charge_amount",
+        "type": "DECIMAL(12,2)"
+      },
+      {
+        "name": "bill_period",
+        "type": "STRING"
+      },
+      {
+        "name": "billed_ms",
+        "type": "BIGINT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "feed_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_file_dialer_result": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "attempt_id",
+        "type": "STRING"
+      },
+      {
+        "name": "campaign_code",
+        "type": "STRING"
+      },
+      {
+        "name": "phone_hash",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "attempt_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "result_code",
+        "type": "STRING"
+      },
+      {
+        "name": "talk_seconds",
+        "type": "INT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "feed_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_file_email_interaction": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "email_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "mailbox",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_email",
+        "type": "STRING"
+      },
+      {
+        "name": "received_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "first_reply_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "resolved_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "subject_category",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "feed_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "stg_file_speech_analytics": {
+    "schema": "staging",
+    "cols": [
+      {
+        "name": "recording_id",
+        "type": "STRING"
+      },
+      {
+        "name": "call_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "analyzed_ms",
+        "type": "BIGINT"
+      },
+      {
+        "name": "sentiment_score",
+        "type": "DOUBLE"
+      },
+      {
+        "name": "silence_pct",
+        "type": "DOUBLE"
+      },
+      {
+        "name": "talk_over_count",
+        "type": "INT"
+      },
+      {
+        "name": "keywords",
+        "type": "ARRAY<STRING>"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "feed_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_program": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "client_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_code",
+        "type": "STRING"
+      },
+      {
+        "name": "program_name",
+        "type": "STRING"
+      },
+      {
+        "name": "line_of_business",
+        "type": "STRING"
+      },
+      {
+        "name": "channel_mix",
+        "type": "STRING"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      },
+      {
+        "name": "go_live_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "updated_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "snapshot_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_contract": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "contract_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "client_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "contract_no",
+        "type": "STRING"
+      },
+      {
+        "name": "start_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "end_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "billing_model",
+        "type": "STRING"
+      },
+      {
+        "name": "currency",
+        "type": "STRING"
+      },
+      {
+        "name": "signed_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "snapshot_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_contract_line": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "contract_line_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "contract_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "line_no",
+        "type": "INT"
+      },
+      {
+        "name": "service_code",
+        "type": "STRING"
+      },
+      {
+        "name": "uom",
+        "type": "STRING"
+      },
+      {
+        "name": "unit_rate",
+        "type": "DECIMAL(12,4)"
+      },
+      {
+        "name": "min_commit",
+        "type": "DECIMAL(12,2)"
+      },
+      {
+        "name": "effective_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "snapshot_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_org_unit": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "org_unit_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "parent_unit_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "unit_code",
+        "type": "STRING"
+      },
+      {
+        "name": "unit_name",
+        "type": "STRING"
+      },
+      {
+        "name": "unit_type",
+        "type": "STRING"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      },
+      {
+        "name": "cost_center",
+        "type": "STRING"
+      },
+      {
+        "name": "created_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "snapshot_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_queue": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "queue_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "queue_code",
+        "type": "STRING"
+      },
+      {
+        "name": "queue_name",
+        "type": "STRING"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "media_type",
+        "type": "STRING"
+      },
+      {
+        "name": "priority",
+        "type": "INT"
+      },
+      {
+        "name": "created_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "snapshot_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_schedule": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "schedule_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "shift_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "shift_code",
+        "type": "STRING"
+      },
+      {
+        "name": "start_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "end_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "paid_minutes",
+        "type": "INT"
+      },
+      {
+        "name": "activity_code",
+        "type": "STRING"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "sched_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_adherence_event": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "adherence_event_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "schedule_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "exception_type",
+        "type": "STRING"
+      },
+      {
+        "name": "start_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "end_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "exception_minutes",
+        "type": "INT"
+      },
+      {
+        "name": "approved_flag",
+        "type": "BOOLEAN"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "event_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_call": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "call_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "queue_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "direction",
+        "type": "STRING"
+      },
+      {
+        "name": "start_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "answer_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "end_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "ring_seconds",
+        "type": "INT"
+      },
+      {
+        "name": "talk_seconds",
+        "type": "INT"
+      },
+      {
+        "name": "hold_seconds",
+        "type": "INT"
+      },
+      {
+        "name": "acw_seconds",
+        "type": "INT"
+      },
+      {
+        "name": "abandoned_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "disposition_code",
+        "type": "STRING"
+      },
+      {
+        "name": "recording_id",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "call_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_ivr_session": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "session_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "first_event_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "last_event_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "menu_path_full",
+        "type": "STRING"
+      },
+      {
+        "name": "hops",
+        "type": "INT"
+      },
+      {
+        "name": "contained_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "exit_key",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "event_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_chat_session": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "chat_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "queue_code",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_email",
+        "type": "STRING"
+      },
+      {
+        "name": "started_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "ended_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "message_count",
+        "type": "INT"
+      },
+      {
+        "name": "agent_message_count",
+        "type": "INT"
+      },
+      {
+        "name": "customer_message_count",
+        "type": "INT"
+      },
+      {
+        "name": "first_response_seconds",
+        "type": "INT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "event_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_email_interaction": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "email_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "mailbox",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_email",
+        "type": "STRING"
+      },
+      {
+        "name": "received_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "first_reply_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "resolved_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "reply_sla_minutes",
+        "type": "INT"
+      },
+      {
+        "name": "subject_category",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "event_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_survey_response": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "survey_id",
+        "type": "STRING"
+      },
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "interaction_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "survey_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "csat_score",
+        "type": "INT"
+      },
+      {
+        "name": "nps_score",
+        "type": "INT"
+      },
+      {
+        "name": "fcr_claimed",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "verbatim",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "event_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_qa_evaluation": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "qa_form_id",
+        "type": "STRING"
+      },
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "interaction_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "evaluator_email",
+        "type": "STRING"
+      },
+      {
+        "name": "evaluated_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "form_version",
+        "type": "STRING"
+      },
+      {
+        "name": "section_count",
+        "type": "INT"
+      },
+      {
+        "name": "scored_points",
+        "type": "INT"
+      },
+      {
+        "name": "max_points",
+        "type": "INT"
+      },
+      {
+        "name": "auto_fail",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "overall_pct",
+        "type": "DECIMAL(5,2)"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "event_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_interaction": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "interaction_id",
+        "type": "STRING"
+      },
+      {
+        "name": "channel",
+        "type": "STRING"
+      },
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "queue_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "customer_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "start_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "end_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "handle_seconds",
+        "type": "INT"
+      },
+      {
+        "name": "resolved_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "source_system",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "event_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_dialer_attempt": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "attempt_id",
+        "type": "STRING"
+      },
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "campaign_code",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "attempt_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "result_code",
+        "type": "STRING"
+      },
+      {
+        "name": "connected_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "talk_seconds",
+        "type": "INT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "event_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_timesheet": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "timesheet_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "work_date",
+        "type": "STRING"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "billable_minutes",
+        "type": "INT"
+      },
+      {
+        "name": "nonbillable_minutes",
+        "type": "INT"
+      },
+      {
+        "name": "approved_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "last_change_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "work_month",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_payroll_adjustment": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "adjustment_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "adj_type",
+        "type": "STRING"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(12,2)"
+      },
+      {
+        "name": "last_change_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "period_month",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_sla_credit": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "sla_credit_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "sla_target_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "credit_amount",
+        "type": "DECIMAL(12,2)"
+      },
+      {
+        "name": "reason",
+        "type": "STRING"
+      },
+      {
+        "name": "last_change_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "period_month",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_callback_request": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "callback_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "call_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "queue_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "requested_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "scheduled_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "completed_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "last_change_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "event_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_shift_swap": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "swap_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "requesting_agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "accepting_agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "schedule_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "swap_date",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      },
+      {
+        "name": "last_change_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "swap_month",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_ticket_worklog": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "worklog_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "ticket_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "minutes_logged",
+        "type": "INT"
+      },
+      {
+        "name": "log_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "note",
+        "type": "STRING"
+      },
+      {
+        "name": "last_change_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "event_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_attrition_event": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "attrition_event_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "notice_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "last_day",
+        "type": "STRING"
+      },
+      {
+        "name": "attrition_type",
+        "type": "STRING"
+      },
+      {
+        "name": "reason_code",
+        "type": "STRING"
+      },
+      {
+        "name": "regrettable_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "last_change_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "event_month",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_rate_card": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "rate_card_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "service_code",
+        "type": "STRING"
+      },
+      {
+        "name": "rate",
+        "type": "DECIMAL(12,4)"
+      },
+      {
+        "name": "currency",
+        "type": "STRING"
+      },
+      {
+        "name": "effective_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "expiry_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "last_change_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "snapshot_date",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "ods_agent_scd2": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "agent_history_id",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "employee_no",
+        "type": "STRING"
+      },
+      {
+        "name": "org_unit_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "job_grade",
+        "type": "STRING"
+      },
+      {
+        "name": "employment_type",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      },
+      {
+        "name": "eff_from_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "eff_to_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "is_current",
+        "type": "BOOLEAN"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "eff_from_year",
+        "type": "INT"
+      }
+    ],
+    "acid": false
+  },
+  "ods_agent_skill_scd2": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "agent_skill_history_id",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "skill_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "skill_code",
+        "type": "STRING"
+      },
+      {
+        "name": "proficiency",
+        "type": "INT"
+      },
+      {
+        "name": "certified",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "eff_from_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "eff_to_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "is_current",
+        "type": "BOOLEAN"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "eff_from_year",
+        "type": "INT"
+      }
+    ],
+    "acid": false
+  },
+  "ods_agent_assignment_scd2": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "assignment_history_id",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "queue_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "role_on_program",
+        "type": "STRING"
+      },
+      {
+        "name": "eff_from_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "eff_to_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "is_current",
+        "type": "BOOLEAN"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "eff_from_year",
+        "type": "INT"
+      }
+    ],
+    "acid": false
+  },
+  "ods_client_acid": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "client_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "client_name",
+        "type": "STRING"
+      },
+      {
+        "name": "industry",
+        "type": "STRING"
+      },
+      {
+        "name": "hq_country",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      },
+      {
+        "name": "created_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "updated_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [],
+    "acid": true
+  },
+  "ods_agent_acid": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "employee_no",
+        "type": "STRING"
+      },
+      {
+        "name": "full_name",
+        "type": "STRING"
+      },
+      {
+        "name": "email",
+        "type": "STRING"
+      },
+      {
+        "name": "org_unit_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "job_grade",
+        "type": "STRING"
+      },
+      {
+        "name": "employment_type",
+        "type": "STRING"
+      },
+      {
+        "name": "hire_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "term_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [],
+    "acid": true
+  },
+  "ods_ticket_acid": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "ticket_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "ticket_no",
+        "type": "STRING"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "category_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "assigned_agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "priority",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      },
+      {
+        "name": "created_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "updated_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "resolved_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [],
+    "acid": true
+  },
+  "ods_invoice_acid": {
+    "schema": "ods",
+    "cols": [
+      {
+        "name": "invoice_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "invoice_no",
+        "type": "STRING"
+      },
+      {
+        "name": "client_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "period_month",
+        "type": "STRING"
+      },
+      {
+        "name": "issued_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "due_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "currency",
+        "type": "STRING"
+      },
+      {
+        "name": "total_amount",
+        "type": "DECIMAL(14,2)"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [],
+    "acid": true
+  },
+  "dim_date": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "date_key",
+        "type": "INT"
+      },
+      {
+        "name": "full_date",
+        "type": "STRING"
+      },
+      {
+        "name": "day_of_week",
+        "type": "INT"
+      },
+      {
+        "name": "day_name",
+        "type": "STRING"
+      },
+      {
+        "name": "week_of_year",
+        "type": "INT"
+      },
+      {
+        "name": "month_no",
+        "type": "INT"
+      },
+      {
+        "name": "month_name",
+        "type": "STRING"
+      },
+      {
+        "name": "quarter_no",
+        "type": "INT"
+      },
+      {
+        "name": "year_no",
+        "type": "INT"
+      },
+      {
+        "name": "is_weekend",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "is_holiday_us",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "fiscal_period",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [],
+    "acid": false
+  },
+  "dim_agent": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "agent_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "employee_no",
+        "type": "STRING"
+      },
+      {
+        "name": "full_name",
+        "type": "STRING"
+      },
+      {
+        "name": "job_grade",
+        "type": "STRING"
+      },
+      {
+        "name": "employment_type",
+        "type": "STRING"
+      },
+      {
+        "name": "org_unit_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "team_name",
+        "type": "STRING"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      },
+      {
+        "name": "hire_date_key",
+        "type": "INT"
+      },
+      {
+        "name": "is_current",
+        "type": "BOOLEAN"
+      }
+    ],
+    "partitions": [],
+    "acid": false
+  },
+  "dim_client": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "client_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "client_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "client_name",
+        "type": "STRING"
+      },
+      {
+        "name": "industry",
+        "type": "STRING"
+      },
+      {
+        "name": "hq_country",
+        "type": "STRING"
+      },
+      {
+        "name": "primary_contact_name",
+        "type": "STRING"
+      },
+      {
+        "name": "primary_contact_email",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [],
+    "acid": false
+  },
+  "dim_program": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "program_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_code",
+        "type": "STRING"
+      },
+      {
+        "name": "program_name",
+        "type": "STRING"
+      },
+      {
+        "name": "client_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "line_of_business",
+        "type": "STRING"
+      },
+      {
+        "name": "channel_mix",
+        "type": "STRING"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      },
+      {
+        "name": "billing_model",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      },
+      {
+        "name": "go_live_date_key",
+        "type": "INT"
+      }
+    ],
+    "partitions": [],
+    "acid": false
+  },
+  "dim_queue": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "queue_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "queue_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "queue_code",
+        "type": "STRING"
+      },
+      {
+        "name": "queue_name",
+        "type": "STRING"
+      },
+      {
+        "name": "program_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "media_type",
+        "type": "STRING"
+      },
+      {
+        "name": "priority",
+        "type": "INT"
+      }
+    ],
+    "partitions": [],
+    "acid": false
+  },
+  "dim_site": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "site_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      },
+      {
+        "name": "site_name",
+        "type": "STRING"
+      },
+      {
+        "name": "region",
+        "type": "STRING"
+      },
+      {
+        "name": "country",
+        "type": "STRING"
+      },
+      {
+        "name": "timezone",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [],
+    "acid": false
+  },
+  "dim_shift": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "shift_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "shift_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "shift_code",
+        "type": "STRING"
+      },
+      {
+        "name": "shift_name",
+        "type": "STRING"
+      },
+      {
+        "name": "start_hhmm",
+        "type": "STRING"
+      },
+      {
+        "name": "end_hhmm",
+        "type": "STRING"
+      },
+      {
+        "name": "overnight_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [],
+    "acid": false
+  },
+  "dim_org": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "org_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "org_unit_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "unit_code",
+        "type": "STRING"
+      },
+      {
+        "name": "unit_name",
+        "type": "STRING"
+      },
+      {
+        "name": "unit_type",
+        "type": "STRING"
+      },
+      {
+        "name": "level1_name",
+        "type": "STRING"
+      },
+      {
+        "name": "level2_name",
+        "type": "STRING"
+      },
+      {
+        "name": "level3_name",
+        "type": "STRING"
+      },
+      {
+        "name": "level4_name",
+        "type": "STRING"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      },
+      {
+        "name": "cost_center",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [],
+    "acid": false
+  },
+  "dim_disposition": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "disposition_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "disposition_code",
+        "type": "STRING"
+      },
+      {
+        "name": "disposition_desc",
+        "type": "STRING"
+      },
+      {
+        "name": "category",
+        "type": "STRING"
+      },
+      {
+        "name": "billable_flag",
+        "type": "BOOLEAN"
+      }
+    ],
+    "partitions": [],
+    "acid": false
+  },
+  "fact_interaction": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "interaction_id",
+        "type": "STRING"
+      },
+      {
+        "name": "client_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "queue_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "customer_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "start_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "end_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "handle_seconds",
+        "type": "INT"
+      },
+      {
+        "name": "resolved_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "source_system",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "date_key",
+        "type": "INT"
+      },
+      {
+        "name": "channel",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "fact_agent_activity": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "agent_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "state_code",
+        "type": "STRING"
+      },
+      {
+        "name": "state_seconds",
+        "type": "BIGINT"
+      },
+      {
+        "name": "occurrence_count",
+        "type": "INT"
+      },
+      {
+        "name": "first_state_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "last_state_ts",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "date_key",
+        "type": "INT"
+      }
+    ],
+    "acid": false
+  },
+  "fact_queue_interval": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "queue_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "interval_start_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "offered",
+        "type": "INT"
+      },
+      {
+        "name": "answered",
+        "type": "INT"
+      },
+      {
+        "name": "abandoned",
+        "type": "INT"
+      },
+      {
+        "name": "answered_in_sl",
+        "type": "INT"
+      },
+      {
+        "name": "sl_threshold_sec",
+        "type": "INT"
+      },
+      {
+        "name": "avg_speed_answer_sec",
+        "type": "DECIMAL(8,2)"
+      },
+      {
+        "name": "avg_handle_sec",
+        "type": "DECIMAL(8,2)"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "date_key",
+        "type": "INT"
+      }
+    ],
+    "acid": false
+  },
+  "fact_csat_survey": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "survey_id",
+        "type": "STRING"
+      },
+      {
+        "name": "interaction_id",
+        "type": "STRING"
+      },
+      {
+        "name": "client_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "agent_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "survey_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "csat_score",
+        "type": "INT"
+      },
+      {
+        "name": "nps_score",
+        "type": "INT"
+      },
+      {
+        "name": "fcr_claimed",
+        "type": "BOOLEAN"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "date_key",
+        "type": "INT"
+      }
+    ],
+    "acid": false
+  },
+  "fact_qa_evaluation": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "qa_form_id",
+        "type": "STRING"
+      },
+      {
+        "name": "interaction_id",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "evaluated_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "scored_points",
+        "type": "INT"
+      },
+      {
+        "name": "max_points",
+        "type": "INT"
+      },
+      {
+        "name": "overall_pct",
+        "type": "DECIMAL(5,2)"
+      },
+      {
+        "name": "auto_fail",
+        "type": "BOOLEAN"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "date_key",
+        "type": "INT"
+      }
+    ],
+    "acid": false
+  },
+  "fact_billing_line": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "invoice_line_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "invoice_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "client_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "service_code",
+        "type": "STRING"
+      },
+      {
+        "name": "qty",
+        "type": "DECIMAL(12,2)"
+      },
+      {
+        "name": "unit_rate",
+        "type": "DECIMAL(12,4)"
+      },
+      {
+        "name": "line_amount",
+        "type": "DECIMAL(14,2)"
+      },
+      {
+        "name": "adjustment_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "invoice_status",
+        "type": "STRING"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "period_month",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "fact_adherence_daily": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "agent_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "scheduled_minutes",
+        "type": "INT"
+      },
+      {
+        "name": "worked_minutes",
+        "type": "INT"
+      },
+      {
+        "name": "exception_minutes",
+        "type": "INT"
+      },
+      {
+        "name": "timeoff_minutes",
+        "type": "INT"
+      },
+      {
+        "name": "adherence_pct",
+        "type": "DECIMAL(5,2)"
+      },
+      {
+        "name": "occupancy_pct",
+        "type": "DECIMAL(5,2)"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "date_key",
+        "type": "INT"
+      }
+    ],
+    "acid": false
+  },
+  "fact_ticket": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "ticket_id",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "category_code",
+        "type": "STRING"
+      },
+      {
+        "name": "assigned_agent_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "priority",
+        "type": "STRING"
+      },
+      {
+        "name": "status",
+        "type": "STRING"
+      },
+      {
+        "name": "created_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "resolved_ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "resolution_minutes",
+        "type": "INT"
+      },
+      {
+        "name": "sla_breached_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "touch_count",
+        "type": "INT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "date_key",
+        "type": "INT"
+      }
+    ],
+    "acid": false
+  },
+  "fact_ivr_path": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "session_ref",
+        "type": "STRING"
+      },
+      {
+        "name": "client_code",
+        "type": "STRING"
+      },
+      {
+        "name": "menu_path_full",
+        "type": "STRING"
+      },
+      {
+        "name": "hops",
+        "type": "INT"
+      },
+      {
+        "name": "contained_flag",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "exit_key",
+        "type": "STRING"
+      },
+      {
+        "name": "duration_seconds",
+        "type": "INT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "date_key",
+        "type": "INT"
+      }
+    ],
+    "acid": false
+  },
+  "agg_agent_daily": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "agent_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      },
+      {
+        "name": "interactions_handled",
+        "type": "INT"
+      },
+      {
+        "name": "avg_handle_seconds",
+        "type": "DECIMAL(8,2)"
+      },
+      {
+        "name": "talk_seconds",
+        "type": "BIGINT"
+      },
+      {
+        "name": "acw_seconds",
+        "type": "BIGINT"
+      },
+      {
+        "name": "aux_seconds",
+        "type": "BIGINT"
+      },
+      {
+        "name": "adherence_pct",
+        "type": "DECIMAL(5,2)"
+      },
+      {
+        "name": "occupancy_pct",
+        "type": "DECIMAL(5,2)"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "date_key",
+        "type": "INT"
+      }
+    ],
+    "acid": false
+  },
+  "agg_agent_weekly": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "agent_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      },
+      {
+        "name": "days_worked",
+        "type": "INT"
+      },
+      {
+        "name": "interactions_handled",
+        "type": "INT"
+      },
+      {
+        "name": "avg_handle_seconds",
+        "type": "DECIMAL(8,2)"
+      },
+      {
+        "name": "adherence_pct",
+        "type": "DECIMAL(5,2)"
+      },
+      {
+        "name": "occupancy_pct",
+        "type": "DECIMAL(5,2)"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "week_start_key",
+        "type": "INT"
+      }
+    ],
+    "acid": false
+  },
+  "agg_program_monthly": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "client_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "line_of_business",
+        "type": "STRING"
+      },
+      {
+        "name": "interactions",
+        "type": "BIGINT"
+      },
+      {
+        "name": "avg_handle_seconds",
+        "type": "DECIMAL(8,2)"
+      },
+      {
+        "name": "avg_csat",
+        "type": "DECIMAL(5,2)"
+      },
+      {
+        "name": "billed_amount",
+        "type": "DECIMAL(14,2)"
+      },
+      {
+        "name": "grouping_level",
+        "type": "INT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "period_month",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "agg_queue_hourly": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "queue_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "hour_of_day",
+        "type": "INT"
+      },
+      {
+        "name": "offered",
+        "type": "INT"
+      },
+      {
+        "name": "answered",
+        "type": "INT"
+      },
+      {
+        "name": "abandoned",
+        "type": "INT"
+      },
+      {
+        "name": "sl_pct",
+        "type": "DECIMAL(5,2)"
+      },
+      {
+        "name": "forecast_volume",
+        "type": "INT"
+      },
+      {
+        "name": "volume_variance_pct",
+        "type": "DECIMAL(7,2)"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "date_key",
+        "type": "INT"
+      }
+    ],
+    "acid": false
+  },
+  "agg_csat_rollup_monthly": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "client_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "site_code",
+        "type": "STRING"
+      },
+      {
+        "name": "surveys",
+        "type": "BIGINT"
+      },
+      {
+        "name": "avg_csat",
+        "type": "DECIMAL(5,2)"
+      },
+      {
+        "name": "pct_promoters",
+        "type": "DECIMAL(5,2)"
+      },
+      {
+        "name": "pct_detractors",
+        "type": "DECIMAL(5,2)"
+      },
+      {
+        "name": "grouping_id",
+        "type": "INT"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "period_month",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "agg_billing_monthly": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "client_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "program_sk",
+        "type": "BIGINT"
+      },
+      {
+        "name": "billed_amount",
+        "type": "DECIMAL(14,2)"
+      },
+      {
+        "name": "sla_credit_amount",
+        "type": "DECIMAL(12,2)"
+      },
+      {
+        "name": "telco_cost_amount",
+        "type": "DECIMAL(12,2)"
+      },
+      {
+        "name": "net_revenue",
+        "type": "DECIMAL(14,2)"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "period_month",
+        "type": "STRING"
+      }
+    ],
+    "acid": false
+  },
+  "agg_site_daily": {
+    "schema": "dm",
+    "cols": [
+      {
+        "name": "site_code",
+        "type": "STRING"
+      },
+      {
+        "name": "agents_active",
+        "type": "INT"
+      },
+      {
+        "name": "interactions",
+        "type": "BIGINT"
+      },
+      {
+        "name": "avg_handle_seconds",
+        "type": "DECIMAL(8,2)"
+      },
+      {
+        "name": "sl_pct",
+        "type": "DECIMAL(5,2)"
+      },
+      {
+        "name": "adherence_pct",
+        "type": "DECIMAL(5,2)"
+      }
+    ],
+    "partitions": [
+      {
+        "name": "date_key",
+        "type": "INT"
+      }
+    ],
+    "acid": false
+  }
+}

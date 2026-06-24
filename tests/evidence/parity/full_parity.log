@@ -1,0 +1,35 @@
+[23:00:39.989] === AC1 Full Parity: Legacy + BQ + Compare ===
+[23:00:40.627] Connected.
+[23:00:40.628] 32 legacy scripts with data
+[23:00:40.628] 
+--- ods_timesheet (from 24-delta-merge-timesheet.sql) ---
+[23:00:45.579]   BQ script executed
+[23:00:47.065]   ✓ count=true fp=true
+[23:00:47.065] 
+--- ods_payroll_adjustment (from 25-delta-merge-payroll-adjustment.sql) ---
+[23:00:51.282]   BQ script executed
+[23:00:52.535]   ✓ count=true fp=true
+[23:00:52.536] 
+--- ods_sla_credit (from 26-delta-merge-sla-credit.sql) ---
+[23:00:56.774]   BQ script executed
+[23:00:58.109]   ✓ count=true fp=true
+[23:00:58.110] 
+--- ods_callback_request (from 27-delta-merge-callback-request.sql) ---
+[23:01:01.130]   BQ exec FAIL: No matching signature for operator CASE; all THEN/ELSE arguments must be coercible to a common type 
+[23:01:01.130] 
+--- ods_shift_swap (from 28-delta-merge-shift-swap.sql) ---
+[23:01:05.770]   BQ script executed
+[23:01:07.038]   ✓ count=true fp=true
+[23:01:07.038] 
+--- ods_ticket_worklog (from 29-delta-merge-ticket-worklog.sql) ---
+[23:01:10.187]   BQ exec FAIL: No matching signature for operator CASE; all THEN/ELSE arguments must be coercible to a common type 
+[23:01:10.188] 
+--- ods_attrition_event (from 30-delta-merge-attrition-event.sql) ---
+[23:01:17.967]   BQ script executed
+[23:01:19.251]   ✓ count=true fp=true
+[23:01:19.252] 
+--- ods_rate_card (from 31-delta-merge-rate-card.sql) ---
+[23:01:25.032]   BQ script executed
+[23:01:26.339]   ✓ count=true fp=true
+[23:01:26.339] 
+--- ods_agent_scd2 (from 32-scd2-agent.sql) ---

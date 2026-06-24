@@ -1,0 +1,663 @@
+{
+  "summary": {
+    "total": 54,
+    "pass": 17,
+    "fail": 15,
+    "hive_empty": 22,
+    "bq_missing": 0,
+    "note": "Cross-engine comparison with improved timestamp normalization"
+  },
+  "tables": {
+    "ods_program": {
+      "status": "PASS",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_contract": {
+      "status": "PASS",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_contract_line": {
+      "status": "FAIL",
+      "hive": 10,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "ods_org_unit": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "ods_queue": {
+      "status": "PASS",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_schedule": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "ods_adherence_event": {
+      "status": "PASS",
+      "hive": 15,
+      "bq": 15,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_call": {
+      "status": "PASS",
+      "hive": 30,
+      "bq": 30,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_ivr_session": {
+      "status": "PASS",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_chat_session": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "ods_email_interaction": {
+      "status": "FAIL",
+      "hive": 10,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "ods_survey_response": {
+      "status": "FAIL",
+      "hive": 15,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "ods_qa_evaluation": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "ods_interaction": {
+      "status": "FAIL",
+      "hive": 40,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "ods_dialer_attempt": {
+      "status": "FAIL",
+      "hive": 10,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "ods_timesheet": {
+      "status": "PASS",
+      "hive": 10,
+      "bq": 10,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_payroll_adjustment": {
+      "status": "PASS",
+      "hive": 3,
+      "bq": 3,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_sla_credit": {
+      "status": "PASS",
+      "hive": 3,
+      "bq": 3,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_callback_request": {
+      "status": "PASS",
+      "hive": 3,
+      "bq": 3,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_shift_swap": {
+      "status": "PASS",
+      "hive": 3,
+      "bq": 3,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_ticket_worklog": {
+      "status": "PASS",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_attrition_event": {
+      "status": "PASS",
+      "hive": 3,
+      "bq": 3,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_rate_card": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": false,
+      "diff_cols": [
+        {
+          "col": "expiry_ts",
+          "hive_sample": "1970-01-01 00:00:00",
+          "bq_sample": "__NULL__"
+        },
+        {
+          "col": "last_change_ts",
+          "hive_sample": "2023-07-22 04:26:40",
+          "bq_sample": "2023-07-22 04:26:40"
+        }
+      ]
+    },
+    "ods_agent_scd2": {
+      "status": "FAIL",
+      "hive": 25,
+      "bq": 20,
+      "count_match": false,
+      "fingerprint_match": false
+    },
+    "ods_agent_skill_scd2": {
+      "status": "FAIL",
+      "hive": 10,
+      "bq": 10,
+      "count_match": true,
+      "fingerprint_match": false,
+      "diff_cols": [
+        {
+          "col": "agent_skill_history_id",
+          "hive_sample": "0191375699ea803caa9d006b2169639d",
+          "bq_sample": "ASH-1"
+        }
+      ]
+    },
+    "ods_agent_assignment_scd2": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "ods_client_acid": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "ods_agent_acid": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "ods_ticket_acid": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "ods_invoice_acid": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "dim_agent": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "dim_client": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "dim_program": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": false,
+      "diff_cols": [
+        {
+          "col": "billing_model",
+          "hive_sample": "PER_F E",
+          "bq_sample": "PER_UNI "
+        }
+      ]
+    },
+    "dim_queue": {
+      "status": "PASS",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "dim_site": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "dim_shift": {
+      "status": "PASS",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "dim_org": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "dim_disposition": {
+      "status": "PASS",
+      "hive": 6,
+      "bq": 6,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "fact_interaction": {
+      "status": "FAIL",
+      "hive": 40,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "fact_agent_activity": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 30,
+      "count_match": false,
+      "fingerprint_match": false,
+      "diff_cols": [
+        {
+          "col": "agent_sk",
+          "hive_sample": "-1",
+          "bq_sample": "10"
+        },
+        {
+          "col": "date_key",
+          "hive_sample": "20240115",
+          "bq_sample": "20240115"
+        },
+        {
+          "col": "first_state_ts",
+          "hive_sample": "2024-01-15 00:10:00",
+          "bq_sample": "2024-01-15 00:10:00"
+        },
+        {
+          "col": "last_state_ts",
+          "hive_sample": "2024-01-15 04:25:00",
+          "bq_sample": "2024-01-15 00:15:00"
+        },
+        {
+          "col": "occurrence_count",
+          "hive_sample": "6",
+          "bq_sample": "true"
+        },
+        {
+          "col": "state_code",
+          "hive_sample": " ALK",
+          "bq_sample": " ALK"
+        },
+        {
+          "col": "state_seconds",
+          "hive_sample": "1800",
+          "bq_sample": "300"
+        }
+      ]
+    },
+    "fact_queue_interval": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "fact_csat_survey": {
+      "status": "FAIL",
+      "hive": 15,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "fact_qa_evaluation": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "fact_billing_line": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "fact_adherence_daily": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "fact_ticket": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "fact_ivr_path": {
+      "status": "PASS",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "agg_agent_daily": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "agg_agent_weekly": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "agg_program_monthly": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "agg_queue_hourly": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "agg_csat_rollup_monthly": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "agg_billing_monthly": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "agg_site_daily": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    }
+  },
+  "column_aggregates": {
+    "ods_program": {
+      "hive": {
+        "s_client_id": "9",
+        "s_program_id": "15"
+      },
+      "bq": {
+        "s_client_id": "9",
+        "s_program_id": "15"
+      }
+    },
+    "ods_contract": {
+      "hive": {
+        "s_client_id": "9",
+        "s_contract_id": "15",
+        "s_program_id": "15"
+      },
+      "bq": {
+        "s_client_id": "9",
+        "s_contract_id": "15",
+        "s_program_id": "15"
+      }
+    },
+    "ods_queue": {
+      "hive": {
+        "s_priority": "15",
+        "s_program_id": "15",
+        "s_queue_id": "15"
+      },
+      "bq": {
+        "s_priority": "15",
+        "s_program_id": "15",
+        "s_queue_id": "15"
+      }
+    },
+    "ods_adherence_event": {
+      "hive": {
+        "s_adherence_event_id": "120",
+        "s_agent_id": "120",
+        "s_exception_minutes": "150",
+        "s_schedule_id": "120"
+      },
+      "bq": {
+        "s_adherence_event_id": "120",
+        "s_agent_id": "120",
+        "s_exception_minutes": "150",
+        "s_schedule_id": "120"
+      }
+    },
+    "ods_call": {
+      "hive": {
+        "s_acw_seconds": "1360",
+        "s_agent_id": "249",
+        "s_call_id": "465",
+        "s_hold_seconds": "1360",
+        "s_program_id": "90"
+      },
+      "bq": {
+        "s_acw_seconds": "1360",
+        "s_agent_id": "249",
+        "s_call_id": "465",
+        "s_hold_seconds": "1360",
+        "s_program_id": "90"
+      }
+    },
+    "ods_ivr_session": {
+      "hive": {
+        "s_hops": "18"
+      },
+      "bq": {
+        "s_hops": "18"
+      }
+    },
+    "ods_timesheet": {
+      "hive": {
+        "s_agent_id": "55",
+        "s_billable_minutes": "4550",
+        "s_nonbillable_minutes": "600",
+        "s_program_id": "30",
+        "s_timesheet_id": "55"
+      },
+      "bq": {
+        "s_agent_id": "55",
+        "s_billable_minutes": "4550",
+        "s_nonbillable_minutes": "600",
+        "s_program_id": "30",
+        "s_timesheet_id": "55"
+      }
+    },
+    "ods_payroll_adjustment": {
+      "hive": {
+        "s_adjustment_id": "6",
+        "s_agent_id": "6",
+        "s_amount": "600"
+      },
+      "bq": {
+        "s_adjustment_id": "6",
+        "s_agent_id": "6",
+        "s_amount": "600"
+      }
+    },
+    "ods_sla_credit": {
+      "hive": {
+        "s_credit_amount": "750",
+        "s_program_id": "6",
+        "s_sla_credit_id": "6",
+        "s_sla_target_id": "6"
+      },
+      "bq": {
+        "s_credit_amount": "750",
+        "s_program_id": "6",
+        "s_sla_credit_id": "6",
+        "s_sla_target_id": "6"
+      }
+    },
+    "ods_callback_request": {
+      "hive": {
+        "s_call_id": "6",
+        "s_callback_id": "6",
+        "s_queue_id": "6"
+      },
+      "bq": {
+        "s_call_id": "6",
+        "s_callback_id": "6",
+        "s_queue_id": "6"
+      }
+    },
+    "ods_shift_swap": {
+      "hive": {
+        "s_accepting_agent_id": "9",
+        "s_requesting_agent_id": "6",
+        "s_schedule_id": "6",
+        "s_swap_id": "6"
+      },
+      "bq": {
+        "s_accepting_agent_id": "9",
+        "s_requesting_agent_id": "6",
+        "s_schedule_id": "6",
+        "s_swap_id": "6"
+      }
+    },
+    "ods_ticket_worklog": {
+      "hive": {
+        "s_agent_id": "15",
+        "s_minutes_logged": "225",
+        "s_ticket_id": "15",
+        "s_worklog_id": "15"
+      },
+      "bq": {
+        "s_agent_id": "15",
+        "s_minutes_logged": "225",
+        "s_ticket_id": "15",
+        "s_worklog_id": "15"
+      }
+    },
+    "ods_attrition_event": {
+      "hive": {
+        "s_agent_id": "51",
+        "s_attrition_event_id": "6"
+      },
+      "bq": {
+        "s_agent_id": "51",
+        "s_attrition_event_id": "6"
+      }
+    },
+    "ods_rate_card": {
+      "hive": {
+        "s_program_id": "15",
+        "s_rate": "2.05",
+        "s_rate_card_id": "15"
+      },
+      "bq": {
+        "s_program_id": "15",
+        "s_rate": "2",
+        "s_rate_card_id": "15"
+      }
+    },
+    "ods_agent_scd2": {
+      "hive": {
+        "s_agent_id": "178",
+        "s_eff_from_year": "50575",
+        "s_org_unit_id": "72"
+      },
+      "bq": {
+        "s_agent_id": "163",
+        "s_eff_from_year": "40460",
+        "s_org_unit_id": "57"
+      }
+    },
+    "ods_agent_skill_scd2": {
+      "hive": {
+        "s_agent_id": "55",
+        "s_eff_from_year": "20230",
+        "s_proficiency": "40",
+        "s_skill_id": "30"
+      },
+      "bq": {
+        "s_agent_id": "55",
+        "s_eff_from_year": "20230",
+        "s_proficiency": "40",
+        "s_skill_id": "30"
+      }
+    },
+    "dim_program": {
+      "hive": {
+        "s_client_id": "9",
+        "s_go_live_date_key": "101153610",
+        "s_program_id": "15",
+        "s_program_sk": "15"
+      },
+      "bq": {
+        "s_client_id": "9",
+        "s_go_live_date_key": "101153610",
+        "s_program_id": "15",
+        "s_program_sk": "15"
+      }
+    },
+    "dim_queue": {
+      "hive": {
+        "s_priority": "15",
+        "s_program_id": "15",
+        "s_queue_id": "15",
+        "s_queue_sk": "15"
+      },
+      "bq": {
+        "s_priority": "15",
+        "s_program_id": "15",
+        "s_queue_id": "15",
+        "s_queue_sk": "15"
+      }
+    },
+    "dim_shift": {
+      "hive": {
+        "s_shift_id": "15",
+        "s_shift_sk": "15"
+      },
+      "bq": {
+        "s_shift_id": "15",
+        "s_shift_sk": "15"
+      }
+    },
+    "dim_disposition": {
+      "hive": {
+        "s_disposition_sk": "21"
+      },
+      "bq": {
+        "s_disposition_sk": "21"
+      }
+    },
+    "fact_agent_activity": {
+      "hive": {
+        "s_agent_sk": "-5",
+        "s_date_key": "101200575",
+        "s_occurrence_count": "30",
+        "s_state_seconds": "9000"
+      },
+      "bq": {
+        "s_agent_sk": "249",
+        "s_date_key": "607203450",
+        "s_occurrence_count": "30",
+        "s_state_seconds": "9000"
+      }
+    },
+    "fact_ivr_path": {
+      "hive": {
+        "s_date_key": "101200575",
+        "s_duration_seconds": "65",
+        "s_hops": "18"
+      },
+      "bq": {
+        "s_date_key": "101200575",
+        "s_duration_seconds": "65",
+        "s_hops": "18"
+      }
+    }
+  }
+}
