@@ -3,20 +3,6 @@
   "fingerprint": "b4a58c4787065fdb192e5ffb06234f0b",
   "sample": [
     {
-      "worklog_id": 2,
-      "ticket_id": 2,
-      "agent_id": 2,
-      "minutes_logged": 35,
-      "log_ts": {
-        "value": "2024-01-15T00:03:20.000Z"
-      },
-      "note": "WL2",
-      "last_change_ts": {
-        "value": "2024-01-15T00:00:00.001Z"
-      },
-      "event_date": "2024-01-15"
-    },
-    {
       "worklog_id": 3,
       "ticket_id": 3,
       "agent_id": 3,
@@ -41,6 +27,20 @@
       "note": "WL1",
       "last_change_ts": {
         "value": "2024-01-15T00:00:00.000Z"
+      },
+      "event_date": "2024-01-15"
+    },
+    {
+      "worklog_id": 2,
+      "ticket_id": 2,
+      "agent_id": 2,
+      "minutes_logged": 35,
+      "log_ts": {
+        "value": "2024-01-15T00:03:20.000Z"
+      },
+      "note": "WL2",
+      "last_change_ts": {
+        "value": "2024-01-15T00:00:00.001Z"
       },
       "event_date": "2024-01-15"
     }

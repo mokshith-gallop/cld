@@ -3,17 +3,6 @@
   "fingerprint": "19c17f816af95bbbbf137f7295355bd0",
   "sample": [
     {
-      "sla_credit_id": 1,
-      "program_id": 1,
-      "sla_target_id": 1,
-      "credit_amount": "250",
-      "reason": "SLA_MISS",
-      "last_change_ts": {
-        "value": "2024-01-15T00:00:00.000Z"
-      },
-      "period_month": "2024-01"
-    },
-    {
       "sla_credit_id": 2,
       "program_id": 2,
       "sla_target_id": 2,
@@ -21,6 +10,17 @@
       "reason": "SLA_MISS",
       "last_change_ts": {
         "value": "2024-01-15T00:00:00.001Z"
+      },
+      "period_month": "2024-01"
+    },
+    {
+      "sla_credit_id": 1,
+      "program_id": 1,
+      "sla_target_id": 1,
+      "credit_amount": "250",
+      "reason": "SLA_MISS",
+      "last_change_ts": {
+        "value": "2024-01-15T00:00:00.000Z"
       },
       "period_month": "2024-01"
     }

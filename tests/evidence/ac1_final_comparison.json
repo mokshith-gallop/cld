@@ -1,13 +1,18 @@
 {
   "total_tables": 28,
-  "pass": 3,
-  "fail": 25,
+  "pass": 5,
+  "fail": 23,
   "not_exercised": 0,
   "tables": {
     "agg_program_monthly": {
-      "status": "COUNT_MISMATCH",
+      "status": "PASS",
       "hive_count": 1,
-      "bq_count": 0
+      "bq_count": 1,
+      "count_match": true,
+      "fingerprint_match": true,
+      "hive_fp": "baf5f6d7b3f177de8c4450d800365c0d",
+      "bq_fp": "baf5f6d7b3f177de8c4450d800365c0d",
+      "common_cols": 9
     },
     "dim_disposition": {
       "status": "PASS",
@@ -25,9 +30,14 @@
       "bq_count": 0
     },
     "dim_program": {
-      "status": "COUNT_MISMATCH",
+      "status": "PASS",
       "hive_count": 5,
-      "bq_count": 0
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true,
+      "hive_fp": "0bbc1e6dd5e67e387d4f9df17e11d190",
+      "bq_fp": "0bbc1e6dd5e67e387d4f9df17e11d190",
+      "common_cols": 11
     },
     "dim_queue": {
       "status": "PASS",
@@ -105,9 +115,14 @@
       "common_cols": 8
     },
     "ods_contract": {
-      "status": "COUNT_MISMATCH",
+      "status": "FAIL",
       "hive_count": 3,
-      "bq_count": 0
+      "bq_count": 3,
+      "count_match": true,
+      "fingerprint_match": false,
+      "hive_fp": "8324dbbe928dd9702377ab202ccf5f25",
+      "bq_fp": "c4663051ba05100ba8af044fcc323d54",
+      "common_cols": 11
     },
     "ods_contract_line": {
       "status": "COUNT_MISMATCH",

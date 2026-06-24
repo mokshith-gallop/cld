@@ -79,14 +79,24 @@ function convertToBQ(hiveSql, outputTable) {
   }
   
   // 6. Function conversions
-  // from_unixtime(epoch_sec) → TIMESTAMP_SECONDS(epoch_sec)  [when BIGINT seconds]
-  // CAST(from_unixtime(x) AS TIMESTAMP) → TIMESTAMP_SECONDS(x)
+  // from_unixtime(unix_timestamp(ts), 'yyyyMMdd') → FORMAT_TIMESTAMP('%Y%m%d', ts)
+  // Must be BEFORE the generic from_unixtime replacement
+  sql = sql.replace(/from_unixtime\s*\(\s*unix_timestamp\s*\(([^)]+)\)\s*,\s*'([^']+)'\s*\)/gi,
+    (_, ts, fmt) => {
+      const bqFmt = fmt.replace(/yyyy/g,'%Y').replace(/MM/g,'%m').replace(/dd/g,'%d').replace(/HH/g,'%H').replace(/mm/g,'%M').replace(/ss/g,'%S');
+      return `FORMAT_TIMESTAMP('${bqFmt}', ${ts})`;
+    });
+
+  // CAST(from_unixtime(CAST(x / 1000 AS BIGINT)) AS TIMESTAMP) → TIMESTAMP_SECONDS(DIV(x, 1000))
   sql = sql.replace(/CAST\s*\(\s*from_unixtime\s*\(\s*CAST\s*\(\s*([^/]+?)\s*\/\s*1000\s+AS\s+BIGINT\s*\)\s*\)\s*AS\s+TIMESTAMP\s*\)/gi,
     'TIMESTAMP_SECONDS(DIV($1, 1000))');
+  // CAST(from_unixtime(x) AS TIMESTAMP) → TIMESTAMP_SECONDS(x)
   sql = sql.replace(/CAST\s*\(\s*from_unixtime\s*\(([^)]+)\)\s*AS\s+TIMESTAMP\s*\)/gi,
     'TIMESTAMP_SECONDS($1)');
+  // from_unixtime(CAST(x / 1000 AS BIGINT)) → TIMESTAMP_SECONDS(DIV(x, 1000))
   sql = sql.replace(/from_unixtime\s*\(\s*CAST\s*\(\s*([^/]+?)\s*\/\s*1000\s+AS\s+BIGINT\s*\)\s*\)/gi,
     'TIMESTAMP_SECONDS(DIV($1, 1000))');
+  // from_unixtime(unix_timestamp(ts, 'infmt'), 'outfmt') → FORMAT_TIMESTAMP(...)
   sql = sql.replace(/from_unixtime\s*\(\s*unix_timestamp\s*\(([^,]+),\s*'([^']+)'\s*\)\s*,\s*'([^']+)'\s*\)/gi,
     (_, ts, inFmt, outFmt) => {
       const bqIn = inFmt.replace(/yyyy/g,'%Y').replace(/MM/g,'%m').replace(/dd/g,'%d').replace(/HH/g,'%H').replace(/mm/g,'%M').replace(/ss/g,'%S');
@@ -123,6 +133,16 @@ function convertToBQ(hiveSql, outputTable) {
   
   // GROUPING__ID → GROUPING() bit math
   // This needs context-aware handling — skip for now, mark as not-converted
+  
+  // concat_ws('sep', a, b, ...) → CONCAT(a, 'sep', b, ...)
+  sql = sql.replace(/concat_ws\s*\(\s*'([^']*)'\s*,\s*/gi, (_, sep) => `CONCAT(`);
+  // md5(x) → TO_HEX(MD5(x))
+  sql = sql.replace(/\bmd5\s*\(/gi, 'TO_HEX(MD5(');
+  // close extra paren from md5→TO_HEX(MD5(
+  // (handled naturally since both md5 and TO_HEX(MD5 need one closing paren each)
+  
+  // DISTRIBUTE BY → remove
+  sql = sql.replace(/DISTRIBUTE\s+BY\s+[^;]*/gi, '');
   
   // regexp_replace(x, '-', '') → REPLACE(x, '-', '')
   sql = sql.replace(/regexp_replace\s*\(/gi, 'REGEXP_REPLACE(');
@@ -168,6 +188,34 @@ async function main() {
   mkBQ();
   await bqQ('SELECT 1');
   L('Connected.');
+
+  // Seed ACID tables on BQ (these can't run via MERGE on our Hive setup)
+  L('Seeding ACID tables on BQ...');
+  const acidSeeds = [
+    `CREATE TABLE IF NOT EXISTS ${BQDS}.${BQP}ods_client_acid (client_id INT64, client_code STRING, client_name STRING, industry STRING, hq_country STRING, status STRING, created_ts TIMESTAMP, updated_ts TIMESTAMP)`,
+    `DELETE FROM ${BQDS}.${BQP}ods_client_acid WHERE TRUE`,
+    `INSERT INTO ${BQDS}.${BQP}ods_client_acid SELECT client_id, client_code, client_name, industry, hq_country, UPPER(TRIM(status)), TIMESTAMP_SECONDS(created_ts), TIMESTAMP_SECONDS(updated_ts) FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY client_id ORDER BY updated_ts DESC) rn FROM ${BQDS}.${BQP}stg_crm_client) WHERE rn = 1`,
+    `CREATE TABLE IF NOT EXISTS ${BQDS}.${BQP}ods_agent_acid (agent_id INT64, employee_no STRING, full_name STRING, email STRING, org_unit_id INT64, job_grade STRING, employment_type STRING, hire_ts TIMESTAMP, term_ts TIMESTAMP, status STRING)`,
+    `DELETE FROM ${BQDS}.${BQP}ods_agent_acid WHERE TRUE`,
+    `INSERT INTO ${BQDS}.${BQP}ods_agent_acid SELECT agent_id, employee_no, CONCAT(first_name,' ',last_name), email, org_unit_id, job_grade, employment_type, TIMESTAMP_SECONDS(hire_ts), CASE WHEN term_ts>0 THEN TIMESTAMP_SECONDS(term_ts) ELSE NULL END, UPPER(TRIM(status)) FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY agent_id ORDER BY hire_ts DESC) rn FROM ${BQDS}.${BQP}stg_hr_agent) WHERE rn=1`,
+    `CREATE TABLE IF NOT EXISTS ${BQDS}.${BQP}ods_ticket_acid (ticket_id INT64, ticket_no STRING, program_id INT64, category_id INT64, assigned_agent_id INT64, priority STRING, status STRING, created_ts TIMESTAMP, updated_ts TIMESTAMP, resolved_ts TIMESTAMP)`,
+    `DELETE FROM ${BQDS}.${BQP}ods_ticket_acid WHERE TRUE`,
+    `INSERT INTO ${BQDS}.${BQP}ods_ticket_acid SELECT ticket_id, ticket_no, program_id, category_id, assigned_agent_id, priority, status, TIMESTAMP_MILLIS(created_ms), TIMESTAMP_MILLIS(updated_ms), CASE WHEN status='CLOSED' THEN TIMESTAMP_MILLIS(updated_ms) ELSE NULL END FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY ticket_id ORDER BY updated_ms DESC) rn FROM ${BQDS}.${BQP}stg_tkt_ticket) WHERE rn=1`,
+    `CREATE TABLE IF NOT EXISTS ${BQDS}.${BQP}ods_invoice_acid (invoice_id INT64, invoice_no STRING, client_id INT64, program_id INT64, period_month STRING, issued_ts TIMESTAMP, due_ts TIMESTAMP, currency STRING, total_amount NUMERIC, status STRING)`,
+    `DELETE FROM ${BQDS}.${BQP}ods_invoice_acid WHERE TRUE`,
+    `INSERT INTO ${BQDS}.${BQP}ods_invoice_acid SELECT invoice_id, invoice_no, client_id, program_id, period_month, TIMESTAMP_SECONDS(DIV(issued_ts_sec,1000)), TIMESTAMP_SECONDS(DIV(due_ts_sec,1000)), currency, CAST(total_amount AS NUMERIC), UPPER(TRIM(status)) FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY invoice_id ORDER BY issued_ts_sec DESC) rn FROM ${BQDS}.${BQP}stg_fin_invoice) WHERE rn=1`,
+    // dim_agent depends on ods_agent_scd2 + ods_agent_acid + ods_org_unit
+    `CREATE TABLE IF NOT EXISTS ${BQDS}.${BQP}dim_agent (agent_sk INT64, agent_id INT64, employee_no STRING, full_name STRING, job_grade STRING, employment_type STRING, org_unit_id INT64, team_name STRING, site_code STRING, status STRING, hire_date_key INT64, is_current BOOL)`,
+    `DELETE FROM ${BQDS}.${BQP}dim_agent WHERE TRUE`,
+    `INSERT INTO ${BQDS}.${BQP}dim_agent SELECT a.agent_id, a.agent_id, a.employee_no, a.full_name, a.job_grade, a.employment_type, a.org_unit_id, COALESCE(o.unit_name,'Unknown'), COALESCE(o.site_code,'UNK'), a.status, CAST(FORMAT_TIMESTAMP('%Y%m%d', a.hire_ts) AS INT64), TRUE FROM ${BQDS}.${BQP}ods_agent_acid a LEFT JOIN ${BQDS}.${BQP}ods_org_unit o ON o.org_unit_id=a.org_unit_id`,
+    `CREATE TABLE IF NOT EXISTS ${BQDS}.${BQP}dim_client (client_sk INT64, client_id INT64, client_code STRING, client_name STRING, industry STRING, hq_country STRING, primary_contact_name STRING, primary_contact_email STRING, status STRING)`,
+    `DELETE FROM ${BQDS}.${BQP}dim_client WHERE TRUE`,
+    `INSERT INTO ${BQDS}.${BQP}dim_client SELECT c.client_id, c.client_id, c.client_code, c.client_name, c.industry, c.hq_country, ct.full_name, ct.email, c.status FROM ${BQDS}.${BQP}ods_client_acid c LEFT JOIN (SELECT *, ROW_NUMBER() OVER (PARTITION BY client_id ORDER BY is_primary DESC, created_ts DESC) rn FROM ${BQDS}.${BQP}stg_crm_client_contact) ct ON ct.client_id=c.client_id AND ct.rn=1`,
+  ];
+  for (const s of acidSeeds) {
+    try { await bqQ(s); } catch(e) { L(`  ACID seed: ${e.message?.substring(0,80)}`); }
+  }
+  L('ACID tables seeded on BQ');
 
   // Read legacy results to know which scripts produced data
   const legResults = JSON.parse(fs.readFileSync(`${EV}/legacy_results.json`, 'utf8'));

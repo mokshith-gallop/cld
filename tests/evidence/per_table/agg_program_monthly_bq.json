@@ -1,0 +1,17 @@
+{
+  "count": 1,
+  "fingerprint": "baf5f6d7b3f177de8c4450d800365c0d",
+  "sample": [
+    {
+      "client_sk": null,
+      "program_sk": null,
+      "line_of_business": null,
+      "interactions": 0,
+      "avg_handle_seconds": null,
+      "avg_csat": null,
+      "billed_amount": null,
+      "grouping_level": 3,
+      "period_month": "2024-01"
+    }
+  ]
+}

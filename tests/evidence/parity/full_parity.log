@@ -1,140 +1,22 @@
-[23:00:39.989] === AC1 Full Parity: Legacy + BQ + Compare ===
-[23:00:40.627] Connected.
-[23:00:40.628] 32 legacy scripts with data
-[23:00:40.628] 
+[23:06:54.755] === AC1 Full Parity: Legacy + BQ + Compare ===
+[23:06:55.372] Connected.
+[23:06:55.372] Seeding ACID tables on BQ...
+[23:07:19.410] ACID tables seeded on BQ
+[23:07:19.410] 32 legacy scripts with data
+[23:07:19.411] 
 --- ods_timesheet (from 24-delta-merge-timesheet.sql) ---
-[23:00:45.579]   BQ script executed
-[23:00:47.065]   ✓ count=true fp=true
-[23:00:47.065] 
+[23:07:23.538]   BQ script executed
+[23:07:24.842]   ✓ count=true fp=true
+[23:07:24.842] 
 --- ods_payroll_adjustment (from 25-delta-merge-payroll-adjustment.sql) ---
-[23:00:51.282]   BQ script executed
-[23:00:52.535]   ✓ count=true fp=true
-[23:00:52.536] 
+[23:07:28.879]   BQ script executed
+[23:07:30.179]   ✓ count=true fp=true
+[23:07:30.180] 
 --- ods_sla_credit (from 26-delta-merge-sla-credit.sql) ---
-[23:00:56.774]   BQ script executed
-[23:00:58.109]   ✓ count=true fp=true
-[23:00:58.110] 
+[23:07:34.300]   BQ script executed
+[23:07:35.545]   ✓ count=true fp=true
+[23:07:35.545] 
 --- ods_callback_request (from 27-delta-merge-callback-request.sql) ---
-[23:01:01.130]   BQ exec FAIL: No matching signature for operator CASE; all THEN/ELSE arguments must be coercible to a common type 
-[23:01:01.130] 
+[23:07:38.189]   BQ exec FAIL: No matching signature for operator CASE; all THEN/ELSE arguments must be coercible to a common type 
+[23:07:38.190] 
 --- ods_shift_swap (from 28-delta-merge-shift-swap.sql) ---
-[23:01:05.770]   BQ script executed
-[23:01:07.038]   ✓ count=true fp=true
-[23:01:07.038] 
---- ods_ticket_worklog (from 29-delta-merge-ticket-worklog.sql) ---
-[23:01:10.187]   BQ exec FAIL: No matching signature for operator CASE; all THEN/ELSE arguments must be coercible to a common type 
-[23:01:10.188] 
---- ods_attrition_event (from 30-delta-merge-attrition-event.sql) ---
-[23:01:17.967]   BQ script executed
-[23:01:19.251]   ✓ count=true fp=true
-[23:01:19.252] 
---- ods_rate_card (from 31-delta-merge-rate-card.sql) ---
-[23:01:25.032]   BQ script executed
-[23:01:26.339]   ✓ count=true fp=true
-[23:01:26.339] 
---- ods_agent_scd2 (from 32-scd2-agent.sql) ---
-[23:01:29.325]   BQ exec FAIL: Function not found: concat_ws at [3:7]
-[23:01:29.326] 
---- ods_agent_skill_scd2 (from 33-scd2-agent-skill.sql) ---
-[23:01:32.029]   BQ exec FAIL: Function not found: concat_ws at [3:7]
-[23:01:32.029] 
---- ods_agent_assignment_scd2 (from 34-scd2-agent-assignment.sql) ---
-[23:01:34.951]   BQ exec FAIL: Function not found: concat_ws at [3:7]
-[23:01:34.952] 
---- ods_program (from 09-cleanse-program.sql) ---
-[23:01:43.148]   BQ script executed
-[23:01:44.583]   ✓ count=true fp=true
-[23:01:44.583] 
---- ods_contract (from 10-cleanse-contract.sql) ---
-[23:01:47.394]   BQ exec FAIL: No matching signature for function UNIX_SECONDS
-  Argument types: STRING
-  Signature: UNIX_SECONDS(T
-[23:01:47.394] 
---- ods_contract_line (from 11-cleanse-contract-line.sql) ---
-[23:01:50.231]   BQ exec FAIL: No matching signature for function UNIX_SECONDS
-  Argument types: STRING
-  Signature: UNIX_SECONDS(T
-[23:01:50.232] 
---- ods_org_unit (from 12-cleanse-org-unit.sql) ---
-[23:01:53.186]   BQ exec FAIL: Query column 2 has type STRING which cannot be inserted into column parent_unit_id, which has type I
-[23:01:53.186] 
---- ods_queue (from 13-cleanse-queue.sql) ---
-[23:01:57.333]   BQ script executed
-[23:01:58.813]   ✓ count=true fp=true
-[23:01:58.813] 
---- ods_adherence_event (from 15-cleanse-adherence-event.sql) ---
-[23:02:01.819]   BQ exec FAIL: Query column 9 has type DATE which cannot be inserted into column event_date, which has type STRING 
-[23:02:01.819] 
---- ods_call (from 16-cleanse-call.sql) ---
-[23:02:04.590]   BQ exec FAIL: Query column 16 has type DATE which cannot be inserted into column call_date, which has type STRING 
-[23:02:04.591] 
---- ods_ivr_session (from 17-cleanse-ivr-session.sql) ---
-[23:02:07.634]   BQ exec FAIL: Query column 9 has type DATE which cannot be inserted into column event_date, which has type STRING 
-[23:02:07.634] 
---- ods_email_interaction (from 19-cleanse-email-interaction.sql) ---
-[23:02:10.211]   BQ exec FAIL: Name load_date not found inside s at [17:11]
-[23:02:10.212] 
---- ods_survey_response (from 20-cleanse-survey-response.sql) ---
-[23:02:13.107]   BQ exec FAIL: Name load_date not found inside s at [16:11]
-[23:02:13.107] 
---- dim_program (from 44-load-dim-program.sql) ---
-[23:02:15.989]   BQ exec FAIL: No matching signature for function TIMESTAMP_SECONDS
-  Argument types: INT64, STRING
-  Signature: TI
-[23:02:15.989] 
---- dim_queue (from 45-load-dim-queue.sql) ---
-[23:02:19.769]   BQ script executed
-[23:02:21.056]   ✓ count=true fp=true
-[23:02:21.057] 
---- dim_shift (from 47-load-dim-shift.sql) ---
-[23:02:25.184]   BQ script executed
-[23:02:26.358]   ✓ count=true fp=true
-[23:02:26.360] 
---- dim_org (from 48-load-dim-org.sql) ---
-[23:02:30.621]   BQ script executed
-[23:02:31.256]   FAIL: hive=5 bq=0
-[23:02:31.257] 
---- dim_disposition (from 49-load-dim-disposition.sql) ---
-[23:02:35.969]   BQ script executed
-[23:02:37.156]   ✓ count=true fp=true
-[23:02:37.156] 
---- fact_interaction (from 50-load-fact-interaction.sql) ---
-[23:02:39.886]   BQ exec FAIL: Not found: Table cloudera-env-experiments:test.qa_xp_dim_agent was not found in location EU
-[23:02:39.886] 
---- fact_agent_activity (from 51-load-fact-agent-activity.sql) ---
-[23:02:42.678]   BQ exec FAIL: Not found: Table cloudera-env-experiments:test.qa_xp_dim_agent was not found in location EU
-[23:02:42.679] 
---- fact_csat_survey (from 53-load-fact-csat-survey.sql) ---
-[23:02:45.543]   BQ exec FAIL: No matching signature for function TIMESTAMP_SECONDS
-  Argument types: INT64, STRING
-  Signature: TI
-[23:02:45.544] 
---- fact_ivr_path (from 58-load-fact-ivr-path.sql) ---
-[23:02:48.467]   BQ exec FAIL: No matching signature for function TIMESTAMP_SECONDS
-  Argument types: INT64, STRING
-  Signature: TI
-[23:02:48.468] 
---- agg_program_monthly (from 61-agg-program-monthly.sql) ---
-[23:02:49.160]   Created BQ table test.qa_xp_agg_program_monthly
-[23:02:51.040]   BQ exec FAIL: Not found: Table cloudera-env-experiments:test.qa_xp_fact_billing_line was not found in location EU
-[23:02:51.041] 
---- fact_agent_activity (from 97-intraday-agent-state.sql) ---
-[23:02:53.617]   BQ exec FAIL: Not found: Table cloudera-env-experiments:test.qa_xp_dim_agent was not found in location EU
-[23:02:53.617] 
-=== SUMMARY ===
-[23:02:53.617] PASS: 11  FAIL: 1  NOT_EXERCISED: 26
-[23:02:53.617]   ✓ ods_timesheet: h=10 b=10 fp=true
-[23:02:53.617]   ✓ ods_payroll_adjustment: h=3 b=3 fp=true
-[23:02:53.617]   ✓ ods_sla_credit: h=3 b=3 fp=true
-[23:02:53.617]   ✓ ods_shift_swap: h=3 b=3 fp=true
-[23:02:53.618]   ✓ ods_attrition_event: h=3 b=3 fp=true
-[23:02:53.618]   ✓ ods_rate_card: h=5 b=5 fp=true
-[23:02:53.618]   ✓ ods_program: h=5 b=5 fp=true
-[23:02:53.618]   ✓ ods_queue: h=5 b=5 fp=true
-[23:02:53.618]   ✓ dim_queue: h=5 b=5 fp=true
-[23:02:53.618]   ✓ dim_shift: h=5 b=5 fp=true
-[23:02:53.618]   ✓ dim_disposition: h=6 b=6 fp=true
-[23:02:53.618] 
-FAILED tables:
-[23:02:53.618]   ✗ dim_org: h=5 b=0 fp=undefined one side empty
-[23:02:53.621] === DONE ===

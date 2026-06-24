@@ -13,16 +13,6 @@
       "site_code": "MTY3"
     },
     {
-      "shift_sk": 2,
-      "shift_id": 2,
-      "shift_code": "SH2",
-      "shift_name": "Shift 2",
-      "start_hhmm": "0800",
-      "end_hhmm": "1700",
-      "overnight_flag": false,
-      "site_code": "BLR2"
-    },
-    {
       "shift_sk": 1,
       "shift_id": 1,
       "shift_code": "SH1",
@@ -31,6 +21,16 @@
       "end_hhmm": "1700",
       "overnight_flag": false,
       "site_code": "MNL1"
+    },
+    {
+      "shift_sk": 2,
+      "shift_id": 2,
+      "shift_code": "SH2",
+      "shift_name": "Shift 2",
+      "start_hhmm": "0800",
+      "end_hhmm": "1700",
+      "overnight_flag": false,
+      "site_code": "BLR2"
     }
   ]
 }
