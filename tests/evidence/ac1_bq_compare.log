@@ -29,3 +29,57 @@
 [23:10:02.662]   ✓ [bq] 46-load-dim-site.sql
 [23:10:06.424]   ✓ [bq] 47-load-dim-shift.sql
 [23:10:10.359]   ✓ [bq] 48-load-dim-org.sql
+[23:10:14.108]   ✓ [bq] 49-load-dim-disposition.sql
+[23:10:17.286]   ✓ [bq] 50-load-fact-interaction.sql
+[23:10:19.252]   ✗ [bq] 51-load-fact-agent-activity.sql: Syntax error: Expected keyword AS but got "," at [9:60]
+[23:10:22.437]   ✓ [bq] 53-load-fact-csat-survey.sql
+[23:10:25.762]   ✓ [bq] 54-load-fact-qa-evaluation.sql
+[23:10:27.887]   ✗ [bq] 55-load-fact-billing-line.sql: Query column 7 has type FLOAT64 which cannot be inserted into column unit_rate, which has type NUMER
+[23:10:30.246]   ✗ [bq] 56-load-fact-adherence-daily.sql: No matching signature for function FORMAT_TIMESTAMP
+  Argument types: STRING, STRING, STRING
+  Signa
+[23:10:33.968]   ✓ [bq] 57-load-fact-ticket.sql
+[23:10:37.121]   ✓ [bq] 58-load-fact-ivr-path.sql
+[23:10:40.605]   ✓ [bq] 59-agg-agent-daily.sql
+[23:10:44.396]   ✓ [bq] 61-agg-program-monthly.sql
+[23:10:47.707]   ✓ [bq] 64-agg-billing-monthly.sql
+[23:10:51.569]   ✓ [bq] 65-agg-site-daily.sql
+[23:10:54.997]   ✓ [bq] 93-close-billing-month.sql
+[23:10:56.799]   ✗ [bq] 97-intraday-agent-state.sql: Syntax error: Expected keyword AS but got "," at [8:60]
+[23:10:56.800]   BQ: 22 pass, 9 fail
+[23:10:56.800] 
+=== Compare Hive vs BQ ===
+[23:10:58.046]   agg_program_monthly: PASS h=1 b=1 fp=MATCH (9 cols)
+[23:10:59.279]   dim_disposition: PASS h=6 b=6 fp=MATCH (5 cols)
+[23:10:59.922]   dim_org: h=5 b=0 COUNT_MISMATCH
+[23:11:01.121]   dim_program: PASS h=5 b=5 fp=MATCH (11 cols)
+[23:11:02.270]   dim_queue: PASS h=5 b=5 fp=MATCH (7 cols)
+[23:11:03.568]   dim_shift: PASS h=3 b=3 fp=MATCH (8 cols)
+[23:11:04.173]   fact_adherence_daily: h=1 b=0 COUNT_MISMATCH
+[23:11:04.851]   fact_agent_activity: h=5 b=0 COUNT_MISMATCH
+[23:11:05.406]   fact_ivr_path: h=4 b=0 COUNT_MISMATCH
+[23:11:05.995]   ods_adherence_event: h=8 b=0 COUNT_MISMATCH
+[23:11:06.564]   ods_agent_scd2: h=14 b=0 COUNT_MISMATCH
+[23:11:07.200]   ods_agent_skill_scd2: h=6 b=0 COUNT_MISMATCH
+[23:11:08.375]   ods_attrition_event: PASS h=1 b=1 fp=MATCH (9 cols)
+[23:11:09.006]   ods_call: h=18 b=0 COUNT_MISMATCH
+[23:11:10.318]   ods_callback_request: FAIL h=2 b=2 fp=DIFF (8 cols)
+[23:11:11.499]   ods_contract: PASS h=3 b=3 fp=MATCH (11 cols)
+[23:11:12.089]   ods_contract_line: h=5 b=0 COUNT_MISMATCH
+[23:11:12.660]   ods_ivr_session: h=4 b=0 COUNT_MISMATCH
+[23:11:13.282]   ods_org_unit: h=5 b=0 COUNT_MISMATCH
+[23:11:14.516]   ods_payroll_adjustment: FAIL h=2 b=2 fp=DIFF (6 cols)
+[23:11:15.712]   ods_program: PASS h=5 b=5 fp=MATCH (11 cols)
+[23:11:16.994]   ods_queue: PASS h=5 b=5 fp=MATCH (8 cols)
+[23:11:17.531]   ods_rate_card: h=3 b=0 COUNT_MISMATCH
+[23:11:18.822]   ods_schedule: PASS h=10 b=10 fp=MATCH (10 cols)
+[23:11:20.001]   ods_shift_swap: PASS h=1 b=1 fp=MATCH (8 cols)
+[23:11:21.218]   ods_sla_credit: FAIL h=2 b=2 fp=DIFF (7 cols)
+[23:11:22.567]   ods_ticket_worklog: FAIL h=3 b=3 fp=DIFF (8 cols)
+[23:11:23.841]   ods_timesheet: FAIL h=5 b=5 fp=DIFF (9 cols)
+[23:11:23.842] 
+=== FINAL RESULT ===
+[23:11:23.842] Tables compared: 28
+[23:11:23.842] PASS: 11, FAIL: 17, NOT_EXERCISED: 0
+[23:11:23.842] reconciled 11/28 tables
+[23:11:23.845] === DONE ===

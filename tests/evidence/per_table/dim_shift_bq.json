@@ -1,16 +1,16 @@
 {
   "count": 3,
-  "fingerprint": "4fedb4b008f597dbc3f10a2cc5177784",
+  "fingerprint": "4fdacd749b15628f7fc8318bf6d9504a",
   "sample": [
     {
-      "shift_sk": 3,
-      "shift_id": 3,
-      "shift_code": "SH3",
-      "shift_name": "Shift 3",
+      "shift_sk": 2,
+      "shift_id": 2,
+      "shift_code": "SH2",
+      "shift_name": "Shift 2",
       "start_hhmm": "0800",
       "end_hhmm": "1700",
       "overnight_flag": false,
-      "site_code": "MTY3"
+      "site_code": "BLR2"
     },
     {
       "shift_sk": 1,
@@ -23,14 +23,14 @@
       "site_code": "MNL1"
     },
     {
-      "shift_sk": 2,
-      "shift_id": 2,
-      "shift_code": "SH2",
-      "shift_name": "Shift 2",
+      "shift_sk": 3,
+      "shift_id": 3,
+      "shift_code": "SH3",
+      "shift_name": "Shift 3",
       "start_hhmm": "0800",
       "end_hhmm": "1700",
       "overnight_flag": false,
-      "site_code": "BLR2"
+      "site_code": "MTY3"
     }
   ]
 }

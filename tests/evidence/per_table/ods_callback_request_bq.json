@@ -1,23 +1,7 @@
 {
   "count": 2,
-  "fingerprint": "4875e25e8de86fae0183d690d22a27e0",
+  "fingerprint": "58861c26ef1d0e9250ae7f5af96a72ed",
   "sample": [
-    {
-      "callback_id": 1,
-      "call_id": 1,
-      "queue_id": 1,
-      "requested_ts": {
-        "value": "2024-01-15T00:00:00.000Z"
-      },
-      "scheduled_ts": {
-        "value": "2024-01-15T01:00:00.000Z"
-      },
-      "completed_flag": true,
-      "last_change_ts": {
-        "value": "2024-01-15T00:00:00.000Z"
-      },
-      "event_date": "2024-01-15"
-    },
     {
       "callback_id": 2,
       "call_id": 2,
@@ -31,6 +15,22 @@
       "completed_flag": false,
       "last_change_ts": {
         "value": "2024-01-15T00:00:00.001Z"
+      },
+      "event_date": "2024-01-15"
+    },
+    {
+      "callback_id": 1,
+      "call_id": 1,
+      "queue_id": 1,
+      "requested_ts": {
+        "value": "2024-01-15T00:00:00.000Z"
+      },
+      "scheduled_ts": {
+        "value": "2024-01-15T01:00:00.000Z"
+      },
+      "completed_flag": true,
+      "last_change_ts": {
+        "value": "2024-01-15T00:00:00.000Z"
       },
       "event_date": "2024-01-15"
     }

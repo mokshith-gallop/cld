@@ -1,19 +1,7 @@
 {
   "count": 5,
-  "fingerprint": "60478703554292fcb5e0052826a6dcbe",
+  "fingerprint": "a977dc8712f616eb1c5c569087de1496",
   "sample": [
-    {
-      "queue_id": 4,
-      "queue_code": "Q004",
-      "queue_name": "Queue 4",
-      "program_id": 4,
-      "media_type": "CHAT",
-      "priority": 4,
-      "created_ts": {
-        "value": "2023-07-22T04:26:40.000Z"
-      },
-      "snapshot_date": "2024-01-15"
-    },
     {
       "queue_id": 5,
       "queue_code": "Q005",
@@ -21,6 +9,18 @@
       "program_id": 5,
       "media_type": "CHAT",
       "priority": 5,
+      "created_ts": {
+        "value": "2023-07-22T04:26:40.000Z"
+      },
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "queue_id": 4,
+      "queue_code": "Q004",
+      "queue_name": "Queue 4",
+      "program_id": 4,
+      "media_type": "CHAT",
+      "priority": 4,
       "created_ts": {
         "value": "2023-07-22T04:26:40.000Z"
       },
