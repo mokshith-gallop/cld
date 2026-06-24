@@ -1,0 +1,27 @@
+{
+  "count": 6,
+  "fingerprint": "8a48c969199ce56e93fddd84addd9ae9",
+  "sample": [
+    {
+      "disposition_sk": 6,
+      "disposition_code": "D06",
+      "disposition_desc": "Other - miscellaneous",
+      "category": "OTHER",
+      "billable_flag": false
+    },
+    {
+      "disposition_sk": 2,
+      "disposition_code": "D02",
+      "disposition_desc": "Password reset locked account",
+      "category": "ACCESS",
+      "billable_flag": false
+    },
+    {
+      "disposition_sk": 5,
+      "disposition_code": "D05",
+      "disposition_desc": "[SVC] General inquiry ref#12345",
+      "category": "SERVICE",
+      "billable_flag": false
+    }
+  ]
+}

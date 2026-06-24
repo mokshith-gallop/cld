@@ -1,0 +1,21 @@
+{
+  "count": 1,
+  "fingerprint": "d935eee69f90cd2a3d2f99e16fbf0396",
+  "sample": [
+    {
+      "attrition_event_id": 1,
+      "agent_id": 8,
+      "notice_ts": {
+        "value": "2023-12-16T00:00:00.000Z"
+      },
+      "last_day": "2024-01-31",
+      "attrition_type": "VOLUNTARY",
+      "reason_code": "PERSONAL",
+      "regrettable_flag": true,
+      "last_change_ts": {
+        "value": "2024-01-15T00:00:00.000Z"
+      },
+      "event_month": "2024-01"
+    }
+  ]
+}

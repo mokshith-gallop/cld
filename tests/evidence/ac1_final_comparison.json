@@ -1,0 +1,213 @@
+{
+  "total_tables": 28,
+  "pass": 3,
+  "fail": 25,
+  "not_exercised": 0,
+  "tables": {
+    "agg_program_monthly": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 1,
+      "bq_count": 0
+    },
+    "dim_disposition": {
+      "status": "PASS",
+      "hive_count": 6,
+      "bq_count": 6,
+      "count_match": true,
+      "fingerprint_match": true,
+      "hive_fp": "8a48c969199ce56e93fddd84addd9ae9",
+      "bq_fp": "8a48c969199ce56e93fddd84addd9ae9",
+      "common_cols": 5
+    },
+    "dim_org": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 5,
+      "bq_count": 0
+    },
+    "dim_program": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 5,
+      "bq_count": 0
+    },
+    "dim_queue": {
+      "status": "PASS",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true,
+      "hive_fp": "9761ae26e78d029d2f72b2f8f105870a",
+      "bq_fp": "9761ae26e78d029d2f72b2f8f105870a",
+      "common_cols": 7
+    },
+    "dim_shift": {
+      "status": "PASS",
+      "hive_count": 3,
+      "bq_count": 3,
+      "count_match": true,
+      "fingerprint_match": true,
+      "hive_fp": "4fedb4b008f597dbc3f10a2cc5177784",
+      "bq_fp": "4fedb4b008f597dbc3f10a2cc5177784",
+      "common_cols": 8
+    },
+    "fact_adherence_daily": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 1,
+      "bq_count": 0
+    },
+    "fact_agent_activity": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 5,
+      "bq_count": 0
+    },
+    "fact_ivr_path": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 4,
+      "bq_count": 0
+    },
+    "ods_adherence_event": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 8,
+      "bq_count": 0
+    },
+    "ods_agent_scd2": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 14,
+      "bq_count": 0
+    },
+    "ods_agent_skill_scd2": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 6,
+      "bq_count": 0
+    },
+    "ods_attrition_event": {
+      "status": "FAIL",
+      "hive_count": 1,
+      "bq_count": 1,
+      "count_match": true,
+      "fingerprint_match": false,
+      "hive_fp": "a9a99458aa6458755192bf071a0400e3",
+      "bq_fp": "d935eee69f90cd2a3d2f99e16fbf0396",
+      "common_cols": 9
+    },
+    "ods_call": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 18,
+      "bq_count": 0
+    },
+    "ods_callback_request": {
+      "status": "FAIL",
+      "hive_count": 2,
+      "bq_count": 2,
+      "count_match": true,
+      "fingerprint_match": false,
+      "hive_fp": "e24486ba618730cbf0fcc9b74b6f264c",
+      "bq_fp": "4875e25e8de86fae0183d690d22a27e0",
+      "common_cols": 8
+    },
+    "ods_contract": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 3,
+      "bq_count": 0
+    },
+    "ods_contract_line": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 5,
+      "bq_count": 0
+    },
+    "ods_ivr_session": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 4,
+      "bq_count": 0
+    },
+    "ods_org_unit": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 5,
+      "bq_count": 0
+    },
+    "ods_payroll_adjustment": {
+      "status": "FAIL",
+      "hive_count": 2,
+      "bq_count": 2,
+      "count_match": true,
+      "fingerprint_match": false,
+      "hive_fp": "ba14d0f012a9a7adea6b1fd6f02641b0",
+      "bq_fp": "143cde421aedc8bd1e68caab640e0a5c",
+      "common_cols": 6
+    },
+    "ods_program": {
+      "status": "FAIL",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": false,
+      "hive_fp": "a53fe6f4f0506b2aa64839795163aea7",
+      "bq_fp": "1ccc8e4033b3250d7164e0bb701c2b12",
+      "common_cols": 11
+    },
+    "ods_queue": {
+      "status": "FAIL",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": false,
+      "hive_fp": "a977dc8712f616eb1c5c569087de1496",
+      "bq_fp": "60478703554292fcb5e0052826a6dcbe",
+      "common_cols": 8
+    },
+    "ods_rate_card": {
+      "status": "COUNT_MISMATCH",
+      "hive_count": 3,
+      "bq_count": 0
+    },
+    "ods_schedule": {
+      "status": "FAIL",
+      "hive_count": 10,
+      "bq_count": 10,
+      "count_match": true,
+      "fingerprint_match": false,
+      "hive_fp": "d62fb84e91052f7e735a710e0a4c1d5a",
+      "bq_fp": "1e90b33c0d4e4dab82fc3a7ebae3bccb",
+      "common_cols": 10
+    },
+    "ods_shift_swap": {
+      "status": "FAIL",
+      "hive_count": 1,
+      "bq_count": 1,
+      "count_match": true,
+      "fingerprint_match": false,
+      "hive_fp": "0fb24864a75b9ef5b4fbfd8fda34af7e",
+      "bq_fp": "832d737c2fc5276c7059598dc6aa8900",
+      "common_cols": 8
+    },
+    "ods_sla_credit": {
+      "status": "FAIL",
+      "hive_count": 2,
+      "bq_count": 2,
+      "count_match": true,
+      "fingerprint_match": false,
+      "hive_fp": "3ca440546937fdb293121e0c358f781d",
+      "bq_fp": "19c17f816af95bbbbf137f7295355bd0",
+      "common_cols": 7
+    },
+    "ods_ticket_worklog": {
+      "status": "FAIL",
+      "hive_count": 3,
+      "bq_count": 3,
+      "count_match": true,
+      "fingerprint_match": false,
+      "hive_fp": "2906bc65ad19321d4666773f70409c7d",
+      "bq_fp": "b4a58c4787065fdb192e5ffb06234f0b",
+      "common_cols": 8
+    },
+    "ods_timesheet": {
+      "status": "FAIL",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": false,
+      "hive_fp": "d62398a6c65ebd15a08a2dcdacea9554",
+      "bq_fp": "2afb1727f84b64a1332b2bda6f298e77",
+      "common_cols": 9
+    }
+  }
+}

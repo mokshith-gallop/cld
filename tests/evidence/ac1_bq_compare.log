@@ -1,23 +1,16 @@
-[22:59:54.712] === AC1 BQ Scripts + Cross-Engine Compare ===
-[22:59:55.265] Connected BQ + Impala
-[22:59:55.265] 
+[23:03:48.166] === AC1 BQ Scripts + Cross-Engine Compare ===
+[23:03:48.745] Connected BQ + Impala
+[23:03:48.746] 
 === Create BQ output tables ===
-[23:00:43.274]   BQ output tables created
-[23:00:43.274] 
+[23:04:38.334]   BQ output tables created
+[23:04:38.335] 
 === Seed BQ dependencies ===
-[23:00:52.242]   Seed err: Inserted row has wrong column count; Has 12, expected 11 at [1:40]
-[23:00:52.690]   Seed err: Inserted row has wrong column count; Has 11, expected 10 at [1:46]
-[23:01:04.578]   Seed err: Query column 4 has type FLOAT64 which cannot be inserted into column rate, which
-[23:01:04.579]   Dependencies seeded
-[23:01:04.579] 
+[23:04:47.302]   Seed err: Inserted row has wrong column count; Has 12, expected 11 at [1:40]
+[23:04:47.733]   Seed err: Inserted row has wrong column count; Has 11, expected 10 at [1:46]
+[23:04:59.270]   Seed err: Query column 4 has type FLOAT64 which cannot be inserted into column rate, which
+[23:04:59.270]   Dependencies seeded
+[23:04:59.270] 
 === Run BQ converted scripts ===
-[23:01:08.151]   ✓ [bq] 09-cleanse-program.sql
-[23:01:10.723]   ✗ [bq] 10-cleanse-contract.sql: Function not found: from_unixtime at [6:8]
-[23:01:12.862]   ✗ [bq] 11-cleanse-contract-line.sql: Function not found: from_unixtime at [9:8]
-[23:01:14.958]   ✗ [bq] 12-cleanse-org-unit.sql: Query column 2 has type STRING which cannot be inserted into column parent_unit_id, which has type I
-[23:01:18.694]   ✓ [bq] 13-cleanse-queue.sql
-[23:01:22.742]   ✓ [bq] 14-cleanse-schedule.sql
-[23:01:25.060]   ✗ [bq] 15-cleanse-adherence-event.sql: Query column 9 has type DATE which cannot be inserted into column event_date, which has type STRING 
-[23:01:27.186]   ✗ [bq] 16-cleanse-call.sql: No matching signature for function TIMESTAMP_SECONDS
-  Argument types: STRING
-  Signature: TIMESTAMP
+[23:05:02.644]   ✓ [bq] 09-cleanse-program.sql
+[23:05:06.501]   ✓ [bq] 10-cleanse-contract.sql
+[23:05:08.944]   ✗ [bq] 11-cleanse-contract-line.sql: Query column 6 has type FLOAT64 which cannot be inserted into column unit_rate, which has type NUMER

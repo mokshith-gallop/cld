@@ -155,37 +155,48 @@ async function main() {
       // Add DELETE before INSERT
       sql = `DELETE FROM ${target} WHERE TRUE;\n` + sql;
     }
-    // from_unixtime(x) → TIMESTAMP_SECONDS(x) for epoch seconds
-    sql = sql.replace(/CAST\s*\(\s*from_unixtime\s*\(\s*(\w+\.\w+)\s*\)\s*AS\s+TIMESTAMP\s*\)/gi, 'TIMESTAMP_SECONDS($1)');
-    sql = sql.replace(/from_unixtime\s*\(\s*(\w+\.\w+)\s*\)/gi, 'CAST(TIMESTAMP_SECONDS($1) AS STRING)');
-    // from_unixtime(CAST(x/1000 AS BIGINT)) → TIMESTAMP_SECONDS(CAST(FLOOR(x/1000) AS INT64))
-    sql = sql.replace(/CAST\s*\(\s*from_unixtime\s*\(\s*CAST\s*\(\s*(\w+\.\w+)\s*\/\s*1000\s*AS\s+BIGINT\s*\)\s*\)\s*AS\s+TIMESTAMP\s*\)/gi,
+    // ═══ Comprehensive dialect rewrites: Hive/Impala → BigQuery ═══
+
+    // from_unixtime(CAST(x/1000 AS BIGINT)) → TIMESTAMP_SECONDS(CAST(FLOOR(x/1000) AS INT64)) — MUST be before simpler patterns
+    sql = sql.replace(/CAST\s*\(\s*from_unixtime\s*\(\s*CAST\s*\(\s*(.+?)\s*\/\s*1000\s*AS\s+BIGINT\s*\)\s*\)\s*AS\s+TIMESTAMP\s*\)/gi,
       'TIMESTAMP_SECONDS(CAST(FLOOR($1/1000) AS INT64))');
-    sql = sql.replace(/from_unixtime\s*\(\s*CAST\s*\(\s*(\w+\.\w+)\s*\/\s*1000\s*AS\s+BIGINT\s*\)\s*\)/gi,
+    sql = sql.replace(/from_unixtime\s*\(\s*CAST\s*\(\s*(.+?)\s*\/\s*1000\s*AS\s+BIGINT\s*\)\s*\)/gi,
       'CAST(TIMESTAMP_SECONDS(CAST(FLOOR($1/1000) AS INT64)) AS STRING)');
+    // from_unixtime(unix_timestamp(x), 'fmt') → FORMAT_TIMESTAMP(bq_fmt, x)
+    sql = sql.replace(/from_unixtime\s*\(\s*unix_timestamp\s*\(\s*(.+?)\s*\)\s*,\s*'yyyyMMdd'\s*\)/gi,
+      "FORMAT_TIMESTAMP('%Y%m%d', $1)");
+    // CAST(from_unixtime(x) AS TIMESTAMP) → TIMESTAMP_SECONDS(x)
+    sql = sql.replace(/CAST\s*\(\s*from_unixtime\s*\(\s*(.+?)\s*\)\s*AS\s+TIMESTAMP\s*\)/gi, 'TIMESTAMP_SECONDS($1)');
+    // Bare from_unixtime(x) → CAST(TIMESTAMP_SECONDS(x) AS STRING)
+    sql = sql.replace(/from_unixtime\s*\(\s*([^,)]+)\s*\)/gi, 'CAST(TIMESTAMP_SECONDS($1) AS STRING)');
+    // unix_timestamp(x, 'fmt') → UNIX_SECONDS(PARSE_TIMESTAMP('fmt', x))
+    sql = sql.replace(/unix_timestamp\s*\(\s*(.+?)\s*,\s*'([^']+)'\s*\)/gi, (_, col, fmt) => {
+      const bqFmt = fmt.replace(/yyyy/g,'%Y').replace(/MM/g,'%m').replace(/dd/g,'%d').replace(/HH/g,'%H').replace(/mm/g,'%M').replace(/ss/g,'%S');
+      return `UNIX_SECONDS(PARSE_TIMESTAMP('${bqFmt}', ${col}))`;
+    });
+    // unix_timestamp(x) → UNIX_SECONDS(x)
+    sql = sql.replace(/unix_timestamp\s*\(\s*([^)]+)\s*\)/gi, 'UNIX_SECONDS($1)');
     // to_date(x) → DATE(x)
     sql = sql.replace(/to_date\s*\(/gi, 'DATE(');
     // CAST(x AS INT) → CAST(x AS INT64)
-    sql = sql.replace(/CAST\s*\(([^)]+)\s+AS\s+INT\s*\)/gi, 'CAST($1 AS INT64)');
-    // CAST(x AS BIGINT) → CAST(x AS INT64)
+    sql = sql.replace(/CAST\s*\(([^)]+?)\s+AS\s+INT\s*\)/gi, 'CAST($1 AS INT64)');
+    // AS BIGINT → AS INT64
     sql = sql.replace(/AS\s+BIGINT/gi, 'AS INT64');
     // group_concat → STRING_AGG
     sql = sql.replace(/group_concat\s*\(/gi, 'STRING_AGG(');
-    // unix_timestamp(x) → UNIX_SECONDS(x) 
-    sql = sql.replace(/unix_timestamp\s*\(\s*(\w+\.\w+)\s*\)/gi, 'UNIX_SECONDS($1)');
-    sql = sql.replace(/unix_timestamp\s*\(\s*(\w+\.\w+)\s*,\s*'([^']+)'\s*\)/gi, 'UNIX_SECONDS(PARSE_TIMESTAMP(\'$2\',$1))');
-    // from_unixtime(x, 'yyyyMMdd') → FORMAT_TIMESTAMP('%Y%m%d', TIMESTAMP_SECONDS(x))
-    sql = sql.replace(/from_unixtime\s*\(\s*unix_timestamp\s*\(\s*(\w+\.\w+)\s*\)\s*,\s*'yyyyMMdd'\s*\)/gi,
-      "FORMAT_TIMESTAMP('%Y%m%d', $1)");
+    // CAST(x AS DECIMAL(p,s)) → CAST(x AS NUMERIC) — BQ doesn't allow parameterized CAST
+    sql = sql.replace(/CAST\s*\((.+?)\s+AS\s+DECIMAL\s*\(\s*\d+\s*,\s*\d+\s*\)\s*\)/gi, 'CAST($1 AS NUMERIC)');
+    // Remaining DECIMAL → NUMERIC in DDL contexts
+    sql = sql.replace(/DECIMAL\s*\(\s*(\d+)\s*,\s*(\d+)\s*\)/gi, 'NUMERIC');
     // regexp_replace → REGEXP_REPLACE
     sql = sql.replace(/regexp_replace\s*\(/gi, 'REGEXP_REPLACE(');
-    // DECIMAL → NUMERIC
-    sql = sql.replace(/DECIMAL\s*\(\s*(\d+)\s*,\s*(\d+)\s*\)/gi, 'NUMERIC($1,$2)');
+    // substr → SUBSTR (already valid)
     // COMPUTE STATS → remove
     sql = sql.replace(/COMPUTE\s+(?:INCREMENTAL\s+)?STATS[^;]*;?/gi, '');
-    // SET hive.* → remove
     // STRAIGHT_JOIN → remove
     sql = sql.replace(/\bSTRAIGHT_JOIN\b/gi, '');
+    // COALESCE(x, y) — already valid in BQ
+    // Boolean: (expr) AS BOOLEAN → keep as is, BQ handles it
 
     const stmts = sql.split(';').map(s=>s.trim()).filter(s=>s.length>10&&!s.match(/^SET\s/i));
 

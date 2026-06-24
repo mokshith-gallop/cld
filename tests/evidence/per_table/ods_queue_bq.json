@@ -1,0 +1,42 @@
+{
+  "count": 5,
+  "fingerprint": "60478703554292fcb5e0052826a6dcbe",
+  "sample": [
+    {
+      "queue_id": 4,
+      "queue_code": "Q004",
+      "queue_name": "Queue 4",
+      "program_id": 4,
+      "media_type": "CHAT",
+      "priority": 4,
+      "created_ts": {
+        "value": "2023-07-22T04:26:40.000Z"
+      },
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "queue_id": 5,
+      "queue_code": "Q005",
+      "queue_name": "Queue 5",
+      "program_id": 5,
+      "media_type": "CHAT",
+      "priority": 5,
+      "created_ts": {
+        "value": "2023-07-22T04:26:40.000Z"
+      },
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "queue_id": 2,
+      "queue_code": "Q002",
+      "queue_name": "Queue 2",
+      "program_id": 2,
+      "media_type": "VOICE",
+      "priority": 2,
+      "created_ts": {
+        "value": "2023-07-22T04:26:40.000Z"
+      },
+      "snapshot_date": "2024-01-15"
+    }
+  ]
+}

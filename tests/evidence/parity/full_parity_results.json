@@ -1,0 +1,193 @@
+{
+  "summary": {
+    "total": 38,
+    "matched": 11,
+    "mismatched": 1,
+    "not_exercised": 26
+  },
+  "tables": {
+    "ods_timesheet": {
+      "status": "PASS",
+      "hive_count": 10,
+      "bq_count": 10,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_payroll_adjustment": {
+      "status": "PASS",
+      "hive_count": 3,
+      "bq_count": 3,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_sla_credit": {
+      "status": "PASS",
+      "hive_count": 3,
+      "bq_count": 3,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_callback_request": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: No matching signature for operator CASE; all THEN/ELSE arguments must be coercible to a common type "
+    },
+    "ods_shift_swap": {
+      "status": "PASS",
+      "hive_count": 3,
+      "bq_count": 3,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_ticket_worklog": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: No matching signature for operator CASE; all THEN/ELSE arguments must be coercible to a common type "
+    },
+    "ods_attrition_event": {
+      "status": "PASS",
+      "hive_count": 3,
+      "bq_count": 3,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_rate_card": {
+      "status": "PASS",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_agent_scd2": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: Function not found: concat_ws at [3:7]"
+    },
+    "ods_agent_skill_scd2": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: Function not found: concat_ws at [3:7]"
+    },
+    "ods_agent_assignment_scd2": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: Function not found: concat_ws at [3:7]"
+    },
+    "ods_program": {
+      "status": "PASS",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_contract": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: No matching signature for function UNIX_SECONDS\n  Argument types: STRING\n  Signature: UNIX_SECONDS(T"
+    },
+    "ods_contract_line": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: No matching signature for function UNIX_SECONDS\n  Argument types: STRING\n  Signature: UNIX_SECONDS(T"
+    },
+    "ods_org_unit": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: Query column 2 has type STRING which cannot be inserted into column parent_unit_id, which has type I"
+    },
+    "ods_queue": {
+      "status": "PASS",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_adherence_event": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: Query column 9 has type DATE which cannot be inserted into column event_date, which has type STRING "
+    },
+    "ods_call": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: Query column 16 has type DATE which cannot be inserted into column call_date, which has type STRING "
+    },
+    "ods_ivr_session": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: Query column 9 has type DATE which cannot be inserted into column event_date, which has type STRING "
+    },
+    "ods_email_interaction": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: Name load_date not found inside s at [17:11]"
+    },
+    "ods_survey_response": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: Name load_date not found inside s at [16:11]"
+    },
+    "dim_program": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: No matching signature for function TIMESTAMP_SECONDS\n  Argument types: INT64, STRING\n  Signature: TI"
+    },
+    "dim_queue": {
+      "status": "PASS",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "dim_shift": {
+      "status": "PASS",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "dim_org": {
+      "status": "FAIL",
+      "hive_count": 5,
+      "bq_count": 0,
+      "reason": "one side empty"
+    },
+    "dim_disposition": {
+      "status": "PASS",
+      "hive_count": 6,
+      "bq_count": 6,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "fact_interaction": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: Not found: Table cloudera-env-experiments:test.qa_xp_dim_agent was not found in location EU"
+    },
+    "fact_agent_activity": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: Not found: Table cloudera-env-experiments:test.qa_xp_dim_agent was not found in location EU"
+    },
+    "fact_csat_survey": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: No matching signature for function TIMESTAMP_SECONDS\n  Argument types: INT64, STRING\n  Signature: TI"
+    },
+    "fact_ivr_path": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: No matching signature for function TIMESTAMP_SECONDS\n  Argument types: INT64, STRING\n  Signature: TI"
+    },
+    "agg_program_monthly": {
+      "status": "NOT_EXERCISED",
+      "reason": "BQ exec failed: Not found: Table cloudera-env-experiments:test.qa_xp_fact_billing_line was not found in location EU"
+    },
+    "35-acid-merge-client.sql": {
+      "status": "NOT_EXERCISED",
+      "reason": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp."
+    },
+    "36-acid-merge-agent.sql": {
+      "status": "NOT_EXERCISED",
+      "reason": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp."
+    },
+    "37-acid-merge-ticket.sql": {
+      "status": "NOT_EXERCISED",
+      "reason": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp."
+    },
+    "38-acid-merge-invoice.sql": {
+      "status": "NOT_EXERCISED",
+      "reason": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp."
+    },
+    "39-acid-update-ticket-bulk-close.sql": {
+      "status": "NOT_EXERCISED",
+      "reason": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp."
+    },
+    "40-acid-delete-gdpr-purge.sql": {
+      "status": "NOT_EXERCISED",
+      "reason": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp."
+    }
+  }
+}
