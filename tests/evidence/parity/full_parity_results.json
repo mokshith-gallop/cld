@@ -1,9 +1,9 @@
 {
   "summary": {
     "total": 38,
-    "matched": 11,
-    "mismatched": 1,
-    "not_exercised": 26
+    "matched": 12,
+    "mismatched": 4,
+    "not_exercised": 22
   },
   "tables": {
     "ods_timesheet": {
@@ -58,15 +58,15 @@
     },
     "ods_agent_scd2": {
       "status": "NOT_EXERCISED",
-      "reason": "BQ exec failed: Function not found: concat_ws at [3:7]"
+      "reason": "BQ exec failed: Syntax error: Expected \")\" but got keyword FROM at [15:1]"
     },
     "ods_agent_skill_scd2": {
       "status": "NOT_EXERCISED",
-      "reason": "BQ exec failed: Function not found: concat_ws at [3:7]"
+      "reason": "BQ exec failed: Syntax error: Expected \")\" but got keyword FROM at [17:1]"
     },
     "ods_agent_assignment_scd2": {
       "status": "NOT_EXERCISED",
-      "reason": "BQ exec failed: Function not found: concat_ws at [3:7]"
+      "reason": "BQ exec failed: Syntax error: Expected \")\" but got keyword FROM at [12:1]"
     },
     "ods_program": {
       "status": "PASS",
@@ -115,8 +115,11 @@
       "reason": "BQ exec failed: Name load_date not found inside s at [16:11]"
     },
     "dim_program": {
-      "status": "NOT_EXERCISED",
-      "reason": "BQ exec failed: No matching signature for function TIMESTAMP_SECONDS\n  Argument types: INT64, STRING\n  Signature: TI"
+      "status": "PASS",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true
     },
     "dim_queue": {
       "status": "PASS",
@@ -146,20 +149,26 @@
       "fingerprint_match": true
     },
     "fact_interaction": {
-      "status": "NOT_EXERCISED",
-      "reason": "BQ exec failed: Not found: Table cloudera-env-experiments:test.qa_xp_dim_agent was not found in location EU"
+      "status": "FAIL",
+      "hive_count": 40,
+      "bq_count": 0,
+      "reason": "one side empty"
     },
     "fact_agent_activity": {
       "status": "NOT_EXERCISED",
-      "reason": "BQ exec failed: Not found: Table cloudera-env-experiments:test.qa_xp_dim_agent was not found in location EU"
+      "reason": "BQ exec failed: Function not found: unix_timestamp at [13:24]"
     },
     "fact_csat_survey": {
-      "status": "NOT_EXERCISED",
-      "reason": "BQ exec failed: No matching signature for function TIMESTAMP_SECONDS\n  Argument types: INT64, STRING\n  Signature: TI"
+      "status": "FAIL",
+      "hive_count": 15,
+      "bq_count": 0,
+      "reason": "one side empty"
     },
     "fact_ivr_path": {
-      "status": "NOT_EXERCISED",
-      "reason": "BQ exec failed: No matching signature for function TIMESTAMP_SECONDS\n  Argument types: INT64, STRING\n  Signature: TI"
+      "status": "FAIL",
+      "hive_count": 5,
+      "bq_count": 0,
+      "reason": "one side empty"
     },
     "agg_program_monthly": {
       "status": "NOT_EXERCISED",

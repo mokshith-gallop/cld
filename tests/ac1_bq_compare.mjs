@@ -46,7 +46,16 @@ const U = new hive.HiveUtils(TCLIService_types);
 async function openHS(h,p){const c=new hive.HiveClient(TCLIService,TCLIService_types);const cn=await c.connect({host:h,port:+p},new hive.connections.TcpConnection(),new hive.auth.NoSaslAuthentication());const s=await cn.openSession({client_protocol:TCLIService_types.TProtocolVersion.HIVE_CLI_SERVICE_PROTOCOL_V10});return{cn,s};}
 async function hQ(s,sql){const o=await s.executeStatement(sql,{runAsync:true});await U.waitUntilReady(o,false,()=>{});await U.fetchAll(o,1);const r=U.getResult(o).getValue()??[];await o.close();return r;}
 
-function norm(v){if(v==null)return'__NULL__';if(typeof v==='object'&&v.value!==undefined)return String(v.value);let s=String(v);return s.replace(/\+00(:00)?$/,'').replace(/T/g,' ').replace(/\.0+$/,'');}
+function norm(v){
+  if(v==null)return'__NULL__';
+  if(typeof v==='object'&&v.value!==undefined)v=v.value;
+  let s=String(v);
+  // Normalize timestamps: remove timezone, T→space, trailing .000
+  s=s.replace(/\+00:00$/,'').replace(/\+00$/,'').replace(/Z$/,'').replace(/T/g,' ').replace(/\.000$/,'').replace(/\.0+$/,'');
+  // Normalize booleans
+  if(s==='true')s='1'; if(s==='false')s='0';
+  return s;
+}
 
 async function main() {
   L('=== AC1 BQ Scripts + Cross-Engine Compare ===');
