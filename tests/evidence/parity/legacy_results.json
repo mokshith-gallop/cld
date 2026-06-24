@@ -1,0 +1,363 @@
+[
+  {
+    "script": "09-cleanse-program.sql",
+    "status": "PASS",
+    "ms": 629,
+    "rows": 5
+  },
+  {
+    "script": "10-cleanse-contract.sql",
+    "status": "PASS",
+    "ms": 579,
+    "rows": 5
+  },
+  {
+    "script": "11-cleanse-contract-line.sql",
+    "status": "PASS",
+    "ms": 643,
+    "rows": 10
+  },
+  {
+    "script": "12-cleanse-org-unit.sql",
+    "status": "PASS",
+    "ms": 580,
+    "rows": 5
+  },
+  {
+    "script": "13-cleanse-queue.sql",
+    "status": "PASS",
+    "ms": 601,
+    "rows": 5
+  },
+  {
+    "script": "14-cleanse-schedule.sql",
+    "status": "PASS",
+    "ms": 772,
+    "rows": 0
+  },
+  {
+    "script": "15-cleanse-adherence-event.sql",
+    "status": "PASS",
+    "ms": 594,
+    "rows": 15
+  },
+  {
+    "script": "16-cleanse-call.sql",
+    "status": "PASS",
+    "ms": 1147,
+    "rows": 30
+  },
+  {
+    "script": "17-cleanse-ivr-session.sql",
+    "status": "PASS",
+    "ms": 800,
+    "rows": 5
+  },
+  {
+    "script": "18-cleanse-chat-session.sql",
+    "status": "FAIL",
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10001]: Line 15:40 Table not found 'messages'"
+  },
+  {
+    "script": "19-cleanse-email-interaction.sql",
+    "status": "PASS",
+    "ms": 613,
+    "rows": 10
+  },
+  {
+    "script": "20-cleanse-survey-response.sql",
+    "status": "PASS",
+    "ms": 637,
+    "rows": 15
+  },
+  {
+    "script": "21-cleanse-qa-evaluation.sql",
+    "status": "FAIL",
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10001]: Line 17:32 Table not found 'sections'"
+  },
+  {
+    "script": "22-cleanse-interaction.sql",
+    "status": "PASS",
+    "ms": 786,
+    "rows": 40
+  },
+  {
+    "script": "23-cleanse-dialer-attempt.sql",
+    "status": "PASS",
+    "ms": 584,
+    "rows": 10
+  },
+  {
+    "script": "24-delta-merge-timesheet.sql",
+    "status": "PASS",
+    "ms": 816,
+    "rows": 10
+  },
+  {
+    "script": "25-delta-merge-payroll-adjustment.sql",
+    "status": "PASS",
+    "ms": 1124,
+    "rows": 3
+  },
+  {
+    "script": "26-delta-merge-sla-credit.sql",
+    "status": "PASS",
+    "ms": 801,
+    "rows": 3
+  },
+  {
+    "script": "27-delta-merge-callback-request.sql",
+    "status": "PASS",
+    "ms": 791,
+    "rows": 3
+  },
+  {
+    "script": "28-delta-merge-shift-swap.sql",
+    "status": "PASS",
+    "ms": 777,
+    "rows": 3
+  },
+  {
+    "script": "29-delta-merge-ticket-worklog.sql",
+    "status": "PASS",
+    "ms": 785,
+    "rows": 5
+  },
+  {
+    "script": "30-delta-merge-attrition-event.sql",
+    "status": "PASS",
+    "ms": 816,
+    "rows": 3
+  },
+  {
+    "script": "31-delta-merge-rate-card.sql",
+    "status": "PASS",
+    "ms": 998,
+    "rows": 5
+  },
+  {
+    "script": "32-scd2-agent.sql",
+    "status": "PASS",
+    "ms": 1176,
+    "rows": 25
+  },
+  {
+    "script": "33-scd2-agent-skill.sql",
+    "status": "PASS",
+    "ms": 1040,
+    "rows": 10
+  },
+  {
+    "script": "34-scd2-agent-assignment.sql",
+    "status": "PASS",
+    "ms": 1492,
+    "rows": 5
+  },
+  {
+    "script": "35-acid-merge-client.sql",
+    "status": "NOT_EXERCISED",
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_client_acid that is not transactional"
+  },
+  {
+    "script": "36-acid-merge-agent.sql",
+    "status": "NOT_EXERCISED",
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_agent_acid that is not transactional"
+  },
+  {
+    "script": "37-acid-merge-ticket.sql",
+    "status": "NOT_EXERCISED",
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_ticket_acid that is not transactional"
+  },
+  {
+    "script": "38-acid-merge-invoice.sql",
+    "status": "NOT_EXERCISED",
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_invoice_acid that is not transactional"
+  },
+  {
+    "script": "42-load-dim-agent.sql",
+    "status": "PASS",
+    "ms": 1117,
+    "rows": 0
+  },
+  {
+    "script": "43-load-dim-client.sql",
+    "status": "PASS",
+    "ms": 772,
+    "rows": 0
+  },
+  {
+    "script": "44-load-dim-program.sql",
+    "status": "PASS",
+    "ms": 1510,
+    "rows": 5
+  },
+  {
+    "script": "45-load-dim-queue.sql",
+    "status": "PASS",
+    "ms": 531,
+    "rows": 5
+  },
+  {
+    "script": "46-load-dim-site.sql",
+    "status": "PASS",
+    "ms": 627,
+    "rows": 0
+  },
+  {
+    "script": "47-load-dim-shift.sql",
+    "status": "PASS",
+    "ms": 803,
+    "rows": 5
+  },
+  {
+    "script": "48-load-dim-org.sql",
+    "status": "PASS",
+    "ms": 1331,
+    "rows": 5
+  },
+  {
+    "script": "49-load-dim-disposition.sql",
+    "status": "PASS",
+    "ms": 955,
+    "rows": 6
+  },
+  {
+    "script": "50-load-fact-interaction.sql",
+    "status": "PASS",
+    "ms": 1188,
+    "rows": 40
+  },
+  {
+    "script": "51-load-fact-agent-activity.sql",
+    "status": "PASS",
+    "ms": 1395,
+    "rows": 5
+  },
+  {
+    "script": "52-load-fact-queue-interval.sql",
+    "status": "FAIL",
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10128]: Line 9:73 Not yet supported place for UDAF 'MAX'"
+  },
+  {
+    "script": "53-load-fact-csat-survey.sql",
+    "status": "PASS",
+    "ms": 709,
+    "rows": 15
+  },
+  {
+    "script": "54-load-fact-qa-evaluation.sql",
+    "status": "PASS",
+    "ms": 423,
+    "rows": 0
+  },
+  {
+    "script": "55-load-fact-billing-line.sql",
+    "status": "PASS",
+    "ms": 1341,
+    "rows": 0
+  },
+  {
+    "script": "56-load-fact-adherence-daily.sql",
+    "status": "PASS",
+    "ms": 1891,
+    "rows": 0
+  },
+  {
+    "script": "57-load-fact-ticket.sql",
+    "status": "PASS",
+    "ms": 1131,
+    "rows": 0
+  },
+  {
+    "script": "58-load-fact-ivr-path.sql",
+    "status": "PASS",
+    "ms": 616,
+    "rows": 5
+  },
+  {
+    "script": "59-agg-agent-daily.sql",
+    "status": "PASS",
+    "ms": 1762,
+    "rows": 0
+  },
+  {
+    "script": "60-agg-agent-weekly.sql",
+    "status": "PASS",
+    "ms": 515,
+    "rows": 0
+  },
+  {
+    "script": "61-agg-program-monthly.sql",
+    "status": "FAIL",
+    "error": "Error while compiling statement: FAILED: ParseException line 2:0 cannot recognize input near 'WITH' 'base' 'AS' in statement"
+  },
+  {
+    "script": "62-agg-queue-hourly.sql",
+    "status": "FAIL",
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10025]: Line 17:9 Expression not in GROUP BY key 'queue_id'"
+  },
+  {
+    "script": "63-agg-csat-rollup-monthly.sql",
+    "status": "FAIL",
+    "error": "Error while compiling statement: FAILED: SemanticException MetaException(message:java.lang.ClassNotFoundException: org.apache.hadoop.hive.ql.udf.UDFToString)"
+  },
+  {
+    "script": "64-agg-billing-monthly.sql",
+    "status": "PASS",
+    "ms": 1129,
+    "rows": 0
+  },
+  {
+    "script": "65-agg-site-daily.sql",
+    "status": "PASS",
+    "ms": 828,
+    "rows": 0
+  },
+  {
+    "script": "93-close-billing-month.sql",
+    "status": "PASS",
+    "ms": 997,
+    "rows": 0
+  },
+  {
+    "script": "96-intraday-queue-hourly.sql",
+    "status": "FAIL",
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10025]: Line 16:9 Expression not in GROUP BY key 'queue_id'"
+  },
+  {
+    "script": "97-intraday-agent-state.sql",
+    "status": "PASS",
+    "ms": 805,
+    "rows": 5
+  },
+  {
+    "script": "74-dq-rowcount-staging-vs-source.sql",
+    "status": "PASS",
+    "rows": -1
+  },
+  {
+    "script": "75-dq-roster-vs-hr.sql",
+    "status": "PASS",
+    "rows": -1
+  },
+  {
+    "script": "76-dq-interaction-export-recon.sql",
+    "status": "PASS",
+    "rows": -1
+  },
+  {
+    "script": "77-dq-fk-orphan-check.sql",
+    "status": "PASS",
+    "rows": -1
+  },
+  {
+    "script": "78-dq-epoch-range-sanity.sql",
+    "status": "PASS",
+    "rows": -1
+  },
+  {
+    "script": "79-dq-partition-completeness.sql",
+    "status": "PASS",
+    "rows": -1
+  }
+]

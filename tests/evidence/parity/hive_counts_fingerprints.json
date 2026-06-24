@@ -1,0 +1,250 @@
+{
+  "ods_program": {
+    "count": 5,
+    "fingerprint": "06a14cf0098d0a569069e4903d13f757",
+    "cols": 11
+  },
+  "ods_contract": {
+    "count": 5,
+    "fingerprint": "8b4ae9a92b7a5aeb673aa031c1fb10d8",
+    "cols": 11
+  },
+  "ods_contract_line": {
+    "count": 10,
+    "fingerprint": "902973eb8e8f2aa7f37c29116747308a",
+    "cols": 9
+  },
+  "ods_org_unit": {
+    "count": 5,
+    "fingerprint": "8900bbbd118f3c00eaa6bf6bfa2ec430",
+    "cols": 9
+  },
+  "ods_queue": {
+    "count": 5,
+    "fingerprint": "a977dc8712f616eb1c5c569087de1496",
+    "cols": 8
+  },
+  "ods_schedule": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "ods_adherence_event": {
+    "count": 15,
+    "fingerprint": "d22e35d143440f118973124f2df119cf",
+    "cols": 9
+  },
+  "ods_call": {
+    "count": 30,
+    "fingerprint": "29797aa59b070e0eb51254b50e46f350",
+    "cols": 16
+  },
+  "ods_ivr_session": {
+    "count": 5,
+    "fingerprint": "95dd30922e1f9fe04a6296db477bb2f6",
+    "cols": 9
+  },
+  "ods_chat_session": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "ods_email_interaction": {
+    "count": 10,
+    "fingerprint": "7c02074a58d82a89a0ae7d004da937ed",
+    "cols": 10
+  },
+  "ods_survey_response": {
+    "count": 15,
+    "fingerprint": "6fc8c8d021c8740f8e28a55585bfc15a",
+    "cols": 9
+  },
+  "ods_qa_evaluation": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "ods_interaction": {
+    "count": 40,
+    "fingerprint": "4672eb1b3f394071ca0516c0d25a69e3",
+    "cols": 13
+  },
+  "ods_dialer_attempt": {
+    "count": 10,
+    "fingerprint": "69b872a9f657b8f42b577a1949963d03",
+    "cols": 9
+  },
+  "ods_timesheet": {
+    "count": 10,
+    "fingerprint": "f8ff0486b2b2af9ff71df1be2945e34b",
+    "cols": 9
+  },
+  "ods_payroll_adjustment": {
+    "count": 3,
+    "fingerprint": "309e08d92d7fda3079f5481210a0c947",
+    "cols": 6
+  },
+  "ods_sla_credit": {
+    "count": 3,
+    "fingerprint": "801585baa93d3fcfb9115df8a0fc1ee6",
+    "cols": 7
+  },
+  "ods_callback_request": {
+    "count": 3,
+    "fingerprint": "1b61cee89dffc983fb1fe4a6364288e3",
+    "cols": 8
+  },
+  "ods_shift_swap": {
+    "count": 3,
+    "fingerprint": "1ab8b5a81e0d30b3e46edeb35d7cdb74",
+    "cols": 8
+  },
+  "ods_ticket_worklog": {
+    "count": 5,
+    "fingerprint": "183dd6095da666f80bb26e422dfb6dee",
+    "cols": 8
+  },
+  "ods_attrition_event": {
+    "count": 3,
+    "fingerprint": "950038fb8c454ff3b990b56c1b0079d1",
+    "cols": 9
+  },
+  "ods_rate_card": {
+    "count": 5,
+    "fingerprint": "a84436671cb69d52ed69b1c426ab5050",
+    "cols": 9
+  },
+  "ods_agent_scd2": {
+    "count": 25,
+    "fingerprint": "27b496a3f3064cfa5c650ea570712d53",
+    "cols": 11
+  },
+  "ods_agent_skill_scd2": {
+    "count": 10,
+    "fingerprint": "20673ab8302509b0e94329d393e3cb04",
+    "cols": 10
+  },
+  "ods_agent_assignment_scd2": {
+    "count": 5,
+    "fingerprint": "fc16e53f917ff63a075135d4ff4dab58",
+    "cols": 9
+  },
+  "ods_client_acid": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "ods_agent_acid": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "ods_ticket_acid": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "ods_invoice_acid": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "dim_agent": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "dim_client": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "dim_program": {
+    "count": 5,
+    "fingerprint": "a6fa6a70066f724c090f038fb6bf538b",
+    "cols": 11
+  },
+  "dim_queue": {
+    "count": 5,
+    "fingerprint": "9761ae26e78d029d2f72b2f8f105870a",
+    "cols": 7
+  },
+  "dim_site": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "dim_shift": {
+    "count": 5,
+    "fingerprint": "4a1c3eb77e2329307835dc111ae04911",
+    "cols": 8
+  },
+  "dim_org": {
+    "count": 5,
+    "fingerprint": "512453ed58bbe1b051007cdb111aa9ff",
+    "cols": 11
+  },
+  "dim_disposition": {
+    "count": 6,
+    "fingerprint": "8a48c969199ce56e93fddd84addd9ae9",
+    "cols": 5
+  },
+  "fact_interaction": {
+    "count": 40,
+    "fingerprint": "299ba91bcbc8d3b8e196b439e45730a3",
+    "cols": 13
+  },
+  "fact_agent_activity": {
+    "count": 5,
+    "fingerprint": "db8858c5dae6226753de367f970bd859",
+    "cols": 7
+  },
+  "fact_queue_interval": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "fact_csat_survey": {
+    "count": 15,
+    "fingerprint": "e27d6ca9cfc4b677f0e6c13a39879efc",
+    "cols": 10
+  },
+  "fact_qa_evaluation": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "fact_billing_line": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "fact_adherence_daily": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "fact_ticket": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "fact_ivr_path": {
+    "count": 5,
+    "fingerprint": "d27b9434294e28ab6889b2ca39f9ed32",
+    "cols": 8
+  },
+  "agg_agent_daily": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "agg_agent_weekly": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "agg_program_monthly": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "agg_queue_hourly": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "agg_csat_rollup_monthly": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "agg_billing_monthly": {
+    "count": 0,
+    "fingerprint": null
+  },
+  "agg_site_daily": {
+    "count": 0,
+    "fingerprint": null
+  }
+}

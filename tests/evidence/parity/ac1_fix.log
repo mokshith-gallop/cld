@@ -1,0 +1,144 @@
+[22:49:33.763] === AC1 Fix — Seed + Run Legacy ===
+[22:49:33.790] Connected
+[22:49:33.813] --- Fix file-feed staging tables ---
+[22:49:34.028]   Created stg_file_ivr_logs
+[22:49:34.158]   Created stg_file_email_interaction
+[22:49:34.335]   Created stg_file_survey_csat
+[22:49:34.468]   Created stg_file_dialer_result
+[22:49:34.667]   Created stg_file_interaction_export
+[22:49:34.811]   Created stg_file_roster
+[22:49:34.983]   Created stg_file_telco_invoice
+[22:49:35.122]   Created stg_file_speech_analytics
+[22:49:35.301]   Created stg_file_chat_transcripts
+[22:49:35.452]   Created stg_file_qa_forms
+[22:49:39.196] --- Seed file-feed tables ---
+[22:49:42.855]   stg_file_ivr_logs: 18 rows
+[22:49:44.776]   stg_file_email_interaction: 10 rows
+[22:49:47.569]   stg_file_survey_csat: 15 rows
+[22:49:49.482]   stg_file_dialer_result: 10 rows
+[22:49:49.482] --- Seed dim_date ---
+[22:49:55.669]   dim_date: 62 rows
+[22:49:55.670] === Run legacy scripts ===
+[22:49:56.299]   ✓ 09-cleanse-program.sql → 5
+[22:49:56.878]   ✓ 10-cleanse-contract.sql → 5
+[22:49:57.522]   ✓ 11-cleanse-contract-line.sql → 10
+[22:49:58.102]   ✓ 12-cleanse-org-unit.sql → 5
+[22:49:58.703]   ✓ 13-cleanse-queue.sql → 5
+[22:49:59.476]   ✓ 14-cleanse-schedule.sql → 0
+[22:50:00.071]   ✓ 15-cleanse-adherence-event.sql → 15
+[22:50:01.219]   ✓ 16-cleanse-call.sql → 30
+[22:50:02.020]   ✓ 17-cleanse-ivr-session.sql → 5
+[22:50:02.066]   ✗ 18-cleanse-chat-session.sql: Error while compiling statement: FAILED: SemanticException [Error 10001]: Line 15:40 Table not found
+[22:50:02.680]   ✓ 19-cleanse-email-interaction.sql → 10
+[22:50:03.318]   ✓ 20-cleanse-survey-response.sql → 15
+[22:50:03.353]   ✗ 21-cleanse-qa-evaluation.sql: Error while compiling statement: FAILED: SemanticException [Error 10001]: Line 17:32 Table not found
+[22:50:04.139]   ✓ 22-cleanse-interaction.sql → 40
+[22:50:04.723]   ✓ 23-cleanse-dialer-attempt.sql → 10
+[22:50:05.539]   ✓ 24-delta-merge-timesheet.sql → 10
+[22:50:06.663]   ✓ 25-delta-merge-payroll-adjustment.sql → 3
+[22:50:07.465]   ✓ 26-delta-merge-sla-credit.sql → 3
+[22:50:08.256]   ✓ 27-delta-merge-callback-request.sql → 3
+[22:50:09.034]   ✓ 28-delta-merge-shift-swap.sql → 3
+[22:50:09.819]   ✓ 29-delta-merge-ticket-worklog.sql → 5
+[22:50:10.635]   ✓ 30-delta-merge-attrition-event.sql → 3
+[22:50:11.634]   ✓ 31-delta-merge-rate-card.sql → 5
+[22:50:12.811]   ✓ 32-scd2-agent.sql → 25
+[22:50:13.852]   ✓ 33-scd2-agent-skill.sql → 10
+[22:50:15.344]   ✓ 34-scd2-agent-assignment.sql → 5
+[22:50:15.419]   ⊘ 35-acid-merge-client.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:50:15.492]   ⊘ 36-acid-merge-agent.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:50:15.577]   ⊘ 37-acid-merge-ticket.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:50:15.656]   ⊘ 38-acid-merge-invoice.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:50:16.774]   ✓ 42-load-dim-agent.sql → 0
+[22:50:17.547]   ✓ 43-load-dim-client.sql → 0
+[22:50:19.057]   ✓ 44-load-dim-program.sql → 5
+[22:50:19.589]   ✓ 45-load-dim-queue.sql → 5
+[22:50:20.216]   ✓ 46-load-dim-site.sql → 0
+[22:50:21.020]   ✓ 47-load-dim-shift.sql → 5
+[22:50:22.351]   ✓ 48-load-dim-org.sql → 5
+[22:50:23.306]   ✓ 49-load-dim-disposition.sql → 6
+[22:50:24.495]   ✓ 50-load-fact-interaction.sql → 40
+[22:50:25.890]   ✓ 51-load-fact-agent-activity.sql → 5
+[22:50:25.961]   ✗ 52-load-fact-queue-interval.sql: Error while compiling statement: FAILED: SemanticException [Error 10128]: Line 9:73 Not yet supporte
+[22:50:26.670]   ✓ 53-load-fact-csat-survey.sql → 15
+[22:50:27.093]   ✓ 54-load-fact-qa-evaluation.sql → 0
+[22:50:28.435]   ✓ 55-load-fact-billing-line.sql → 0
+[22:50:30.326]   ✓ 56-load-fact-adherence-daily.sql → 0
+[22:50:31.457]   ✓ 57-load-fact-ticket.sql → 0
+[22:50:32.073]   ✓ 58-load-fact-ivr-path.sql → 5
+[22:50:33.835]   ✓ 59-agg-agent-daily.sql → 0
+[22:50:34.351]   ✓ 60-agg-agent-weekly.sql → 0
+[22:50:34.358]   ✗ 61-agg-program-monthly.sql: Error while compiling statement: FAILED: ParseException line 2:0 cannot recognize input near 'WITH' 
+[22:50:34.441]   ✗ 62-agg-queue-hourly.sql: Error while compiling statement: FAILED: SemanticException [Error 10025]: Line 17:9 Expression not i
+[22:50:34.646]   ✗ 63-agg-csat-rollup-monthly.sql: Error while compiling statement: FAILED: SemanticException MetaException(message:java.lang.ClassNotF
+[22:50:35.775]   ✓ 64-agg-billing-monthly.sql → 0
+[22:50:36.604]   ✓ 65-agg-site-daily.sql → 0
+[22:50:37.601]   ✓ 93-close-billing-month.sql → 0
+[22:50:38.065]   ✗ 96-intraday-queue-hourly.sql: Error while compiling statement: FAILED: SemanticException [Error 10025]: Line 16:9 Expression not i
+[22:50:38.871]   ✓ 97-intraday-agent-state.sql → 5
+[22:50:41.827]   ✓ DQ 74-dq-rowcount-staging-vs-source.sql
+[22:50:43.220]   ✓ DQ 75-dq-roster-vs-hr.sql
+[22:50:43.862]   ✓ DQ 76-dq-interaction-export-recon.sql
+[22:50:46.186]   ✓ DQ 77-dq-fk-orphan-check.sql
+[22:50:48.149]   ✓ DQ 78-dq-epoch-range-sanity.sql
+[22:50:50.014]   ✓ DQ 79-dq-partition-completeness.sql
+[22:50:50.015] === Collect Hive output counts ===
+[22:50:50.160]   ods_program: {"count":5,"fingerprint":"06a14cf0098d0a569069e4903d13f757","cols":11}
+[22:50:50.291]   ods_contract: {"count":5,"fingerprint":"8b4ae9a92b7a5aeb673aa031c1fb10d8","cols":11}
+[22:50:50.430]   ods_contract_line: {"count":10,"fingerprint":"902973eb8e8f2aa7f37c29116747308a","cols":9}
+[22:50:50.567]   ods_org_unit: {"count":5,"fingerprint":"8900bbbd118f3c00eaa6bf6bfa2ec430","cols":9}
+[22:50:50.699]   ods_queue: {"count":5,"fingerprint":"a977dc8712f616eb1c5c569087de1496","cols":8}
+[22:50:50.769]   ods_schedule: {"count":0,"fingerprint":null}
+[22:50:50.899]   ods_adherence_event: {"count":15,"fingerprint":"d22e35d143440f118973124f2df119cf","cols":9}
+[22:50:51.056]   ods_call: {"count":30,"fingerprint":"29797aa59b070e0eb51254b50e46f350","cols":16}
+[22:50:51.245]   ods_ivr_session: {"count":5,"fingerprint":"95dd30922e1f9fe04a6296db477bb2f6","cols":9}
+[22:50:51.318]   ods_chat_session: {"count":0,"fingerprint":null}
+[22:50:51.448]   ods_email_interaction: {"count":10,"fingerprint":"7c02074a58d82a89a0ae7d004da937ed","cols":10}
+[22:50:51.580]   ods_survey_response: {"count":15,"fingerprint":"6fc8c8d021c8740f8e28a55585bfc15a","cols":9}
+[22:50:51.650]   ods_qa_evaluation: {"count":0,"fingerprint":null}
+[22:50:51.799]   ods_interaction: {"count":40,"fingerprint":"4672eb1b3f394071ca0516c0d25a69e3","cols":13}
+[22:50:51.937]   ods_dialer_attempt: {"count":10,"fingerprint":"69b872a9f657b8f42b577a1949963d03","cols":9}
+[22:50:52.064]   ods_timesheet: {"count":10,"fingerprint":"f8ff0486b2b2af9ff71df1be2945e34b","cols":9}
+[22:50:52.418]   ods_payroll_adjustment: {"count":3,"fingerprint":"309e08d92d7fda3079f5481210a0c947","cols":6}
+[22:50:52.550]   ods_sla_credit: {"count":3,"fingerprint":"801585baa93d3fcfb9115df8a0fc1ee6","cols":7}
+[22:50:52.675]   ods_callback_request: {"count":3,"fingerprint":"1b61cee89dffc983fb1fe4a6364288e3","cols":8}
+[22:50:52.795]   ods_shift_swap: {"count":3,"fingerprint":"1ab8b5a81e0d30b3e46edeb35d7cdb74","cols":8}
+[22:50:52.903]   ods_ticket_worklog: {"count":5,"fingerprint":"183dd6095da666f80bb26e422dfb6dee","cols":8}
+[22:50:53.020]   ods_attrition_event: {"count":3,"fingerprint":"950038fb8c454ff3b990b56c1b0079d1","cols":9}
+[22:50:53.131]   ods_rate_card: {"count":5,"fingerprint":"a84436671cb69d52ed69b1c426ab5050","cols":9}
+[22:50:53.253]   ods_agent_scd2: {"count":25,"fingerprint":"27b496a3f3064cfa5c650ea570712d53","cols":11}
+[22:50:53.373]   ods_agent_skill_scd2: {"count":10,"fingerprint":"20673ab8302509b0e94329d393e3cb04","cols":10}
+[22:50:53.487]   ods_agent_assignment_scd2: {"count":5,"fingerprint":"fc16e53f917ff63a075135d4ff4dab58","cols":9}
+[22:50:53.551]   ods_client_acid: {"count":0,"fingerprint":null}
+[22:50:53.613]   ods_agent_acid: {"count":0,"fingerprint":null}
+[22:50:53.707]   ods_ticket_acid: {"count":0,"fingerprint":null}
+[22:50:53.773]   ods_invoice_acid: {"count":0,"fingerprint":null}
+[22:50:53.841]   dim_agent: {"count":0,"fingerprint":null}
+[22:50:53.911]   dim_client: {"count":0,"fingerprint":null}
+[22:50:54.007]   dim_program: {"count":5,"fingerprint":"a6fa6a70066f724c090f038fb6bf538b","cols":11}
+[22:50:54.108]   dim_queue: {"count":5,"fingerprint":"9761ae26e78d029d2f72b2f8f105870a","cols":7}
+[22:50:54.181]   dim_site: {"count":0,"fingerprint":null}
+[22:50:54.287]   dim_shift: {"count":5,"fingerprint":"4a1c3eb77e2329307835dc111ae04911","cols":8}
+[22:50:54.400]   dim_org: {"count":5,"fingerprint":"512453ed58bbe1b051007cdb111aa9ff","cols":11}
+[22:50:54.494]   dim_disposition: {"count":6,"fingerprint":"8a48c969199ce56e93fddd84addd9ae9","cols":5}
+[22:50:54.593]   fact_interaction: {"count":40,"fingerprint":"299ba91bcbc8d3b8e196b439e45730a3","cols":13}
+[22:50:54.675]   fact_agent_activity: {"count":5,"fingerprint":"db8858c5dae6226753de367f970bd859","cols":7}
+[22:50:54.741]   fact_queue_interval: {"count":0,"fingerprint":null}
+[22:50:54.832]   fact_csat_survey: {"count":15,"fingerprint":"e27d6ca9cfc4b677f0e6c13a39879efc","cols":10}
+[22:50:54.887]   fact_qa_evaluation: {"count":0,"fingerprint":null}
+[22:50:54.943]   fact_billing_line: {"count":0,"fingerprint":null}
+[22:50:54.993]   fact_adherence_daily: {"count":0,"fingerprint":null}
+[22:50:55.045]   fact_ticket: {"count":0,"fingerprint":null}
+[22:50:55.136]   fact_ivr_path: {"count":5,"fingerprint":"d27b9434294e28ab6889b2ca39f9ed32","cols":8}
+[22:50:55.192]   agg_agent_daily: {"count":0,"fingerprint":null}
+[22:50:55.243]   agg_agent_weekly: {"count":0,"fingerprint":null}
+[22:50:55.335]   agg_program_monthly: {"count":0,"fingerprint":null}
+[22:50:55.401]   agg_queue_hourly: {"count":0,"fingerprint":null}
+[22:50:55.461]   agg_csat_rollup_monthly: {"count":0,"fingerprint":null}
+[22:50:55.525]   agg_billing_monthly: {"count":0,"fingerprint":null}
+[22:50:55.577]   agg_site_daily: {"count":0,"fingerprint":null}
+[22:50:55.577] 
+=== SUMMARY ===
+[22:50:55.577] Scripts: 52 pass, 7 fail, 4 not-exercised
+[22:50:55.578] Tables: 32 non-empty, 22 empty, 54 total
+[22:50:55.649] === DONE ===

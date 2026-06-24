@@ -1,0 +1,5 @@
+[22:51:44.739]   ✓ 25-delta-merge-payroll-adjustment.sql (853ms) → 3 rows
+[22:51:45.451]   ✓ 26-delta-merge-sla-credit.sql (712ms) → 3 rows
+[22:51:46.345]   ✓ 27-delta-merge-callback-request.sql (892ms) → 3 rows
+[22:51:47.406]   ✓ 28-delta-merge-shift-swap.sql (1061ms) → 3 rows
+[22:51:48.196]   ✓ 29-delta-merge-ticket-worklog.sql (789ms) → 5 rows
