@@ -1,7 +1,17 @@
 {
   "count": 2,
-  "fingerprint": "fbb45696b7f5b5caecc39279dd4329ff",
+  "fingerprint": "ba14d0f012a9a7adea6b1fd6f02641b0",
   "sample": [
+    {
+      "adjustment_id": 2,
+      "agent_id": 2,
+      "adj_type": "BONUS",
+      "amount": "150",
+      "last_change_ts": {
+        "value": "2024-01-15T00:00:00.000Z"
+      },
+      "period_month": "2024-01"
+    },
     {
       "adjustment_id": 1,
       "agent_id": 1,
@@ -9,16 +19,6 @@
       "amount": "100",
       "last_change_ts": {
         "value": "2024-01-15T00:00:00.000Z"
-      },
-      "period_month": "2024-01"
-    },
-    {
-      "adjustment_id": 2,
-      "agent_id": 2,
-      "adj_type": "BONUS",
-      "amount": "150",
-      "last_change_ts": {
-        "value": "2024-01-15T00:00:00.001Z"
       },
       "period_month": "2024-01"
     }

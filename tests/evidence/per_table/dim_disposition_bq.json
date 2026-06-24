@@ -3,17 +3,17 @@
   "fingerprint": "e0cf826efdceab5c01abfbb366b61281",
   "sample": [
     {
-      "disposition_sk": 6,
-      "disposition_code": "D06",
-      "disposition_desc": "Other - miscellaneous",
-      "category": "OTHER",
-      "billable_flag": false
-    },
-    {
       "disposition_sk": 2,
       "disposition_code": "D02",
       "disposition_desc": "Password reset locked account",
       "category": "ACCESS",
+      "billable_flag": false
+    },
+    {
+      "disposition_sk": 6,
+      "disposition_code": "D06",
+      "disposition_desc": "Other - miscellaneous",
+      "category": "OTHER",
       "billable_flag": false
     },
     {

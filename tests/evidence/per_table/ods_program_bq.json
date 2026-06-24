@@ -3,23 +3,6 @@
   "fingerprint": "a53fe6f4f0506b2aa64839795163aea7",
   "sample": [
     {
-      "program_id": 2,
-      "client_id": 2,
-      "program_code": "PRG2",
-      "program_name": "Program 2",
-      "line_of_business": "SUPPORT",
-      "channel_mix": "VOICE",
-      "site_code": "BLR2",
-      "status": "ACTIVE",
-      "go_live_ts": {
-        "value": "2023-07-22T04:43:20.000Z"
-      },
-      "updated_ts": {
-        "value": "2023-11-14T22:21:40.000Z"
-      },
-      "snapshot_date": "2024-01-15"
-    },
-    {
       "program_id": 5,
       "client_id": 2,
       "program_code": "PRG5",
@@ -33,6 +16,23 @@
       },
       "updated_ts": {
         "value": "2023-11-14T22:46:40.000Z"
+      },
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "program_id": 2,
+      "client_id": 2,
+      "program_code": "PRG2",
+      "program_name": "Program 2",
+      "line_of_business": "SUPPORT",
+      "channel_mix": "VOICE",
+      "site_code": "BLR2",
+      "status": "ACTIVE",
+      "go_live_ts": {
+        "value": "2023-07-22T04:43:20.000Z"
+      },
+      "updated_ts": {
+        "value": "2023-11-14T22:21:40.000Z"
       },
       "snapshot_date": "2024-01-15"
     },

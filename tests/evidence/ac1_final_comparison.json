@@ -1,7 +1,7 @@
 {
   "total_tables": 28,
-  "pass": 11,
-  "fail": 17,
+  "pass": 16,
+  "fail": 12,
   "not_exercised": 0,
   "tables": {
     "agg_program_monthly": {
@@ -105,13 +105,13 @@
       "bq_count": 0
     },
     "ods_callback_request": {
-      "status": "FAIL",
+      "status": "PASS",
       "hive_count": 2,
       "bq_count": 2,
       "count_match": true,
-      "fingerprint_match": false,
+      "fingerprint_match": true,
       "hive_fp": "72aeecaea69ec059eec52e4a8567162d",
-      "bq_fp": "58861c26ef1d0e9250ae7f5af96a72ed",
+      "bq_fp": "72aeecaea69ec059eec52e4a8567162d",
       "common_cols": 8
     },
     "ods_contract": {
@@ -140,13 +140,13 @@
       "bq_count": 0
     },
     "ods_payroll_adjustment": {
-      "status": "FAIL",
+      "status": "PASS",
       "hive_count": 2,
       "bq_count": 2,
       "count_match": true,
-      "fingerprint_match": false,
+      "fingerprint_match": true,
       "hive_fp": "ba14d0f012a9a7adea6b1fd6f02641b0",
-      "bq_fp": "fbb45696b7f5b5caecc39279dd4329ff",
+      "bq_fp": "ba14d0f012a9a7adea6b1fd6f02641b0",
       "common_cols": 6
     },
     "ods_program": {
@@ -195,33 +195,33 @@
       "common_cols": 8
     },
     "ods_sla_credit": {
-      "status": "FAIL",
+      "status": "PASS",
       "hive_count": 2,
       "bq_count": 2,
       "count_match": true,
-      "fingerprint_match": false,
+      "fingerprint_match": true,
       "hive_fp": "3ca440546937fdb293121e0c358f781d",
-      "bq_fp": "3aa7a631ef2f2aa45e7bb8d2ed2b57b9",
+      "bq_fp": "3ca440546937fdb293121e0c358f781d",
       "common_cols": 7
     },
     "ods_ticket_worklog": {
-      "status": "FAIL",
+      "status": "PASS",
       "hive_count": 3,
       "bq_count": 3,
       "count_match": true,
-      "fingerprint_match": false,
+      "fingerprint_match": true,
       "hive_fp": "2906bc65ad19321d4666773f70409c7d",
-      "bq_fp": "2682960e93dc6a8f220c1e5ee8d9255f",
+      "bq_fp": "2906bc65ad19321d4666773f70409c7d",
       "common_cols": 8
     },
     "ods_timesheet": {
-      "status": "FAIL",
+      "status": "PASS",
       "hive_count": 5,
       "bq_count": 5,
       "count_match": true,
-      "fingerprint_match": false,
+      "fingerprint_match": true,
       "hive_fp": "bc9641758ea2a97be8f941a8d92a89a6",
-      "bq_fp": "9a4b606cb806d9338ae0b072fbc81d74",
+      "bq_fp": "bc9641758ea2a97be8f941a8d92a89a6",
       "common_cols": 9
     }
   }

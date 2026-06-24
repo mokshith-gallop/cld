@@ -1,145 +1,145 @@
-[23:06:54.755] === AC1 Full Parity: Legacy + BQ + Compare ===
-[23:06:55.372] Connected.
-[23:06:55.372] Seeding ACID tables on BQ...
-[23:07:19.410] ACID tables seeded on BQ
-[23:07:19.410] 32 legacy scripts with data
-[23:07:19.411] 
+[23:12:26.163] === AC1 Full Parity: Legacy + BQ + Compare ===
+[23:12:26.719] Connected.
+[23:12:26.719] Seeding ACID tables on BQ...
+[23:12:50.871] ACID tables seeded on BQ
+[23:12:50.872] 32 legacy scripts with data
+[23:12:50.872] 
 --- ods_timesheet (from 24-delta-merge-timesheet.sql) ---
-[23:07:23.538]   BQ script executed
-[23:07:24.842]   ✓ count=true fp=true
-[23:07:24.842] 
+[23:12:54.860]   BQ script executed
+[23:12:56.132]   ✓ count=true fp=true
+[23:12:56.133] 
 --- ods_payroll_adjustment (from 25-delta-merge-payroll-adjustment.sql) ---
-[23:07:28.879]   BQ script executed
-[23:07:30.179]   ✓ count=true fp=true
-[23:07:30.180] 
+[23:12:59.841]   BQ script executed
+[23:13:01.151]   ✓ count=true fp=true
+[23:13:01.153] 
 --- ods_sla_credit (from 26-delta-merge-sla-credit.sql) ---
-[23:07:34.300]   BQ script executed
-[23:07:35.545]   ✓ count=true fp=true
-[23:07:35.545] 
+[23:13:05.072]   BQ script executed
+[23:13:06.329]   ✓ count=true fp=true
+[23:13:06.330] 
 --- ods_callback_request (from 27-delta-merge-callback-request.sql) ---
-[23:07:38.189]   BQ exec FAIL: No matching signature for operator CASE; all THEN/ELSE arguments must be coercible to a common type 
-[23:07:38.190] 
+[23:13:08.878]   BQ exec FAIL: No matching signature for operator CASE; all THEN/ELSE arguments must be coercible to a common type 
+[23:13:08.879] 
 --- ods_shift_swap (from 28-delta-merge-shift-swap.sql) ---
-[23:07:42.169]   BQ script executed
-[23:07:43.506]   ✓ count=true fp=true
-[23:07:43.507] 
+[23:13:12.502]   BQ script executed
+[23:13:13.753]   ✓ count=true fp=true
+[23:13:13.754] 
 --- ods_ticket_worklog (from 29-delta-merge-ticket-worklog.sql) ---
-[23:07:46.125]   BQ exec FAIL: No matching signature for operator CASE; all THEN/ELSE arguments must be coercible to a common type 
-[23:07:46.127] 
+[23:13:16.380]   BQ exec FAIL: No matching signature for operator CASE; all THEN/ELSE arguments must be coercible to a common type 
+[23:13:16.380] 
 --- ods_attrition_event (from 30-delta-merge-attrition-event.sql) ---
-[23:07:50.150]   BQ script executed
-[23:07:51.477]   ✓ count=true fp=true
-[23:07:51.478] 
+[23:13:20.008]   BQ script executed
+[23:13:21.320]   ✓ count=true fp=true
+[23:13:21.320] 
 --- ods_rate_card (from 31-delta-merge-rate-card.sql) ---
-[23:07:55.480]   BQ script executed
-[23:07:56.690]   ✓ count=true fp=true
-[23:07:56.691] 
+[23:13:25.218]   BQ script executed
+[23:13:26.484]   ✓ count=true fp=true
+[23:13:26.484] 
 --- ods_agent_scd2 (from 32-scd2-agent.sql) ---
-[23:07:59.146]   BQ exec FAIL: Syntax error: Expected ")" but got keyword FROM at [15:1]
-[23:07:59.147] 
+[23:13:28.780]   BQ exec FAIL: Syntax error: Expected ")" but got keyword FROM at [15:1]
+[23:13:28.780] 
 --- ods_agent_skill_scd2 (from 33-scd2-agent-skill.sql) ---
-[23:08:01.649]   BQ exec FAIL: Syntax error: Expected ")" but got keyword FROM at [17:1]
-[23:08:01.650] 
+[23:13:31.346]   BQ exec FAIL: Syntax error: Expected ")" but got keyword FROM at [17:1]
+[23:13:31.346] 
 --- ods_agent_assignment_scd2 (from 34-scd2-agent-assignment.sql) ---
-[23:08:04.266]   BQ exec FAIL: Syntax error: Expected ")" but got keyword FROM at [12:1]
-[23:08:04.266] 
+[23:13:33.689]   BQ exec FAIL: Syntax error: Expected ")" but got keyword FROM at [12:1]
+[23:13:33.690] 
 --- ods_program (from 09-cleanse-program.sql) ---
-[23:08:08.538]   BQ script executed
-[23:08:10.066]   ✓ count=true fp=true
-[23:08:10.066] 
+[23:13:37.380]   BQ script executed
+[23:13:38.553]   ✓ count=true fp=true
+[23:13:38.554] 
 --- ods_contract (from 10-cleanse-contract.sql) ---
-[23:08:12.736]   BQ exec FAIL: No matching signature for function UNIX_SECONDS
+[23:13:41.206]   BQ exec FAIL: No matching signature for function UNIX_SECONDS
   Argument types: STRING
   Signature: UNIX_SECONDS(T
-[23:08:12.736] 
+[23:13:41.206] 
 --- ods_contract_line (from 11-cleanse-contract-line.sql) ---
-[23:08:16.845]   BQ exec FAIL: No matching signature for function UNIX_SECONDS
+[23:13:43.713]   BQ exec FAIL: No matching signature for function UNIX_SECONDS
   Argument types: STRING
   Signature: UNIX_SECONDS(T
-[23:08:16.845] 
+[23:13:43.713] 
 --- ods_org_unit (from 12-cleanse-org-unit.sql) ---
-[23:08:19.388]   BQ exec FAIL: Query column 2 has type STRING which cannot be inserted into column parent_unit_id, which has type I
-[23:08:19.388] 
+[23:13:46.516]   BQ exec FAIL: Query column 2 has type STRING which cannot be inserted into column parent_unit_id, which has type I
+[23:13:46.516] 
 --- ods_queue (from 13-cleanse-queue.sql) ---
-[23:08:23.044]   BQ script executed
-[23:08:24.179]   ✓ count=true fp=true
-[23:08:24.179] 
+[23:13:50.204]   BQ script executed
+[23:13:51.338]   ✓ count=true fp=true
+[23:13:51.338] 
 --- ods_adherence_event (from 15-cleanse-adherence-event.sql) ---
-[23:08:26.914]   BQ exec FAIL: Query column 9 has type DATE which cannot be inserted into column event_date, which has type STRING 
-[23:08:26.914] 
+[23:13:53.833]   BQ exec FAIL: Query column 9 has type DATE which cannot be inserted into column event_date, which has type STRING 
+[23:13:53.833] 
 --- ods_call (from 16-cleanse-call.sql) ---
-[23:08:29.521]   BQ exec FAIL: Query column 16 has type DATE which cannot be inserted into column call_date, which has type STRING 
-[23:08:29.521] 
+[23:13:56.378]   BQ exec FAIL: Query column 16 has type DATE which cannot be inserted into column call_date, which has type STRING 
+[23:13:56.378] 
 --- ods_ivr_session (from 17-cleanse-ivr-session.sql) ---
-[23:08:32.023]   BQ exec FAIL: Query column 9 has type DATE which cannot be inserted into column event_date, which has type STRING 
-[23:08:32.024] 
+[23:13:59.064]   BQ exec FAIL: Query column 9 has type DATE which cannot be inserted into column event_date, which has type STRING 
+[23:13:59.064] 
 --- ods_email_interaction (from 19-cleanse-email-interaction.sql) ---
-[23:08:34.545]   BQ exec FAIL: Name load_date not found inside s at [17:11]
-[23:08:34.547] 
+[23:14:01.592]   BQ exec FAIL: Name load_date not found inside s at [17:11]
+[23:14:01.594] 
 --- ods_survey_response (from 20-cleanse-survey-response.sql) ---
-[23:08:37.140]   BQ exec FAIL: Name load_date not found inside s at [16:11]
-[23:08:37.141] 
+[23:14:04.649]   BQ exec FAIL: Name load_date not found inside s at [16:11]
+[23:14:04.649] 
 --- dim_program (from 44-load-dim-program.sql) ---
-[23:08:41.150]   BQ script executed
-[23:08:42.379]   ✓ count=true fp=true
-[23:08:42.379] 
+[23:14:08.464]   BQ script executed
+[23:14:09.598]   ✓ count=true fp=true
+[23:14:09.598] 
 --- dim_queue (from 45-load-dim-queue.sql) ---
-[23:08:46.296]   BQ script executed
-[23:08:47.536]   ✓ count=true fp=true
-[23:08:47.536] 
+[23:14:13.257]   BQ script executed
+[23:14:14.492]   ✓ count=true fp=true
+[23:14:14.492] 
 --- dim_shift (from 47-load-dim-shift.sql) ---
-[23:08:51.346]   BQ script executed
-[23:08:52.506]   ✓ count=true fp=true
-[23:08:52.506] 
+[23:14:18.919]   BQ script executed
+[23:14:20.192]   ✓ count=true fp=true
+[23:14:20.192] 
 --- dim_org (from 48-load-dim-org.sql) ---
-[23:08:56.160]   BQ script executed
-[23:08:56.752]   FAIL: hive=5 bq=0
-[23:08:56.752] 
+[23:14:31.559]   BQ script executed
+[23:14:32.166]   FAIL: hive=5 bq=0
+[23:14:32.166] 
 --- dim_disposition (from 49-load-dim-disposition.sql) ---
-[23:09:00.827]   BQ script executed
-[23:09:02.014]   ✓ count=true fp=true
-[23:09:02.015] 
+[23:14:36.033]   BQ script executed
+[23:14:37.272]   ✓ count=true fp=true
+[23:14:37.272] 
 --- fact_interaction (from 50-load-fact-interaction.sql) ---
-[23:09:06.319]   BQ script executed
-[23:09:06.910]   FAIL: hive=40 bq=0
-[23:09:06.911] 
+[23:14:41.069]   BQ script executed
+[23:14:41.681]   FAIL: hive=40 bq=0
+[23:14:41.682] 
 --- fact_agent_activity (from 51-load-fact-agent-activity.sql) ---
-[23:09:09.798]   BQ exec FAIL: No matching signature for function TIMESTAMP_SECONDS
+[23:14:44.297]   BQ exec FAIL: No matching signature for function TIMESTAMP_SECONDS
   Argument types: INT64, STRING
   Signature: TI
-[23:09:09.798] 
+[23:14:44.297] 
 --- fact_csat_survey (from 53-load-fact-csat-survey.sql) ---
-[23:09:13.772]   BQ script executed
-[23:09:14.469]   FAIL: hive=15 bq=0
-[23:09:14.470] 
+[23:14:48.007]   BQ script executed
+[23:14:48.648]   FAIL: hive=15 bq=0
+[23:14:48.649] 
 --- fact_ivr_path (from 58-load-fact-ivr-path.sql) ---
-[23:09:18.442]   BQ script executed
-[23:09:18.997]   FAIL: hive=5 bq=0
-[23:09:18.997] 
+[23:14:52.247]   BQ script executed
+[23:14:52.826]   FAIL: hive=5 bq=0
+[23:14:52.827] 
 --- agg_program_monthly (from 61-agg-program-monthly.sql) ---
-[23:09:21.996]   BQ exec FAIL: Not found: Table cloudera-env-experiments:test.qa_xp_fact_billing_line was not found in location EU
-[23:09:21.996] 
+[23:14:55.228]   BQ exec FAIL: Not found: Table cloudera-env-experiments:test.qa_xp_fact_billing_line was not found in location EU
+[23:14:55.228] 
 --- fact_agent_activity (from 97-intraday-agent-state.sql) ---
-[23:09:24.473]   BQ exec FAIL: Function not found: unix_timestamp at [13:24]
-[23:09:24.474] 
+[23:14:57.994]   BQ exec FAIL: Function not found: unix_timestamp at [13:24]
+[23:14:57.995] 
 === SUMMARY ===
-[23:09:24.474] PASS: 12  FAIL: 4  NOT_EXERCISED: 22
-[23:09:24.474]   ✓ ods_timesheet: h=10 b=10 fp=true
-[23:09:24.474]   ✓ ods_payroll_adjustment: h=3 b=3 fp=true
-[23:09:24.474]   ✓ ods_sla_credit: h=3 b=3 fp=true
-[23:09:24.474]   ✓ ods_shift_swap: h=3 b=3 fp=true
-[23:09:24.474]   ✓ ods_attrition_event: h=3 b=3 fp=true
-[23:09:24.474]   ✓ ods_rate_card: h=5 b=5 fp=true
-[23:09:24.475]   ✓ ods_program: h=5 b=5 fp=true
-[23:09:24.475]   ✓ ods_queue: h=5 b=5 fp=true
-[23:09:24.475]   ✓ dim_program: h=5 b=5 fp=true
-[23:09:24.475]   ✓ dim_queue: h=5 b=5 fp=true
-[23:09:24.475]   ✓ dim_shift: h=5 b=5 fp=true
-[23:09:24.475]   ✓ dim_disposition: h=6 b=6 fp=true
-[23:09:24.475] 
+[23:14:57.995] PASS: 12  FAIL: 4  NOT_EXERCISED: 22
+[23:14:57.995]   ✓ ods_timesheet: h=10 b=10 fp=true
+[23:14:57.995]   ✓ ods_payroll_adjustment: h=3 b=3 fp=true
+[23:14:57.995]   ✓ ods_sla_credit: h=3 b=3 fp=true
+[23:14:57.995]   ✓ ods_shift_swap: h=3 b=3 fp=true
+[23:14:57.995]   ✓ ods_attrition_event: h=3 b=3 fp=true
+[23:14:57.995]   ✓ ods_rate_card: h=5 b=5 fp=true
+[23:14:57.995]   ✓ ods_program: h=5 b=5 fp=true
+[23:14:57.995]   ✓ ods_queue: h=5 b=5 fp=true
+[23:14:57.995]   ✓ dim_program: h=5 b=5 fp=true
+[23:14:57.995]   ✓ dim_queue: h=5 b=5 fp=true
+[23:14:57.996]   ✓ dim_shift: h=5 b=5 fp=true
+[23:14:57.996]   ✓ dim_disposition: h=6 b=6 fp=true
+[23:14:57.996] 
 FAILED tables:
-[23:09:24.475]   ✗ dim_org: h=5 b=0 fp=undefined one side empty
-[23:09:24.475]   ✗ fact_interaction: h=40 b=0 fp=undefined one side empty
-[23:09:24.475]   ✗ fact_csat_survey: h=15 b=0 fp=undefined one side empty
-[23:09:24.475]   ✗ fact_ivr_path: h=5 b=0 fp=undefined one side empty
-[23:09:24.478] === DONE ===
+[23:14:57.996]   ✗ dim_org: h=5 b=0 fp=undefined one side empty
+[23:14:57.996]   ✗ fact_interaction: h=40 b=0 fp=undefined one side empty
+[23:14:57.996]   ✗ fact_csat_survey: h=15 b=0 fp=undefined one side empty
+[23:14:57.996]   ✗ fact_ivr_path: h=5 b=0 fp=undefined one side empty
+[23:14:58.000] === DONE ===

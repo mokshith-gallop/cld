@@ -3,6 +3,22 @@
   "fingerprint": "d62fb84e91052f7e735a710e0a4c1d5a",
   "sample": [
     {
+      "schedule_id": 5,
+      "agent_id": 5,
+      "shift_id": 2,
+      "shift_code": "SH2",
+      "start_ts": {
+        "value": "2024-01-15T00:06:40.000Z"
+      },
+      "end_ts": {
+        "value": "2024-01-15T08:06:40.000Z"
+      },
+      "paid_minutes": 480,
+      "activity_code": "WORK",
+      "site_code": "BLR2",
+      "sched_date": "2024-01-15"
+    },
+    {
       "schedule_id": 2,
       "agent_id": 2,
       "shift_id": 2,
@@ -28,22 +44,6 @@
       },
       "end_ts": {
         "value": "2024-01-15T08:11:40.000Z"
-      },
-      "paid_minutes": 480,
-      "activity_code": "WORK",
-      "site_code": "BLR2",
-      "sched_date": "2024-01-15"
-    },
-    {
-      "schedule_id": 5,
-      "agent_id": 5,
-      "shift_id": 2,
-      "shift_code": "SH2",
-      "start_ts": {
-        "value": "2024-01-15T00:06:40.000Z"
-      },
-      "end_ts": {
-        "value": "2024-01-15T08:06:40.000Z"
       },
       "paid_minutes": 480,
       "activity_code": "WORK",
