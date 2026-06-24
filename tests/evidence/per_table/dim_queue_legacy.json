@@ -1,0 +1,51 @@
+{
+  "count": 5,
+  "fingerprint": "9761ae26e78d029d2f72b2f8f105870a",
+  "sample": [
+    {
+      "queue_sk": 5,
+      "queue_id": 5,
+      "queue_code": "Q005",
+      "queue_name": "Queue 5",
+      "program_id": 5,
+      "media_type": "CHAT",
+      "priority": 5
+    },
+    {
+      "queue_sk": 2,
+      "queue_id": 2,
+      "queue_code": "Q002",
+      "queue_name": "Queue 2",
+      "program_id": 2,
+      "media_type": "VOICE",
+      "priority": 2
+    },
+    {
+      "queue_sk": 3,
+      "queue_id": 3,
+      "queue_code": "Q003",
+      "queue_name": "Queue 3",
+      "program_id": 3,
+      "media_type": "VOICE",
+      "priority": 3
+    },
+    {
+      "queue_sk": 4,
+      "queue_id": 4,
+      "queue_code": "Q004",
+      "queue_name": "Queue 4",
+      "program_id": 4,
+      "media_type": "CHAT",
+      "priority": 4
+    },
+    {
+      "queue_sk": 1,
+      "queue_id": 1,
+      "queue_code": "Q001",
+      "queue_name": "Queue 1",
+      "program_id": 1,
+      "media_type": "VOICE",
+      "priority": 1
+    }
+  ]
+}

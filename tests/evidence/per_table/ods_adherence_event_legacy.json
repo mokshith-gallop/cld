@@ -1,0 +1,61 @@
+{
+  "count": 8,
+  "fingerprint": "952ab735c9151272b28eb56c886277f6",
+  "sample": [
+    {
+      "adherence_event_id": 2,
+      "agent_id": 2,
+      "schedule_id": 2,
+      "exception_type": "EARLY",
+      "start_ts": "2024-01-15 00:16:40",
+      "end_ts": "2024-01-15 00:26:40",
+      "exception_minutes": 10,
+      "approved_flag": false,
+      "event_date": "2024-01-15"
+    },
+    {
+      "adherence_event_id": 7,
+      "agent_id": 7,
+      "schedule_id": 7,
+      "exception_type": "LATE",
+      "start_ts": "2024-01-15 01:40:00",
+      "end_ts": "2024-01-15 01:50:00",
+      "exception_minutes": 10,
+      "approved_flag": true,
+      "event_date": "2024-01-15"
+    },
+    {
+      "adherence_event_id": 8,
+      "agent_id": 8,
+      "schedule_id": 8,
+      "exception_type": "EARLY",
+      "start_ts": "2024-01-15 01:56:40",
+      "end_ts": "2024-01-15 02:06:40",
+      "exception_minutes": 10,
+      "approved_flag": false,
+      "event_date": "2024-01-15"
+    },
+    {
+      "adherence_event_id": 1,
+      "agent_id": 1,
+      "schedule_id": 1,
+      "exception_type": "LATE",
+      "start_ts": "2024-01-15 00:00:00",
+      "end_ts": "2024-01-15 00:10:00",
+      "exception_minutes": 10,
+      "approved_flag": true,
+      "event_date": "2024-01-15"
+    },
+    {
+      "adherence_event_id": 6,
+      "agent_id": 6,
+      "schedule_id": 6,
+      "exception_type": "ABSENT",
+      "start_ts": "2024-01-15 01:23:20",
+      "end_ts": "2024-01-15 01:33:20",
+      "exception_minutes": 10,
+      "approved_flag": false,
+      "event_date": "2024-01-15"
+    }
+  ]
+}

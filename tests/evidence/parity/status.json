@@ -1,0 +1,13 @@
+{
+  "phase": "done",
+  "started": "2026-06-24T22:46:59.131Z",
+  "errors": [],
+  "completed": "2026-06-24T22:52:18.982Z",
+  "results": {
+    "total_scripts": 65,
+    "legacy_pass": 52,
+    "legacy_fail": 7,
+    "legacy_not_exercised": 6,
+    "legacy_skip": 3
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "count": 4,
+  "fingerprint": "677f2d38552c2ff742f383ccbe36fcaa",
+  "sample": [
+    {
+      "session_ref": "IVR-0003",
+      "client_code": "CLT1",
+      "menu_path_full": "main.billing.dispute > main.billing > main",
+      "hops": 3,
+      "contained_flag": true,
+      "exit_key": "3",
+      "duration_seconds": 10,
+      "date_key": 20240115
+    },
+    {
+      "session_ref": "IVR-0001",
+      "client_code": "CLT1",
+      "menu_path_full": "main.support > main.billing.dispute > main.billing > main",
+      "hops": 4,
+      "contained_flag": true,
+      "exit_key": "4",
+      "duration_seconds": 15,
+      "date_key": 20240115
+    },
+    {
+      "session_ref": "IVR-0002",
+      "client_code": "CLT1",
+      "menu_path_full": "main.support > main.billing.dispute > main.billing > main",
+      "hops": 4,
+      "contained_flag": true,
+      "exit_key": "4",
+      "duration_seconds": 15,
+      "date_key": 20240115
+    },
+    {
+      "session_ref": "IVR-0004",
+      "client_code": "CLT1",
+      "menu_path_full": "main.billing.dispute > main.billing > main",
+      "hops": 3,
+      "contained_flag": true,
+      "exit_key": "3",
+      "duration_seconds": 10,
+      "date_key": 20240115
+    }
+  ]
+}

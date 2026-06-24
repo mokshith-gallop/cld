@@ -1,0 +1,41 @@
+{
+  "count": 6,
+  "fingerprint": "8a48c969199ce56e93fddd84addd9ae9",
+  "sample": [
+    {
+      "disposition_sk": 1,
+      "disposition_code": "D01",
+      "disposition_desc": "Billing dispute - invoice charge",
+      "category": "BILLING",
+      "billable_flag": true
+    },
+    {
+      "disposition_sk": 2,
+      "disposition_code": "D02",
+      "disposition_desc": "Password reset locked account",
+      "category": "ACCESS",
+      "billable_flag": false
+    },
+    {
+      "disposition_sk": 3,
+      "disposition_code": "D03",
+      "disposition_desc": "Cancel service churn retention",
+      "category": "RETENTION",
+      "billable_flag": true
+    },
+    {
+      "disposition_sk": 4,
+      "disposition_code": "D04",
+      "disposition_desc": "[TECH] Hardware fault",
+      "category": "TECH",
+      "billable_flag": true
+    },
+    {
+      "disposition_sk": 5,
+      "disposition_code": "D05",
+      "disposition_desc": "[SVC] General inquiry ref#12345",
+      "category": "SERVICE",
+      "billable_flag": false
+    }
+  ]
+}

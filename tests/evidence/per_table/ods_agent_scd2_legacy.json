@@ -1,0 +1,71 @@
+{
+  "count": 14,
+  "fingerprint": "f1fdb9f30814b37628c3424511e0ddd5",
+  "sample": [
+    {
+      "agent_history_id": "c9239e45dc27868f5854e061eda3ba8a",
+      "agent_id": -1,
+      "employee_no": "EN1",
+      "org_unit_id": 1,
+      "job_grade": "L1",
+      "employment_type": "FTE",
+      "status": "ACTIVE",
+      "eff_from_ts": "2023-03-28 10:40:00",
+      "eff_to_ts": "9999-12-31 00:00:00",
+      "is_current": true,
+      "eff_from_year": 2023
+    },
+    {
+      "agent_history_id": "8610fa5e6357c4b16afa902bf547d5fc",
+      "agent_id": 1,
+      "employee_no": "E0001",
+      "org_unit_id": 1,
+      "job_grade": "L1",
+      "employment_type": "FTE",
+      "status": "ACTIVE",
+      "eff_from_ts": "2023-03-28 10:40:00",
+      "eff_to_ts": "2023-03-28 10:40:00",
+      "is_current": false,
+      "eff_from_year": 2023
+    },
+    {
+      "agent_history_id": "8610fa5e6357c4b16afa902bf547d5fc",
+      "agent_id": 1,
+      "employee_no": "E0001",
+      "org_unit_id": 1,
+      "job_grade": "L1",
+      "employment_type": "FTE",
+      "status": "ACTIVE",
+      "eff_from_ts": "2023-03-28 10:40:00",
+      "eff_to_ts": "9999-12-31 00:00:00",
+      "is_current": true,
+      "eff_from_year": 2023
+    },
+    {
+      "agent_history_id": "c599105c502763d42039b8ece39ec43b",
+      "agent_id": 2,
+      "employee_no": "E0002",
+      "org_unit_id": 2,
+      "job_grade": "L1",
+      "employment_type": "FTE",
+      "status": "ACTIVE",
+      "eff_from_ts": "2023-03-29 10:40:00",
+      "eff_to_ts": "2023-03-29 10:40:00",
+      "is_current": false,
+      "eff_from_year": 2023
+    },
+    {
+      "agent_history_id": "c599105c502763d42039b8ece39ec43b",
+      "agent_id": 2,
+      "employee_no": "E0002",
+      "org_unit_id": 2,
+      "job_grade": "L1",
+      "employment_type": "FTE",
+      "status": "ACTIVE",
+      "eff_from_ts": "2023-03-29 10:40:00",
+      "eff_to_ts": "9999-12-31 00:00:00",
+      "is_current": true,
+      "eff_from_year": 2023
+    }
+  ]
+}

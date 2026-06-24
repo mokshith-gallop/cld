@@ -1,0 +1,51 @@
+{
+  "count": 5,
+  "fingerprint": "9790a89deea758fc126665d79b29e1b5",
+  "sample": [
+    {
+      "agent_sk": -1,
+      "state_code": "READY",
+      "state_seconds": 900,
+      "occurrence_count": 3,
+      "first_state_ts": "2024-01-15 00:30:00",
+      "last_state_ts": "2024-01-15 02:15:00",
+      "date_key": 20240115
+    },
+    {
+      "agent_sk": -1,
+      "state_code": "AUX_BREAK",
+      "state_seconds": 900,
+      "occurrence_count": 3,
+      "first_state_ts": "2024-01-15 00:40:00",
+      "last_state_ts": "2024-01-15 02:25:00",
+      "date_key": 20240115
+    },
+    {
+      "agent_sk": -1,
+      "state_code": "ACW",
+      "state_seconds": 900,
+      "occurrence_count": 3,
+      "first_state_ts": "2024-01-15 00:20:00",
+      "last_state_ts": "2024-01-15 02:05:00",
+      "date_key": 20240115
+    },
+    {
+      "agent_sk": -1,
+      "state_code": "TALK",
+      "state_seconds": 900,
+      "occurrence_count": 3,
+      "first_state_ts": "2024-01-15 00:00:00",
+      "last_state_ts": "2024-01-15 01:45:00",
+      "date_key": 20240115
+    },
+    {
+      "agent_sk": -1,
+      "state_code": "HOLD",
+      "state_seconds": 900,
+      "occurrence_count": 3,
+      "first_state_ts": "2024-01-15 00:10:00",
+      "last_state_ts": "2024-01-15 01:55:00",
+      "date_key": 20240115
+    }
+  ]
+}

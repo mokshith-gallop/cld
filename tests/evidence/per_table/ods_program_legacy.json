@@ -1,0 +1,71 @@
+{
+  "count": 5,
+  "fingerprint": "a53fe6f4f0506b2aa64839795163aea7",
+  "sample": [
+    {
+      "program_id": 3,
+      "client_id": 3,
+      "program_code": "PRG3",
+      "program_name": "Program 3",
+      "line_of_business": "SUPPORT",
+      "channel_mix": "VOICE",
+      "site_code": "MTY3",
+      "status": "ACTIVE",
+      "go_live_ts": "2023-07-22 05:00:00",
+      "updated_ts": "2023-11-14 22:30:00",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "program_id": 2,
+      "client_id": 2,
+      "program_code": "PRG2",
+      "program_name": "Program 2",
+      "line_of_business": "SUPPORT",
+      "channel_mix": "VOICE",
+      "site_code": "BLR2",
+      "status": "ACTIVE",
+      "go_live_ts": "2023-07-22 04:43:20",
+      "updated_ts": "2023-11-14 22:21:40",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "program_id": 4,
+      "client_id": 1,
+      "program_code": "PRG4",
+      "program_name": "Program 4",
+      "line_of_business": "SUPPORT",
+      "channel_mix": "VOICE",
+      "site_code": "MNL1",
+      "status": "ACTIVE",
+      "go_live_ts": "2023-07-22 05:16:40",
+      "updated_ts": "2023-11-14 22:38:20",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "program_id": 1,
+      "client_id": 1,
+      "program_code": "PRG1",
+      "program_name": "Program 1",
+      "line_of_business": "SUPPORT",
+      "channel_mix": "VOICE",
+      "site_code": "MNL1",
+      "status": "ACTIVE",
+      "go_live_ts": "2023-07-22 04:26:40",
+      "updated_ts": "2023-11-14 22:13:20",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "program_id": 5,
+      "client_id": 2,
+      "program_code": "PRG5",
+      "program_name": "Program 5",
+      "line_of_business": "SUPPORT",
+      "channel_mix": "VOICE",
+      "site_code": "BLR2",
+      "status": "ACTIVE",
+      "go_live_ts": "2023-07-22 05:33:20",
+      "updated_ts": "2023-11-14 22:46:40",
+      "snapshot_date": "2024-01-15"
+    }
+  ]
+}

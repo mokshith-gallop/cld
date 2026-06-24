@@ -1,0 +1,61 @@
+{
+  "count": 5,
+  "fingerprint": "d62398a6c65ebd15a08a2dcdacea9554",
+  "sample": [
+    {
+      "timesheet_id": 1,
+      "agent_id": 1,
+      "work_date": "2024-01-15",
+      "program_id": 1,
+      "billable_minutes": 400,
+      "nonbillable_minutes": 60,
+      "approved_flag": true,
+      "last_change_ts": "2024-01-15 00:00:00",
+      "work_month": "2024-01"
+    },
+    {
+      "timesheet_id": 4,
+      "agent_id": 4,
+      "work_date": "2024-01-15",
+      "program_id": 4,
+      "billable_minutes": 430,
+      "nonbillable_minutes": 60,
+      "approved_flag": true,
+      "last_change_ts": "2024-01-15 00:00:00",
+      "work_month": "2024-01"
+    },
+    {
+      "timesheet_id": 3,
+      "agent_id": 3,
+      "work_date": "2024-01-15",
+      "program_id": 3,
+      "billable_minutes": 420,
+      "nonbillable_minutes": 60,
+      "approved_flag": true,
+      "last_change_ts": "2024-01-15 00:00:00",
+      "work_month": "2024-01"
+    },
+    {
+      "timesheet_id": 5,
+      "agent_id": 5,
+      "work_date": "2024-01-15",
+      "program_id": 5,
+      "billable_minutes": 440,
+      "nonbillable_minutes": 60,
+      "approved_flag": true,
+      "last_change_ts": "2024-01-15 00:00:00",
+      "work_month": "2024-01"
+    },
+    {
+      "timesheet_id": 2,
+      "agent_id": 2,
+      "work_date": "2024-01-15",
+      "program_id": 2,
+      "billable_minutes": 410,
+      "nonbillable_minutes": 60,
+      "approved_flag": true,
+      "last_change_ts": "2024-01-15 00:00:00",
+      "work_month": "2024-01"
+    }
+  ]
+}

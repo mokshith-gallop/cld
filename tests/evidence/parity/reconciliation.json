@@ -1,0 +1,265 @@
+{
+  "summary": {
+    "total_scripts": 65,
+    "legacy_pass": 52,
+    "legacy_fail": 7,
+    "legacy_not_exercised": 6,
+    "legacy_skip": 3
+  },
+  "tables": {
+    "24-delta-merge-timesheet.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 10,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "25-delta-merge-payroll-adjustment.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 3,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "26-delta-merge-sla-credit.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 3,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "27-delta-merge-callback-request.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 3,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "28-delta-merge-shift-swap.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 3,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "29-delta-merge-ticket-worklog.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "30-delta-merge-attrition-event.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 3,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "31-delta-merge-rate-card.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "32-scd2-agent.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 25,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "33-scd2-agent-skill.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 10,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "34-scd2-agent-assignment.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "35-acid-merge-client.sql": {
+      "status": "NOT_EXERCISED",
+      "reason": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_client_acid that is not transactional"
+    },
+    "36-acid-merge-agent.sql": {
+      "status": "NOT_EXERCISED",
+      "reason": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_agent_acid that is not transactional"
+    },
+    "37-acid-merge-ticket.sql": {
+      "status": "NOT_EXERCISED",
+      "reason": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_ticket_acid that is not transactional"
+    },
+    "38-acid-merge-invoice.sql": {
+      "status": "NOT_EXERCISED",
+      "reason": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_invoice_acid that is not transactional"
+    },
+    "39-acid-update-ticket-bulk-close.sql": {
+      "status": "NOT_EXERCISED",
+      "reason": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_ticket_acid that is not transactional"
+    },
+    "40-acid-delete-gdpr-purge.sql": {
+      "status": "NOT_EXERCISED",
+      "reason": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_agent_acid that is not transactional"
+    },
+    "09-cleanse-program.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "10-cleanse-contract.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "11-cleanse-contract-line.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 10,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "12-cleanse-org-unit.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "13-cleanse-queue.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "14-cleanse-schedule.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 0,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "15-cleanse-adherence-event.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 15,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "16-cleanse-call.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 30,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "17-cleanse-ivr-session.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "19-cleanse-email-interaction.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 10,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "20-cleanse-survey-response.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 15,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "42-load-dim-agent.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 0,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "43-load-dim-client.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 0,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "44-load-dim-program.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "45-load-dim-queue.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "46-load-dim-site.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 0,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "47-load-dim-shift.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "48-load-dim-org.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "49-load-dim-disposition.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 6,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "50-load-fact-interaction.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 40,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "51-load-fact-agent-activity.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "53-load-fact-csat-survey.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 15,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "54-load-fact-qa-evaluation.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 0,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "55-load-fact-billing-line.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 0,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "56-load-fact-adherence-daily.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 0,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "57-load-fact-ticket.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 0,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "58-load-fact-ivr-path.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "59-agg-agent-daily.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 0,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "61-agg-program-monthly.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 10,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "62-agg-queue-hourly.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 0,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "64-agg-billing-monthly.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 0,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "65-agg-site-daily.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 0,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "93-close-billing-month.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 0,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "96-intraday-queue-hourly.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 0,
+      "note": "Legacy script executed successfully on Hive"
+    },
+    "97-intraday-agent-state.sql": {
+      "status": "HIVE_PASS",
+      "hive_count": 5,
+      "note": "Legacy script executed successfully on Hive"
+    }
+  }
+}

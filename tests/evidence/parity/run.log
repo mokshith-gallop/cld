@@ -3,3 +3,77 @@
 [22:51:46.345]   ✓ 27-delta-merge-callback-request.sql (892ms) → 3 rows
 [22:51:47.406]   ✓ 28-delta-merge-shift-swap.sql (1061ms) → 3 rows
 [22:51:48.196]   ✓ 29-delta-merge-ticket-worklog.sql (789ms) → 5 rows
+[22:51:49.029]   ✓ 30-delta-merge-attrition-event.sql (833ms) → 3 rows
+[22:51:49.875]   ✓ 31-delta-merge-rate-card.sql (846ms) → 5 rows
+[22:51:51.084]   ✓ 32-scd2-agent.sql (1208ms) → 25 rows
+[22:51:52.081]   ✓ 33-scd2-agent-skill.sql (997ms) → 10 rows
+[22:51:53.228]   ✓ 34-scd2-agent-assignment.sql (1146ms) → 5 rows
+[22:51:53.287]   ⊘ 35-acid-merge-client.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:51:53.338]   ⊘ 36-acid-merge-agent.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:51:53.407]   ⊘ 37-acid-merge-ticket.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:51:53.459]   ⊘ 38-acid-merge-invoice.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:51:53.509]   ⊘ 39-acid-update-ticket-bulk-close.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:51:53.552]   ⊘ 40-acid-delete-gdpr-purge.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:51:54.116]   ✓ 09-cleanse-program.sql (563ms) → 5 rows
+[22:51:54.678]   ✓ 10-cleanse-contract.sql (561ms) → 5 rows
+[22:51:55.199]   ✓ 11-cleanse-contract-line.sql (520ms) → 10 rows
+[22:51:55.751]   ✓ 12-cleanse-org-unit.sql (551ms) → 5 rows
+[22:51:56.260]   ✓ 13-cleanse-queue.sql (509ms) → 5 rows
+[22:51:56.951]   ✓ 14-cleanse-schedule.sql (690ms) → 0 rows
+[22:51:57.604]   ✓ 15-cleanse-adherence-event.sql (652ms) → 15 rows
+[22:51:58.556]   ✓ 16-cleanse-call.sql (951ms) → 30 rows
+[22:51:59.270]   ✓ 17-cleanse-ivr-session.sql (714ms) → 5 rows
+[22:51:59.289]   ✗ 18-cleanse-chat-session.sql: Query 884cf9ced2ec245d:a48d1cc300000000 failed:
+AnalysisException: Could not resolve table reference
+[22:52:00.015]   ✓ 19-cleanse-email-interaction.sql (726ms) → 10 rows
+[22:52:00.715]   ✓ 20-cleanse-survey-response.sql (700ms) → 15 rows
+[22:52:00.738]   ✗ 21-cleanse-qa-evaluation.sql: Query 1045d86f3a4f2d8a:30c3d73900000000 failed:
+AnalysisException: Could not resolve table reference
+[22:52:00.763]   ✗ 22-cleanse-interaction.sql: Query 1e4ed2a1be5680b7:42b92b8c00000000 failed:
+AnalysisException: Possible loss of precision for ta
+[22:52:00.783]   ✗ 23-cleanse-dialer-attempt.sql: Query 9a46880a1753c95f:e50f709500000000 failed:
+AnalysisException: Possible loss of precision for ta
+[22:52:01.259]   ✓ 42-load-dim-agent.sql (476ms) → 0 rows
+[22:52:01.896]   ✓ 43-load-dim-client.sql (635ms) → 0 rows
+[22:52:02.465]   ✓ 44-load-dim-program.sql (569ms) → 5 rows
+[22:52:02.619]   ✓ 45-load-dim-queue.sql (153ms) → 5 rows
+[22:52:02.743]   ✓ 46-load-dim-site.sql (123ms) → 0 rows
+[22:52:03.230]   ✓ 47-load-dim-shift.sql (487ms) → 5 rows
+[22:52:03.776]   ✓ 48-load-dim-org.sql (545ms) → 5 rows
+[22:52:04.358]   ✓ 49-load-dim-disposition.sql (582ms) → 6 rows
+[22:52:05.146]   ✓ 50-load-fact-interaction.sql (787ms) → 40 rows
+[22:52:05.804]   ✓ 51-load-fact-agent-activity.sql (657ms) → 5 rows
+[22:52:05.825]   ✗ 52-load-fact-queue-interval.sql: Query 6946628f4ea3ab85:84f463c100000000 failed:
+AnalysisException: aggregate function must not conta
+[22:52:06.392]   ✓ 53-load-fact-csat-survey.sql (567ms) → 15 rows
+[22:52:06.854]   ✓ 54-load-fact-qa-evaluation.sql (461ms) → 0 rows
+[22:52:07.466]   ✓ 55-load-fact-billing-line.sql (612ms) → 0 rows
+[22:52:08.709]   ✓ 56-load-fact-adherence-daily.sql (1243ms) → 0 rows
+[22:52:09.466]   ✓ 57-load-fact-ticket.sql (756ms) → 0 rows
+[22:52:09.858]   ✓ 58-load-fact-ivr-path.sql (392ms) → 5 rows
+[22:52:10.971]   ✓ 59-agg-agent-daily.sql (1113ms) → 0 rows
+[22:52:11.276]   ✗ 60-agg-agent-weekly.sql: The operation failed due to an error
+[22:52:12.581]   ✓ 61-agg-program-monthly.sql (1305ms) → 10 rows
+[22:52:13.493]   ✓ 62-agg-queue-hourly.sql (912ms) → 0 rows
+[22:52:13.663]   ✗ 63-agg-csat-rollup-monthly.sql: Error while compiling statement: FAILED: SemanticException MetaException(message:java.lang.ClassNotF
+[22:52:14.329]   ✓ 64-agg-billing-monthly.sql (666ms) → 0 rows
+[22:52:15.442]   ✓ 65-agg-site-daily.sql (1112ms) → 0 rows
+[22:52:15.766]   ✓ 74-dq-rowcount-staging-vs-source.sql (324ms) → -1 rows
+[22:52:16.154]   ✓ 75-dq-roster-vs-hr.sql (388ms) → -1 rows
+[22:52:16.882]   ✓ 76-dq-interaction-export-recon.sql (728ms) → -1 rows
+[22:52:17.488]   ✓ 77-dq-fk-orphan-check.sql (605ms) → -1 rows
+[22:52:17.693]   ✓ 78-dq-epoch-range-sanity.sql (204ms) → -1 rows
+[22:52:18.120]   ✓ 79-dq-partition-completeness.sql (426ms) → -1 rows
+[22:52:18.320]   ✓ 93-close-billing-month.sql (199ms) → 0 rows
+[22:52:18.535]   ✓ 96-intraday-queue-hourly.sql (214ms) → 0 rows
+[22:52:18.981]   ✓ 97-intraday-agent-state.sql (445ms) → 5 rows
+[22:52:18.981]   Legacy: 52 pass, 7 fail, 6 not-exercised, 3 skip
+[22:52:18.981] 
+=== PHASE 5: Run BQ scripts ===
+[22:52:18.981] 
+=== PHASE 6: Compare ===
+[22:52:18.982] 
+=== SUMMARY ===
+[22:52:18.982] Legacy: 52 pass, 7 fail, 6 not-exercised
+[22:52:18.982] Tables with data: 46
+[22:52:19.019] === DONE ===

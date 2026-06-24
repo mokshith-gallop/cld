@@ -1,0 +1,16 @@
+{
+  "count": 1,
+  "fingerprint": "0fb24864a75b9ef5b4fbfd8fda34af7e",
+  "sample": [
+    {
+      "swap_id": 1,
+      "requesting_agent_id": 1,
+      "accepting_agent_id": 2,
+      "schedule_id": 1,
+      "swap_date": "2024-01-15",
+      "status": "APPROVED",
+      "last_change_ts": "2024-01-15 00:00:00",
+      "swap_month": "2024-01"
+    }
+  ]
+}

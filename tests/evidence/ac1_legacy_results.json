@@ -2,291 +2,289 @@
   {
     "script": "24-delta-merge-timesheet.sql",
     "status": "PASS",
-    "ms": 1024,
-    "count": 10
+    "rows": 5,
+    "ms": 396
   },
   {
     "script": "25-delta-merge-payroll-adjustment.sql",
     "status": "PASS",
-    "ms": 853,
-    "count": 3
+    "rows": 2,
+    "ms": 878
   },
   {
     "script": "26-delta-merge-sla-credit.sql",
     "status": "PASS",
-    "ms": 712,
-    "count": 3
+    "rows": 2,
+    "ms": 829
   },
   {
     "script": "27-delta-merge-callback-request.sql",
     "status": "PASS",
-    "ms": 892,
-    "count": 3
+    "rows": 2,
+    "ms": 890
   },
   {
     "script": "28-delta-merge-shift-swap.sql",
     "status": "PASS",
-    "ms": 1061,
-    "count": 3
+    "rows": 1,
+    "ms": 738
   },
   {
     "script": "29-delta-merge-ticket-worklog.sql",
     "status": "PASS",
-    "ms": 789,
-    "count": 5
+    "rows": 3,
+    "ms": 860
   },
   {
     "script": "30-delta-merge-attrition-event.sql",
     "status": "PASS",
-    "ms": 833,
-    "count": 3
+    "rows": 1,
+    "ms": 797
   },
   {
     "script": "31-delta-merge-rate-card.sql",
     "status": "PASS",
-    "ms": 846,
-    "count": 5
+    "rows": 3,
+    "ms": 639
   },
   {
     "script": "32-scd2-agent.sql",
     "status": "PASS",
-    "ms": 1208,
-    "count": 25
+    "rows": 14,
+    "ms": 1174
   },
   {
     "script": "33-scd2-agent-skill.sql",
     "status": "PASS",
-    "ms": 997,
-    "count": 10
+    "rows": 6,
+    "ms": 929
   },
   {
     "script": "34-scd2-agent-assignment.sql",
     "status": "PASS",
-    "ms": 1146,
-    "count": 5
+    "rows": 0,
+    "ms": 727
   },
   {
     "script": "35-acid-merge-client.sql",
     "status": "NOT_EXERCISED",
-    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_client_acid that is not transactional"
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_ac1.ods_client_acid that is not transactional"
   },
   {
     "script": "36-acid-merge-agent.sql",
     "status": "NOT_EXERCISED",
-    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_agent_acid that is not transactional"
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_ac1.ods_agent_acid that is not transactional"
   },
   {
     "script": "37-acid-merge-ticket.sql",
     "status": "NOT_EXERCISED",
-    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_ticket_acid that is not transactional"
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_ac1.ods_ticket_acid that is not transactional"
   },
   {
     "script": "38-acid-merge-invoice.sql",
     "status": "NOT_EXERCISED",
-    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_invoice_acid that is not transactional"
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_ac1.ods_invoice_acid that is not transactional"
   },
   {
     "script": "39-acid-update-ticket-bulk-close.sql",
     "status": "NOT_EXERCISED",
-    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_ticket_acid that is not transactional"
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_ac1.ods_ticket_acid that is not transactional"
   },
   {
     "script": "40-acid-delete-gdpr-purge.sql",
     "status": "NOT_EXERCISED",
-    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_xp.ods_agent_acid that is not transactional"
+    "error": "Error while compiling statement: FAILED: SemanticException [Error 10297]: Attempt to do update or delete on table qa_ac1.ods_agent_acid that is not transactional"
   },
   {
     "script": "09-cleanse-program.sql",
     "status": "PASS",
-    "ms": 563,
-    "count": 5
+    "rows": 5,
+    "ms": 273
   },
   {
     "script": "10-cleanse-contract.sql",
     "status": "PASS",
-    "ms": 561,
-    "count": 5
+    "rows": 3,
+    "ms": 576
   },
   {
     "script": "11-cleanse-contract-line.sql",
     "status": "PASS",
-    "ms": 520,
-    "count": 10
+    "rows": 5,
+    "ms": 263
   },
   {
     "script": "12-cleanse-org-unit.sql",
     "status": "PASS",
-    "ms": 551,
-    "count": 5
+    "rows": 5,
+    "ms": 256
   },
   {
     "script": "13-cleanse-queue.sql",
     "status": "PASS",
-    "ms": 509,
-    "count": 5
+    "rows": 5,
+    "ms": 259
   },
   {
     "script": "14-cleanse-schedule.sql",
     "status": "PASS",
-    "ms": 690,
-    "count": 0
+    "rows": 10,
+    "ms": 304
   },
   {
     "script": "15-cleanse-adherence-event.sql",
     "status": "PASS",
-    "ms": 652,
-    "count": 15
+    "rows": 8,
+    "ms": 261
   },
   {
     "script": "16-cleanse-call.sql",
     "status": "PASS",
-    "ms": 951,
-    "count": 30
+    "rows": 18,
+    "ms": 347
   },
   {
     "script": "17-cleanse-ivr-session.sql",
     "status": "PASS",
-    "ms": 714,
-    "count": 5
+    "rows": 4,
+    "ms": 272
   },
   {
     "script": "18-cleanse-chat-session.sql",
     "status": "FAIL",
-    "error": "Query 884cf9ced2ec245d:a48d1cc300000000 failed:\nAnalysisException: Could not resolve table reference: 't.messages'\n\n"
+    "error": "Query 3e4a42961268b90c:39f5c14900000000 failed:\nAnalysisException: Could not resolve table reference: 't.messages'\n\n"
   },
   {
     "script": "19-cleanse-email-interaction.sql",
-    "status": "PASS",
-    "ms": 726,
-    "count": 10
+    "status": "FAIL",
+    "error": "Query c6497b00aab80ed2:1ae42d1d00000000 failed:\nAnalysisException: Could not resolve column/field reference: 's.load_date'\n\n"
   },
   {
     "script": "20-cleanse-survey-response.sql",
-    "status": "PASS",
-    "ms": 700,
-    "count": 15
+    "status": "FAIL",
+    "error": "Query ee4a555122444046:88796ff900000000 failed:\nAnalysisException: Could not resolve column/field reference: 's.load_date'\n\n"
   },
   {
     "script": "21-cleanse-qa-evaluation.sql",
     "status": "FAIL",
-    "error": "Query 1045d86f3a4f2d8a:30c3d73900000000 failed:\nAnalysisException: Could not resolve table reference: 'f.sections'\n\n"
+    "error": "Query 39498280a9b79a94:405f320000000000 failed:\nAnalysisException: Could not resolve table reference: 'f.sections'\n\n"
   },
   {
     "script": "22-cleanse-interaction.sql",
     "status": "FAIL",
-    "error": "Query 1e4ed2a1be5680b7:42b92b8c00000000 failed:\nAnalysisException: Possible loss of precision for target table 'qa_xp.ods_interaction'.\nExpression 'u.handle_seconds' (type: BIGINT) would need to be ca"
+    "error": "Query 434f59b8f4406914:6a071c0600000000 failed:\nAnalysisException: Possible loss of precision for target table 'qa_ac1.ods_interaction'.\nExpression 'u.handle_seconds' (type: BIGINT) would need to be c"
   },
   {
     "script": "23-cleanse-dialer-attempt.sql",
     "status": "FAIL",
-    "error": "Query 9a46880a1753c95f:e50f709500000000 failed:\nAnalysisException: Possible loss of precision for target table 'qa_xp.ods_dialer_attempt'.\nExpression 's.talk_seconds' (type: BIGINT) would need to be c"
+    "error": "Query 9b435647de2a3928:c0b48e3f00000000 failed:\nAnalysisException: Could not resolve column/field reference: 's.load_date'\n\n"
   },
   {
     "script": "42-load-dim-agent.sql",
     "status": "PASS",
-    "ms": 476,
-    "count": 0
+    "rows": 0,
+    "ms": 208
   },
   {
     "script": "43-load-dim-client.sql",
     "status": "PASS",
-    "ms": 635,
-    "count": 0
+    "rows": 0,
+    "ms": 206
   },
   {
     "script": "44-load-dim-program.sql",
     "status": "PASS",
-    "ms": 569,
-    "count": 5
+    "rows": 5,
+    "ms": 216
   },
   {
     "script": "45-load-dim-queue.sql",
     "status": "PASS",
-    "ms": 153,
-    "count": 5
+    "rows": 5,
+    "ms": 173
   },
   {
     "script": "46-load-dim-site.sql",
     "status": "PASS",
-    "ms": 123,
-    "count": 0
+    "rows": 0,
+    "ms": 139
   },
   {
     "script": "47-load-dim-shift.sql",
     "status": "PASS",
-    "ms": 487,
-    "count": 5
+    "rows": 3,
+    "ms": 535
   },
   {
     "script": "48-load-dim-org.sql",
     "status": "PASS",
-    "ms": 545,
-    "count": 5
+    "rows": 5,
+    "ms": 266
   },
   {
     "script": "49-load-dim-disposition.sql",
     "status": "PASS",
-    "ms": 582,
-    "count": 6
+    "rows": 6,
+    "ms": 189
   },
   {
     "script": "50-load-fact-interaction.sql",
     "status": "PASS",
-    "ms": 787,
-    "count": 40
+    "rows": 0,
+    "ms": 771
   },
   {
     "script": "51-load-fact-agent-activity.sql",
     "status": "PASS",
-    "ms": 657,
-    "count": 5
+    "rows": 5,
+    "ms": 323
   },
   {
     "script": "52-load-fact-queue-interval.sql",
     "status": "FAIL",
-    "error": "Query 6946628f4ea3ab85:84f463c100000000 failed:\nAnalysisException: aggregate function must not contain aggregate parameters: sum(CASE WHEN NOT c.abandoned_flag AND c.ring_seconds <= coalesce(max(t.sl_"
+    "error": "Query 1d47cc92cc572401:d98113e400000000 failed:\nAnalysisException: aggregate function must not contain aggregate parameters: sum(CASE WHEN NOT c.abandoned_flag AND c.ring_seconds <= coalesce(max(t.sl_"
   },
   {
     "script": "53-load-fact-csat-survey.sql",
     "status": "PASS",
-    "ms": 567,
-    "count": 15
+    "rows": 0,
+    "ms": 473
   },
   {
     "script": "54-load-fact-qa-evaluation.sql",
     "status": "PASS",
-    "ms": 461,
-    "count": 0
+    "rows": 0,
+    "ms": 493
   },
   {
     "script": "55-load-fact-billing-line.sql",
     "status": "PASS",
-    "ms": 612,
-    "count": 0
+    "rows": 0,
+    "ms": 257
   },
   {
     "script": "56-load-fact-adherence-daily.sql",
     "status": "PASS",
-    "ms": 1243,
-    "count": 0
+    "rows": 1,
+    "ms": 1153
   },
   {
     "script": "57-load-fact-ticket.sql",
     "status": "PASS",
-    "ms": 756,
-    "count": 0
+    "rows": 0,
+    "ms": 278
   },
   {
     "script": "58-load-fact-ivr-path.sql",
     "status": "PASS",
-    "ms": 392,
-    "count": 5
+    "rows": 4,
+    "ms": 215
   },
   {
     "script": "59-agg-agent-daily.sql",
     "status": "PASS",
-    "ms": 1113,
-    "count": 0
+    "rows": 0,
+    "ms": 1191
   },
   {
     "script": "60-agg-agent-weekly.sql",
@@ -296,14 +294,14 @@
   {
     "script": "61-agg-program-monthly.sql",
     "status": "PASS",
-    "ms": 1305,
-    "count": 10
+    "rows": 1,
+    "ms": 592
   },
   {
     "script": "62-agg-queue-hourly.sql",
     "status": "PASS",
-    "ms": 912,
-    "count": 0
+    "rows": 0,
+    "ms": 653
   },
   {
     "script": "63-agg-csat-rollup-monthly.sql",
@@ -313,67 +311,67 @@
   {
     "script": "64-agg-billing-monthly.sql",
     "status": "PASS",
-    "ms": 666,
-    "count": 0
+    "rows": 0,
+    "ms": 1059
   },
   {
     "script": "65-agg-site-daily.sql",
     "status": "PASS",
-    "ms": 1112,
-    "count": 0
+    "rows": 0,
+    "ms": 226
   },
   {
     "script": "74-dq-rowcount-staging-vs-source.sql",
     "status": "PASS",
-    "ms": 324,
-    "count": -1
+    "rows": -1,
+    "ms": 113
   },
   {
     "script": "75-dq-roster-vs-hr.sql",
     "status": "PASS",
-    "ms": 388,
-    "count": -1
+    "rows": -1,
+    "ms": 213
   },
   {
     "script": "76-dq-interaction-export-recon.sql",
     "status": "PASS",
-    "ms": 728,
-    "count": -1
+    "rows": -1,
+    "ms": 304
   },
   {
     "script": "77-dq-fk-orphan-check.sql",
     "status": "PASS",
-    "ms": 605,
-    "count": -1
+    "rows": -1,
+    "ms": 308
   },
   {
     "script": "78-dq-epoch-range-sanity.sql",
     "status": "PASS",
-    "ms": 204,
-    "count": -1
+    "rows": -1,
+    "ms": 124
   },
   {
     "script": "79-dq-partition-completeness.sql",
     "status": "PASS",
-    "ms": 426,
-    "count": -1
+    "rows": -1,
+    "ms": 110
   },
   {
     "script": "93-close-billing-month.sql",
     "status": "PASS",
-    "ms": 199,
-    "count": 0
+    "rows": 0,
+    "ms": 228
   },
   {
     "script": "96-intraday-queue-hourly.sql",
     "status": "PASS",
-    "ms": 214,
-    "count": 0
+    "rows": 0,
+    "ms": 235
   },
   {
     "script": "97-intraday-agent-state.sql",
     "status": "PASS",
-    "ms": 445,
-    "count": 5
+    "rows": 5,
+    "ms": 217
   }
 ]

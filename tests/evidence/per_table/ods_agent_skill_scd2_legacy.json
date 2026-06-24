@@ -1,0 +1,66 @@
+{
+  "count": 6,
+  "fingerprint": "818ae886577659289705b972231000a6",
+  "sample": [
+    {
+      "agent_skill_history_id": "f54880731d55d835ceaaec78737853ba",
+      "agent_id": 1,
+      "skill_id": 1,
+      "skill_code": "SK1",
+      "proficiency": 3,
+      "certified": true,
+      "eff_from_ts": "2023-07-22 04:26:40",
+      "eff_to_ts": "9999-12-31 00:00:00",
+      "is_current": true,
+      "eff_from_year": 2023
+    },
+    {
+      "agent_skill_history_id": "4101e9b90e447c9c863c67859a6ee195",
+      "agent_id": 2,
+      "skill_id": 2,
+      "skill_code": "SK2",
+      "proficiency": 4,
+      "certified": false,
+      "eff_from_ts": "2023-07-22 04:26:40",
+      "eff_to_ts": "9999-12-31 00:00:00",
+      "is_current": true,
+      "eff_from_year": 2023
+    },
+    {
+      "agent_skill_history_id": "e5bc8fd01e325abea416a15fc759b925",
+      "agent_id": 3,
+      "skill_id": 3,
+      "skill_code": "SK3",
+      "proficiency": 5,
+      "certified": true,
+      "eff_from_ts": "2023-07-22 04:26:40",
+      "eff_to_ts": "9999-12-31 00:00:00",
+      "is_current": true,
+      "eff_from_year": 2023
+    },
+    {
+      "agent_skill_history_id": "00b541e07a2e6348f22b0340c2ff45c4",
+      "agent_id": 4,
+      "skill_id": 1,
+      "skill_code": "SK1",
+      "proficiency": 3,
+      "certified": false,
+      "eff_from_ts": "2023-07-22 04:26:40",
+      "eff_to_ts": "9999-12-31 00:00:00",
+      "is_current": true,
+      "eff_from_year": 2023
+    },
+    {
+      "agent_skill_history_id": "925a2aa138f0eb9d0d316dbc17907d3e",
+      "agent_id": 5,
+      "skill_id": 2,
+      "skill_code": "SK2",
+      "proficiency": 4,
+      "certified": true,
+      "eff_from_ts": "2023-07-22 04:26:40",
+      "eff_to_ts": "9999-12-31 00:00:00",
+      "is_current": true,
+      "eff_from_year": 2023
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "count": 2,
+  "fingerprint": "e24486ba618730cbf0fcc9b74b6f264c",
+  "sample": [
+    {
+      "callback_id": 1,
+      "call_id": 1,
+      "queue_id": 1,
+      "requested_ts": "2024-01-15 00:00:00",
+      "scheduled_ts": "2024-01-15 01:00:00",
+      "completed_flag": true,
+      "last_change_ts": "2024-01-15 00:00:00",
+      "event_date": "2024-01-15"
+    },
+    {
+      "callback_id": 2,
+      "call_id": 2,
+      "queue_id": 2,
+      "requested_ts": "2024-01-15 00:01:40",
+      "scheduled_ts": "2024-01-15 01:01:40",
+      "completed_flag": false,
+      "last_change_ts": "2024-01-15 00:00:00",
+      "event_date": "2024-01-15"
+    }
+  ]
+}

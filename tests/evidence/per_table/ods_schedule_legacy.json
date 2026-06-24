@@ -1,0 +1,66 @@
+{
+  "count": 10,
+  "fingerprint": "d62fb84e91052f7e735a710e0a4c1d5a",
+  "sample": [
+    {
+      "schedule_id": 1,
+      "agent_id": 1,
+      "shift_id": 1,
+      "shift_code": "SH1",
+      "start_ts": "2024-01-15 00:00:00",
+      "end_ts": "2024-01-15 08:00:00",
+      "paid_minutes": 480,
+      "activity_code": "WORK",
+      "site_code": "MNL1",
+      "sched_date": "2024-01-15"
+    },
+    {
+      "schedule_id": 4,
+      "agent_id": 4,
+      "shift_id": 1,
+      "shift_code": "SH1",
+      "start_ts": "2024-01-15 00:05:00",
+      "end_ts": "2024-01-15 08:05:00",
+      "paid_minutes": 480,
+      "activity_code": "WORK",
+      "site_code": "MNL1",
+      "sched_date": "2024-01-15"
+    },
+    {
+      "schedule_id": 7,
+      "agent_id": 7,
+      "shift_id": 1,
+      "shift_code": "SH1",
+      "start_ts": "2024-01-15 00:10:00",
+      "end_ts": "2024-01-15 08:10:00",
+      "paid_minutes": 480,
+      "activity_code": "WORK",
+      "site_code": "MNL1",
+      "sched_date": "2024-01-15"
+    },
+    {
+      "schedule_id": 3,
+      "agent_id": 3,
+      "shift_id": 3,
+      "shift_code": "SH3",
+      "start_ts": "2024-01-15 00:03:20",
+      "end_ts": "2024-01-15 08:03:20",
+      "paid_minutes": 480,
+      "activity_code": "WORK",
+      "site_code": "MTY3",
+      "sched_date": "2024-01-15"
+    },
+    {
+      "schedule_id": 6,
+      "agent_id": 6,
+      "shift_id": 3,
+      "shift_code": "SH3",
+      "start_ts": "2024-01-15 00:08:20",
+      "end_ts": "2024-01-15 08:08:20",
+      "paid_minutes": 480,
+      "activity_code": "WORK",
+      "site_code": "MTY3",
+      "sched_date": "2024-01-15"
+    }
+  ]
+}

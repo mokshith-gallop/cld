@@ -1,0 +1,61 @@
+{
+  "count": 5,
+  "fingerprint": "f85fd4398810629921d275ff1b83ed69",
+  "sample": [
+    {
+      "contract_line_id": 4,
+      "contract_id": 1,
+      "line_no": 4,
+      "service_code": "SVC0",
+      "uom": "MINUTES",
+      "unit_rate": 0.38,
+      "min_commit": 1000,
+      "effective_ts": "2023-01-01 00:00:00",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "contract_line_id": 1,
+      "contract_id": 1,
+      "line_no": 1,
+      "service_code": "SVC0",
+      "uom": "MINUTES",
+      "unit_rate": 0.35,
+      "min_commit": 1000,
+      "effective_ts": "2023-01-01 00:00:00",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "contract_line_id": 2,
+      "contract_id": 2,
+      "line_no": 2,
+      "service_code": "SVC1",
+      "uom": "MINUTES",
+      "unit_rate": 0.36,
+      "min_commit": 1000,
+      "effective_ts": "2023-01-01 00:00:00",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "contract_line_id": 3,
+      "contract_id": 3,
+      "line_no": 3,
+      "service_code": "SVC2",
+      "uom": "MINUTES",
+      "unit_rate": 0.37,
+      "min_commit": 1000,
+      "effective_ts": "2023-01-01 00:00:00",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "contract_line_id": 5,
+      "contract_id": 2,
+      "line_no": 5,
+      "service_code": "SVC1",
+      "uom": "MINUTES",
+      "unit_rate": 0.39,
+      "min_commit": 1000,
+      "effective_ts": "2023-01-01 00:00:00",
+      "snapshot_date": "2024-01-15"
+    }
+  ]
+}

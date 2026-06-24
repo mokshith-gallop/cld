@@ -1,0 +1,121 @@
+[22:53:16.803]   BQ FAIL stg_fin_invoice_line: Multiple errors occurred during the request. Please see the `errors` array for c
+[22:53:59.665]   BQ: 41 seeded
+[22:53:59.665] 
+=== PHASE 4: Legacy scripts ===
+[22:54:00.077]   ✓ 24-delta-merge-timesheet.sql → 5 rows (396ms)
+[22:54:00.956]   ✓ 25-delta-merge-payroll-adjustment.sql → 2 rows (878ms)
+[22:54:01.785]   ✓ 26-delta-merge-sla-credit.sql → 2 rows (829ms)
+[22:54:02.676]   ✓ 27-delta-merge-callback-request.sql → 2 rows (890ms)
+[22:54:03.415]   ✓ 28-delta-merge-shift-swap.sql → 1 rows (738ms)
+[22:54:04.275]   ✓ 29-delta-merge-ticket-worklog.sql → 3 rows (860ms)
+[22:54:05.073]   ✓ 30-delta-merge-attrition-event.sql → 1 rows (797ms)
+[22:54:05.714]   ✓ 31-delta-merge-rate-card.sql → 3 rows (639ms)
+[22:54:06.888]   ✓ 32-scd2-agent.sql → 14 rows (1174ms)
+[22:54:07.817]   ✓ 33-scd2-agent-skill.sql → 6 rows (929ms)
+[22:54:08.545]   ✓ 34-scd2-agent-assignment.sql → 0 rows (727ms)
+[22:54:08.603]   ⊘ 35-acid-merge-client.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:54:08.657]   ⊘ 36-acid-merge-agent.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:54:08.735]   ⊘ 37-acid-merge-ticket.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:54:08.785]   ⊘ 38-acid-merge-invoice.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:54:08.828]   ⊘ 39-acid-update-ticket-bulk-close.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:54:08.869]   ⊘ 40-acid-delete-gdpr-purge.sql: NOT_EXERCISED — Error while compiling statement: FAILED: SemanticException [Error 10297]: Attemp
+[22:54:09.143]   ✓ 09-cleanse-program.sql → 5 rows (273ms)
+[22:54:09.720]   ✓ 10-cleanse-contract.sql → 3 rows (576ms)
+[22:54:09.983]   ✓ 11-cleanse-contract-line.sql → 5 rows (263ms)
+[22:54:10.240]   ✓ 12-cleanse-org-unit.sql → 5 rows (256ms)
+[22:54:10.501]   ✓ 13-cleanse-queue.sql → 5 rows (259ms)
+[22:54:10.805]   ✓ 14-cleanse-schedule.sql → 10 rows (304ms)
+[22:54:11.066]   ✓ 15-cleanse-adherence-event.sql → 8 rows (261ms)
+[22:54:11.414]   ✓ 16-cleanse-call.sql → 18 rows (347ms)
+[22:54:11.686]   ✓ 17-cleanse-ivr-session.sql → 4 rows (272ms)
+[22:54:11.714]   ✗ 18-cleanse-chat-session.sql: Query 3e4a42961268b90c:39f5c14900000000 failed:
+AnalysisException: Could not resolve table reference
+[22:54:11.732]   ✗ 19-cleanse-email-interaction.sql: Query c6497b00aab80ed2:1ae42d1d00000000 failed:
+AnalysisException: Could not resolve column/field re
+[22:54:11.749]   ✗ 20-cleanse-survey-response.sql: Query ee4a555122444046:88796ff900000000 failed:
+AnalysisException: Could not resolve column/field re
+[22:54:11.781]   ✗ 21-cleanse-qa-evaluation.sql: Query 39498280a9b79a94:405f320000000000 failed:
+AnalysisException: Could not resolve table reference
+[22:54:11.805]   ✗ 22-cleanse-interaction.sql: Query 434f59b8f4406914:6a071c0600000000 failed:
+AnalysisException: Possible loss of precision for ta
+[22:54:11.821]   ✗ 23-cleanse-dialer-attempt.sql: Query 9b435647de2a3928:c0b48e3f00000000 failed:
+AnalysisException: Could not resolve column/field re
+[22:54:12.030]   ✓ 42-load-dim-agent.sql → 0 rows (208ms)
+[22:54:12.237]   ✓ 43-load-dim-client.sql → 0 rows (206ms)
+[22:54:12.454]   ✓ 44-load-dim-program.sql → 5 rows (216ms)
+[22:54:12.627]   ✓ 45-load-dim-queue.sql → 5 rows (173ms)
+[22:54:12.766]   ✓ 46-load-dim-site.sql → 0 rows (139ms)
+[22:54:13.302]   ✓ 47-load-dim-shift.sql → 3 rows (535ms)
+[22:54:13.569]   ✓ 48-load-dim-org.sql → 5 rows (266ms)
+[22:54:13.759]   ✓ 49-load-dim-disposition.sql → 6 rows (189ms)
+[22:54:14.531]   ✓ 50-load-fact-interaction.sql → 0 rows (771ms)
+[22:54:14.854]   ✓ 51-load-fact-agent-activity.sql → 5 rows (323ms)
+[22:54:14.873]   ✗ 52-load-fact-queue-interval.sql: Query 1d47cc92cc572401:d98113e400000000 failed:
+AnalysisException: aggregate function must not conta
+[22:54:15.347]   ✓ 53-load-fact-csat-survey.sql → 0 rows (473ms)
+[22:54:15.841]   ✓ 54-load-fact-qa-evaluation.sql → 0 rows (493ms)
+[22:54:16.098]   ✓ 55-load-fact-billing-line.sql → 0 rows (257ms)
+[22:54:17.251]   ✓ 56-load-fact-adherence-daily.sql → 1 rows (1153ms)
+[22:54:17.529]   ✓ 57-load-fact-ticket.sql → 0 rows (278ms)
+[22:54:17.744]   ✓ 58-load-fact-ivr-path.sql → 4 rows (215ms)
+[22:54:18.935]   ✓ 59-agg-agent-daily.sql → 0 rows (1191ms)
+[22:54:19.012]   ✗ 60-agg-agent-weekly.sql: The operation failed due to an error
+[22:54:19.605]   ✓ 61-agg-program-monthly.sql → 1 rows (592ms)
+[22:54:20.258]   ✓ 62-agg-queue-hourly.sql → 0 rows (653ms)
+[22:54:20.418]   ✗ 63-agg-csat-rollup-monthly.sql: Error while compiling statement: FAILED: SemanticException MetaException(message:java.lang.ClassNotF
+[22:54:21.478]   ✓ 64-agg-billing-monthly.sql → 0 rows (1059ms)
+[22:54:21.704]   ✓ 65-agg-site-daily.sql → 0 rows (226ms)
+[22:54:21.818]   ✓ 74-dq-rowcount-staging-vs-source.sql → -1 rows (113ms)
+[22:54:22.032]   ✓ 75-dq-roster-vs-hr.sql → -1 rows (213ms)
+[22:54:22.337]   ✓ 76-dq-interaction-export-recon.sql → -1 rows (304ms)
+[22:54:22.646]   ✓ 77-dq-fk-orphan-check.sql → -1 rows (308ms)
+[22:54:22.770]   ✓ 78-dq-epoch-range-sanity.sql → -1 rows (124ms)
+[22:54:22.880]   ✓ 79-dq-partition-completeness.sql → -1 rows (110ms)
+[22:54:23.108]   ✓ 93-close-billing-month.sql → 0 rows (228ms)
+[22:54:23.344]   ✓ 96-intraday-queue-hourly.sql → 0 rows (235ms)
+[22:54:23.561]   ✓ 97-intraday-agent-state.sql → 5 rows (217ms)
+[22:54:23.561]   Legacy: 50 pass, 9 fail, 6 not-exercised
+[22:54:23.561] 
+=== PHASE 5: Compare ===
+[22:54:23.563]   Comparing 28 output tables with data
+[22:54:23.982]   ods_timesheet: h=5
+[22:54:24.336]   ods_payroll_adjustment: h=2
+[22:54:24.675]   ods_sla_credit: h=2
+[22:54:24.982]   ods_callback_request: h=2
+[22:54:25.332]   ods_shift_swap: h=1
+[22:54:25.691]   ods_ticket_worklog: h=3
+[22:54:26.033]   ods_attrition_event: h=1
+[22:54:26.368]   ods_rate_card: h=3
+[22:54:26.710]   ods_agent_scd2: h=14
+[22:54:27.100]   ods_agent_skill_scd2: h=6
+[22:54:27.428]   ods_program: h=5
+[22:54:27.749]   ods_contract: h=3
+[22:54:28.106]   ods_contract_line: h=5
+[22:54:28.415]   ods_org_unit: h=5
+[22:54:28.752]   ods_queue: h=5
+[22:54:29.107]   ods_schedule: h=10
+[22:54:29.422]   ods_adherence_event: h=8
+[22:54:29.717]   ods_call: h=18
+[22:54:30.045]   ods_ivr_session: h=4
+[22:54:30.381]   dim_program: h=5
+[22:54:30.699]   dim_queue: h=5
+[22:54:31.004]   dim_shift: h=3
+[22:54:31.345]   dim_org: h=5
+[22:54:31.655]   dim_disposition: h=6
+[22:54:31.945]   fact_agent_activity: h=5
+[22:54:32.262]   fact_adherence_daily: h=1
+[22:54:32.557]   fact_ivr_path: h=4
+[22:54:32.870]   agg_program_monthly: h=1
+[22:54:32.871] 
+=== SUMMARY ===
+[22:54:32.871] {
+  "seed_tables": 42,
+  "hive_seeded": 42,
+  "bq_seeded": 41,
+  "legacy_scripts_pass": 50,
+  "legacy_scripts_fail": 9,
+  "legacy_scripts_not_exercised": 6,
+  "output_tables_with_data": 28,
+  "output_tables_compared": 28
+}
+[22:54:32.911] === DONE ===

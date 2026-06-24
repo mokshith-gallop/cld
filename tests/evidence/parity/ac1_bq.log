@@ -1,0 +1,110 @@
+[22:55:14.112] === AC1 BQ Parity — seed + run + compare ===
+[22:55:14.734] BQ connected
+[22:55:14.745] Impala connected
+[22:55:14.745] 
+=== P1: Create BQ output tables ===
+[22:55:15.678]   ods_program: created
+[22:55:16.510]   ods_contract: created
+[22:55:17.404]   ods_contract_line: created
+[22:55:18.282]   ods_org_unit: created
+[22:55:19.200]   ods_queue: created
+[22:55:20.184]   ods_schedule: created
+[22:55:21.141]   ods_adherence_event: created
+[22:55:22.081]   ods_call: created
+[22:55:22.918]   ods_ivr_session: created
+[22:55:24.015]   ods_email_interaction: created
+[22:55:24.895]   ods_survey_response: created
+[22:55:25.716]   ods_interaction: created
+[22:55:26.565]   ods_dialer_attempt: created
+[22:55:27.410]   ods_timesheet: created
+[22:55:28.288]   ods_payroll_adjustment: created
+[22:55:29.119]   ods_sla_credit: created
+[22:55:29.978]   ods_callback_request: created
+[22:55:30.776]   ods_shift_swap: created
+[22:55:31.704]   ods_ticket_worklog: created
+[22:55:32.659]   ods_attrition_event: created
+[22:55:33.608]   ods_rate_card: created
+[22:55:34.401]   ods_agent_scd2: created
+[22:55:35.187]   ods_agent_skill_scd2: created
+[22:55:36.081]   ods_agent_assignment_scd2: created
+[22:55:36.877]   dim_program: created
+[22:55:37.792]   dim_queue: created
+[22:55:38.555]   dim_shift: created
+[22:55:39.415]   dim_org: created
+[22:55:40.213]   dim_disposition: created
+[22:55:40.974]   fact_interaction: created
+[22:55:41.784]   fact_agent_activity: created
+[22:55:42.553]   fact_csat_survey: created
+[22:55:43.421]   fact_ivr_path: created
+[22:55:43.421] 
+=== P2: Run BQ converted scripts ===
+[22:55:47.516]   ✓ 09-cleanse-program → 5 rows
+[22:55:51.563]   ✓ 10-cleanse-contract → 5 rows
+[22:55:55.458]   ✓ 11-cleanse-contract-line → 0 rows
+[22:55:57.637]   ✗ 12-cleanse-org-unit: Query column 2 has type STRING which cannot be inserted into column parent_unit_id, which has type INT64 at [1:37]
+[22:56:01.367]   ✓ 13-cleanse-queue → 5 rows
+[22:56:08.476]   ✓ 15-cleanse-adherence-event → 15 rows
+[22:56:12.613]   ✓ 16-cleanse-call → 30 rows
+[22:56:16.337]   ✓ 17-cleanse-ivr-session → 5 rows
+[22:56:18.731]   ✗ 19-cleanse-email: Name load_date not found inside s at [8:62]
+[22:56:20.811]   ✗ 20-cleanse-survey: Name load_date not found inside s at [6:56]
+[22:56:22.888]   ✗ 22-cleanse-interaction: Name load_date not found inside i at [8:63]
+[22:56:25.273]   ✗ 23-cleanse-dialer: Name load_date not found inside s at [6:58]
+[22:56:28.950]   ✓ 24-delta-timesheet → 10 rows
+[22:56:32.689]   ✓ 25-delta-payroll → 3 rows
+[22:56:36.471]   ✓ 26-delta-sla-credit → 3 rows
+[22:56:38.585]   ✓ 27-delta-callback → 3 rows
+[22:56:40.749]   ✓ 28-delta-shift-swap → 3 rows
+[22:56:42.876]   ✓ 29-delta-worklog → 5 rows
+[22:56:44.984]   ✓ 30-delta-attrition → 3 rows
+[22:56:47.406]   ✓ 31-delta-rate-card → 5 rows
+[22:56:51.254]   ✓ 32-scd2-agent → 20 rows
+[22:56:54.989]   ✓ 33-scd2-skill → 10 rows
+[22:56:57.190]   ✗ 34-scd2-assignment: Unsupported subquery with table in join predicate.
+[22:57:03.267]   ✓ 44-dim-program → 5 rows
+[22:57:06.903]   ✓ 45-dim-queue → 5 rows
+[22:57:10.729]   ✓ 47-dim-shift → 5 rows
+[22:57:14.427]   ✓ 48-dim-org → 0 rows
+[22:57:19.931]   ✓ 49-dim-disposition → 6 rows
+[22:57:23.640]   ✓ 50-fact-interaction → 0 rows
+[22:57:27.655]   ✓ 51-fact-agent-activity → 30 rows
+[22:57:31.652]   ✓ 53-fact-csat → 0 rows
+[22:57:35.380]   ✓ 58-fact-ivr-path → 5 rows
+[22:57:35.380]   BQ: 26 pass, 6 fail
+[22:57:35.380] 
+=== P3: Compare Hive vs BQ ===
+[22:57:37.057]   ods_program: ✗ h=5 b=5 fp=false
+[22:57:38.449]   ods_contract: ✗ h=5 b=5 fp=false
+[22:57:38.876]   ods_contract_line: ✗ h=10 b=0 fp=null
+[22:57:39.386]   ods_org_unit: ✗ h=5 b=0 fp=null
+[22:57:41.046]   ods_queue: ✗ h=5 b=5 fp=false
+[22:57:42.582]   ods_adherence_event: ✗ h=15 b=15 fp=false
+[22:57:44.166]   ods_call: ✗ h=30 b=30 fp=false
+[22:57:45.693]   ods_ivr_session: ✗ h=5 b=5 fp=false
+[22:57:46.185]   ods_email_interaction: ✗ h=10 b=0 fp=null
+[22:57:46.650]   ods_survey_response: ✗ h=15 b=0 fp=null
+[22:57:47.197]   ods_interaction: ✗ h=40 b=0 fp=null
+[22:57:47.776]   ods_dialer_attempt: ✗ h=10 b=0 fp=null
+[22:57:49.320]   ods_timesheet: ✗ h=10 b=10 fp=false
+[22:57:50.795]   ods_payroll_adjustment: ✗ h=3 b=3 fp=false
+[22:57:52.317]   ods_sla_credit: ✗ h=3 b=3 fp=false
+[22:57:53.838]   ods_callback_request: ✗ h=3 b=3 fp=false
+[22:57:55.373]   ods_shift_swap: ✗ h=3 b=3 fp=false
+[22:57:56.992]   ods_ticket_worklog: ✗ h=5 b=5 fp=false
+[22:57:58.641]   ods_attrition_event: ✗ h=3 b=3 fp=false
+[22:58:00.195]   ods_rate_card: ✗ h=5 b=5 fp=false
+[22:58:01.666]   ods_agent_scd2: ✗ h=25 b=20 fp=false
+[22:58:03.110]   ods_agent_skill_scd2: ✗ h=10 b=10 fp=false
+[22:58:03.556]   ods_agent_assignment_scd2: ✗ h=5 b=0 fp=null
+[22:58:05.304]   dim_program: ✗ h=5 b=5 fp=false
+[22:58:06.796]   dim_queue: ✓ h=5 b=5 fp=true
+[22:58:08.256]   dim_shift: ✓ h=5 b=5 fp=true
+[22:58:08.720]   dim_org: ✗ h=5 b=0 fp=null
+[22:58:10.177]   dim_disposition: ✓ h=6 b=6 fp=true
+[22:58:10.618]   fact_interaction: ✗ h=40 b=0 fp=null
+[22:58:12.098]   fact_agent_activity: ✗ h=5 b=30 fp=false
+[22:58:12.561]   fact_csat_survey: ✗ h=15 b=0 fp=null
+[22:58:14.071]   fact_ivr_path: ✓ h=5 b=5 fp=true
+[22:58:14.072] 
+=== SUMMARY: 4 PASS, 28 FAIL, 0 NOT_EXERCISED ===
+[22:58:14.075] === DONE ===

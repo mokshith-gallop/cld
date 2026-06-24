@@ -1,0 +1,16 @@
+{
+  "phase": "done",
+  "ts": "2026-06-24T22:50:12.895Z",
+  "errors": [],
+  "completed": "2026-06-24T22:54:32.871Z",
+  "results": {
+    "seed_tables": 42,
+    "hive_seeded": 42,
+    "bq_seeded": 41,
+    "legacy_scripts_pass": 50,
+    "legacy_scripts_fail": 9,
+    "legacy_scripts_not_exercised": 6,
+    "output_tables_with_data": 28,
+    "output_tables_compared": 28
+  }
+}

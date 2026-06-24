@@ -1,0 +1,188 @@
+[22:56:36.691] === AC1 Phase 2: BQ execution + cross-engine comparison ===
+[22:56:37.308] Connected to Impala + BQ
+[22:56:37.309] Legacy scripts with data: 32
+[22:56:37.311] 
+--- Comparing ods_timesheet ---
+[22:56:37.366]   Hive: 10 rows
+[22:56:37.858]   BQ: 10 rows
+[22:56:38.459]   FP mismatch: 10 hive-only, 10 bq-only
+[22:56:41.030]   Result: ✗ count=true fp=MISMATCH
+[22:56:41.030] 
+--- Comparing ods_payroll_adjustment ---
+[22:56:41.062]   Hive: 3 rows
+[22:56:41.578]   BQ: 3 rows
+[22:56:42.202]   FP mismatch: 3 hive-only, 3 bq-only
+[22:56:43.718]   Result: ✗ count=true fp=MISMATCH
+[22:56:43.718] 
+--- Comparing ods_sla_credit ---
+[22:56:43.749]   Hive: 3 rows
+[22:56:44.277]   BQ: 3 rows
+[22:56:44.847]   FP mismatch: 3 hive-only, 3 bq-only
+[22:56:46.985]   Result: ✗ count=true fp=MISMATCH
+[22:56:46.985] 
+--- Comparing ods_callback_request ---
+[22:56:47.015]   Hive: 3 rows
+[22:56:47.467]   BQ: 3 rows
+[22:56:48.061]   FP mismatch: 3 hive-only, 3 bq-only
+[22:56:49.644]   Result: ✗ count=true fp=MISMATCH
+[22:56:49.644] 
+--- Comparing ods_shift_swap ---
+[22:56:49.673]   Hive: 3 rows
+[22:56:50.104]   BQ: 3 rows
+[22:56:50.594]   FP mismatch: 3 hive-only, 3 bq-only
+[22:56:52.531]   Result: ✗ count=true fp=MISMATCH
+[22:56:52.531] 
+--- Comparing ods_ticket_worklog ---
+[22:56:52.559]   Hive: 5 rows
+[22:56:53.107]   BQ: 5 rows
+[22:56:53.706]   FP mismatch: 5 hive-only, 5 bq-only
+[22:56:55.769]   Result: ✗ count=true fp=MISMATCH
+[22:56:55.769] 
+--- Comparing ods_attrition_event ---
+[22:56:55.801]   Hive: 3 rows
+[22:56:56.268]   BQ: 3 rows
+[22:56:56.853]   FP mismatch: 3 hive-only, 3 bq-only
+[22:56:57.854]   Result: ✗ count=true fp=MISMATCH
+[22:56:57.854] 
+--- Comparing ods_rate_card ---
+[22:56:57.884]   Hive: 5 rows
+[22:56:58.414]   BQ: 5 rows
+[22:56:59.045]   FP mismatch: 5 hive-only, 5 bq-only
+[22:57:00.505]   Result: ✗ count=true fp=MISMATCH
+[22:57:00.505] 
+--- Comparing ods_agent_scd2 ---
+[22:57:00.536]   Hive: 25 rows
+[22:57:00.979]   BQ: 20 rows
+[22:57:01.549]   FP mismatch: 25 hive-only, 20 bq-only
+[22:57:02.957]   Result: ✗ count=false fp=MISMATCH
+[22:57:02.957] 
+--- Comparing ods_agent_skill_scd2 ---
+[22:57:02.987]   Hive: 10 rows
+[22:57:03.449]   BQ: 10 rows
+[22:57:03.974]   FP mismatch: 10 hive-only, 10 bq-only
+[22:57:05.809]   Result: ✗ count=true fp=MISMATCH
+[22:57:05.809] 
+--- Comparing ods_agent_assignment_scd2 ---
+[22:57:05.839]   Hive: 5 rows
+[22:57:06.399]   BQ: 0 rows
+[22:57:06.399]   Result: ✗ count=false fp=n/a
+[22:57:06.399] 
+--- Comparing ods_program ---
+[22:57:06.429]   Hive: 5 rows
+[22:57:06.949]   BQ: 5 rows
+[22:57:07.489]   FP mismatch: 5 hive-only, 5 bq-only
+[22:57:08.481]   Result: ✗ count=true fp=MISMATCH
+[22:57:08.481] 
+--- Comparing ods_contract ---
+[22:57:08.514]   Hive: 5 rows
+[22:57:09.222]   BQ: 5 rows
+[22:57:09.777]   FP mismatch: 5 hive-only, 5 bq-only
+[22:57:11.227]   Result: ✗ count=true fp=MISMATCH
+[22:57:11.227] 
+--- Comparing ods_contract_line ---
+[22:57:11.262]   Hive: 10 rows
+[22:57:11.769]   BQ: 0 rows
+[22:57:11.769]   Result: ✗ count=false fp=n/a
+[22:57:11.769] 
+--- Comparing ods_org_unit ---
+[22:57:11.798]   Hive: 5 rows
+[22:57:12.382]   BQ: 0 rows
+[22:57:12.383]   Result: ✗ count=false fp=n/a
+[22:57:12.383] 
+--- Comparing ods_queue ---
+[22:57:12.411]   Hive: 5 rows
+[22:57:12.932]   BQ: 5 rows
+[22:57:13.542]   FP mismatch: 5 hive-only, 5 bq-only
+[22:57:14.962]   Result: ✗ count=true fp=MISMATCH
+[22:57:14.962] 
+--- Comparing ods_adherence_event ---
+[22:57:14.990]   Hive: 15 rows
+[22:57:15.447]   BQ: 15 rows
+[22:57:16.001]   FP mismatch: 15 hive-only, 15 bq-only
+[22:57:17.846]   Result: ✗ count=true fp=MISMATCH
+[22:57:17.846] 
+--- Comparing ods_call ---
+[22:57:17.880]   Hive: 30 rows
+[22:57:18.377]   BQ: 30 rows
+[22:57:18.890]   FP mismatch: 30 hive-only, 30 bq-only
+[22:57:21.221]   Result: ✗ count=true fp=MISMATCH
+[22:57:21.221] 
+--- Comparing ods_ivr_session ---
+[22:57:21.253]   Hive: 5 rows
+[22:57:21.744]   BQ: 5 rows
+[22:57:22.304]   FP mismatch: 5 hive-only, 5 bq-only
+[22:57:23.245]   Result: ✗ count=true fp=MISMATCH
+[22:57:23.245] 
+--- Comparing ods_email_interaction ---
+[22:57:23.275]   Hive: 10 rows
+[22:57:23.991]   BQ: 0 rows
+[22:57:23.991]   Result: ✗ count=false fp=n/a
+[22:57:23.992] 
+--- Comparing ods_survey_response ---
+[22:57:24.019]   Hive: 15 rows
+[22:57:24.581]   BQ: 0 rows
+[22:57:24.581]   Result: ✗ count=false fp=n/a
+[22:57:24.581] 
+--- Comparing dim_program ---
+[22:57:24.615]   Hive: 5 rows
+[22:57:25.064]   BQ: 5 rows
+[22:57:25.702]   FP mismatch: 5 hive-only, 5 bq-only
+[22:57:27.689]   Result: ✗ count=true fp=MISMATCH
+[22:57:27.689] 
+--- Comparing dim_queue ---
+[22:57:27.719]   Hive: 5 rows
+[22:57:28.171]   BQ: 5 rows
+[22:57:30.943]   Result: ✓ count=true fp=MATCH
+[22:57:30.943] 
+--- Comparing dim_shift ---
+[22:57:30.978]   Hive: 5 rows
+[22:57:31.455]   BQ: 5 rows
+[22:57:33.918]   Result: ✓ count=true fp=MATCH
+[22:57:33.918] 
+--- Comparing dim_org ---
+[22:57:33.950]   Hive: 5 rows
+[22:57:34.365]   BQ: 0 rows
+[22:57:34.365]   Result: ✗ count=false fp=n/a
+[22:57:34.365] 
+--- Comparing dim_disposition ---
+[22:57:34.390]   Hive: 6 rows
+[22:57:34.813]   BQ: 6 rows
+[22:57:35.803]   Result: ✓ count=true fp=MATCH
+[22:57:35.803] 
+--- Comparing fact_interaction ---
+[22:57:35.839]   Hive: 40 rows
+[22:57:36.331]   BQ: 0 rows
+[22:57:36.332]   Result: ✗ count=false fp=n/a
+[22:57:36.333] 
+--- Comparing fact_agent_activity ---
+[22:57:36.360]   Hive: 5 rows
+[22:57:36.788]   BQ: 30 rows
+[22:57:37.366]   FP mismatch: 5 hive-only, 30 bq-only
+[22:57:39.375]   Result: ✗ count=false fp=MISMATCH
+[22:57:39.375] 
+--- Comparing fact_csat_survey ---
+[22:57:39.404]   Hive: 15 rows
+[22:57:39.857]   BQ: 0 rows
+[22:57:39.857]   Result: ✗ count=false fp=n/a
+[22:57:39.857] 
+--- Comparing fact_ivr_path ---
+[22:57:39.885]   Hive: 5 rows
+[22:57:40.341]   BQ: 5 rows
+[22:57:42.706]   Result: ✓ count=true fp=MATCH
+[22:57:42.706] 
+--- Comparing agg_program_monthly ---
+[22:57:42.734]   Hive: 10 rows
+[22:57:42.961]   BQ table test.qa_xp_agg_program_monthly not found
+[22:57:42.961] 
+--- Comparing fact_agent_activity ---
+[22:57:42.988]   Hive: 5 rows
+[22:57:43.440]   BQ: 30 rows
+[22:57:43.951]   FP mismatch: 5 hive-only, 30 bq-only
+[22:57:45.831]   Result: ✗ count=false fp=MISMATCH
+[22:57:45.832] 
+=== SUMMARY ===
+[22:57:45.832] Compared: 32
+[22:57:45.832] PASS: 4
+[22:57:45.832] FAIL: 27
+[22:57:45.832] NOT_EXERCISED: 7
+[22:57:45.837] === DONE ===

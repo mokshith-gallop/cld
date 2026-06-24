@@ -1,0 +1,16 @@
+{
+  "count": 1,
+  "fingerprint": "3593f71e561331fc0d9f6edb4f86e0ef",
+  "sample": [
+    {
+      "agent_sk": -1,
+      "scheduled_minutes": 4800,
+      "worked_minutes": 4790,
+      "exception_minutes": 10,
+      "timeoff_minutes": 480,
+      "adherence_pct": 99.79,
+      "occupancy_pct": 0,
+      "date_key": 20240115
+    }
+  ]
+}

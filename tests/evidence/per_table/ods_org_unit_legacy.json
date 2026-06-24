@@ -1,0 +1,61 @@
+{
+  "count": 5,
+  "fingerprint": "d131e9bf8d840c41f9a4190b3e719872",
+  "sample": [
+    {
+      "org_unit_id": 2,
+      "parent_unit_id": 1,
+      "unit_code": "OPS",
+      "unit_name": "Operations",
+      "unit_type": "DIV",
+      "site_code": "MNL1",
+      "cost_center": "CC2",
+      "created_ts": "2023-07-22 04:26:40",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "org_unit_id": 1,
+      "parent_unit_id": null,
+      "unit_code": "CORP",
+      "unit_name": "Corporation",
+      "unit_type": "COMPANY",
+      "site_code": "MNL1",
+      "cost_center": "CC1",
+      "created_ts": "2023-07-22 04:26:40",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "org_unit_id": 3,
+      "parent_unit_id": 2,
+      "unit_code": "TMA",
+      "unit_name": "Team A",
+      "unit_type": "TEAM",
+      "site_code": "MNL1",
+      "cost_center": "CC3",
+      "created_ts": "2023-07-22 04:26:40",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "org_unit_id": 5,
+      "parent_unit_id": 1,
+      "unit_code": "BLR",
+      "unit_name": "BLR Div",
+      "unit_type": "DIV",
+      "site_code": "BLR2",
+      "cost_center": "CC5",
+      "created_ts": "2023-07-22 04:26:40",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "org_unit_id": 4,
+      "parent_unit_id": 3,
+      "unit_code": "P1",
+      "unit_name": "Pod 1",
+      "unit_type": "POD",
+      "site_code": "MNL1",
+      "cost_center": "CC4",
+      "created_ts": "2023-07-22 04:26:40",
+      "snapshot_date": "2024-01-15"
+    }
+  ]
+}

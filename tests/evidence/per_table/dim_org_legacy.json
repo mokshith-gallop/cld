@@ -1,0 +1,71 @@
+{
+  "count": 5,
+  "fingerprint": "44671084f05762600540fe3af2c4bc51",
+  "sample": [
+    {
+      "org_sk": 1,
+      "org_unit_id": 1,
+      "unit_code": "CORP",
+      "unit_name": "Corporation",
+      "unit_type": "COMPANY",
+      "level1_name": "Corporation",
+      "level2_name": "Corporation",
+      "level3_name": "Corporation",
+      "level4_name": "Corporation",
+      "site_code": "MNL1",
+      "cost_center": "CC1"
+    },
+    {
+      "org_sk": 3,
+      "org_unit_id": 3,
+      "unit_code": "TMA",
+      "unit_name": "Team A",
+      "unit_type": "TEAM",
+      "level1_name": "Team A",
+      "level2_name": "Corporation",
+      "level3_name": "Operations",
+      "level4_name": "Team A",
+      "site_code": "MNL1",
+      "cost_center": "CC3"
+    },
+    {
+      "org_sk": 5,
+      "org_unit_id": 5,
+      "unit_code": "BLR",
+      "unit_name": "BLR Div",
+      "unit_type": "DIV",
+      "level1_name": "BLR Div",
+      "level2_name": "BLR Div",
+      "level3_name": "Corporation",
+      "level4_name": "BLR Div",
+      "site_code": "BLR2",
+      "cost_center": "CC5"
+    },
+    {
+      "org_sk": 2,
+      "org_unit_id": 2,
+      "unit_code": "OPS",
+      "unit_name": "Operations",
+      "unit_type": "DIV",
+      "level1_name": "Operations",
+      "level2_name": "Operations",
+      "level3_name": "Corporation",
+      "level4_name": "Operations",
+      "site_code": "MNL1",
+      "cost_center": "CC2"
+    },
+    {
+      "org_sk": 4,
+      "org_unit_id": 4,
+      "unit_code": "P1",
+      "unit_name": "Pod 1",
+      "unit_type": "POD",
+      "level1_name": "Corporation",
+      "level2_name": "Operations",
+      "level3_name": "Team A",
+      "level4_name": "Pod 1",
+      "site_code": "MNL1",
+      "cost_center": "CC4"
+    }
+  ]
+}

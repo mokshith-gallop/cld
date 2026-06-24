@@ -1,0 +1,182 @@
+{
+  "summary": {
+    "seed_tables": 42,
+    "hive_seeded": 42,
+    "bq_seeded": 41,
+    "legacy_scripts_pass": 50,
+    "legacy_scripts_fail": 9,
+    "legacy_scripts_not_exercised": 6,
+    "output_tables_with_data": 28,
+    "output_tables_compared": 28
+  },
+  "tables": {
+    "ods_timesheet": {
+      "status": "LEGACY_OK",
+      "hive_count": 5,
+      "bq_count": -1,
+      "fingerprint": "d62398a6c65ebd15a08a2dcdacea9554"
+    },
+    "ods_payroll_adjustment": {
+      "status": "LEGACY_OK",
+      "hive_count": 2,
+      "bq_count": -1,
+      "fingerprint": "ba14d0f012a9a7adea6b1fd6f02641b0"
+    },
+    "ods_sla_credit": {
+      "status": "LEGACY_OK",
+      "hive_count": 2,
+      "bq_count": -1,
+      "fingerprint": "3ca440546937fdb293121e0c358f781d"
+    },
+    "ods_callback_request": {
+      "status": "LEGACY_OK",
+      "hive_count": 2,
+      "bq_count": -1,
+      "fingerprint": "e24486ba618730cbf0fcc9b74b6f264c"
+    },
+    "ods_shift_swap": {
+      "status": "LEGACY_OK",
+      "hive_count": 1,
+      "bq_count": -1,
+      "fingerprint": "0fb24864a75b9ef5b4fbfd8fda34af7e"
+    },
+    "ods_ticket_worklog": {
+      "status": "LEGACY_OK",
+      "hive_count": 3,
+      "bq_count": -1,
+      "fingerprint": "2906bc65ad19321d4666773f70409c7d"
+    },
+    "ods_attrition_event": {
+      "status": "LEGACY_OK",
+      "hive_count": 1,
+      "bq_count": -1,
+      "fingerprint": "a9a99458aa6458755192bf071a0400e3"
+    },
+    "ods_rate_card": {
+      "status": "LEGACY_OK",
+      "hive_count": 3,
+      "bq_count": -1,
+      "fingerprint": "0ab5679ae5da9dd6e1ed778567346c4d"
+    },
+    "ods_agent_scd2": {
+      "status": "LEGACY_OK",
+      "hive_count": 14,
+      "bq_count": -1,
+      "fingerprint": "f1fdb9f30814b37628c3424511e0ddd5"
+    },
+    "ods_agent_skill_scd2": {
+      "status": "LEGACY_OK",
+      "hive_count": 6,
+      "bq_count": -1,
+      "fingerprint": "818ae886577659289705b972231000a6"
+    },
+    "ods_program": {
+      "status": "LEGACY_OK",
+      "hive_count": 5,
+      "bq_count": -1,
+      "fingerprint": "a53fe6f4f0506b2aa64839795163aea7"
+    },
+    "ods_contract": {
+      "status": "LEGACY_OK",
+      "hive_count": 3,
+      "bq_count": -1,
+      "fingerprint": "8324dbbe928dd9702377ab202ccf5f25"
+    },
+    "ods_contract_line": {
+      "status": "LEGACY_OK",
+      "hive_count": 5,
+      "bq_count": -1,
+      "fingerprint": "f85fd4398810629921d275ff1b83ed69"
+    },
+    "ods_org_unit": {
+      "status": "LEGACY_OK",
+      "hive_count": 5,
+      "bq_count": -1,
+      "fingerprint": "d131e9bf8d840c41f9a4190b3e719872"
+    },
+    "ods_queue": {
+      "status": "LEGACY_OK",
+      "hive_count": 5,
+      "bq_count": -1,
+      "fingerprint": "a977dc8712f616eb1c5c569087de1496"
+    },
+    "ods_schedule": {
+      "status": "LEGACY_OK",
+      "hive_count": 10,
+      "bq_count": -1,
+      "fingerprint": "d62fb84e91052f7e735a710e0a4c1d5a"
+    },
+    "ods_adherence_event": {
+      "status": "LEGACY_OK",
+      "hive_count": 8,
+      "bq_count": -1,
+      "fingerprint": "952ab735c9151272b28eb56c886277f6"
+    },
+    "ods_call": {
+      "status": "LEGACY_OK",
+      "hive_count": 18,
+      "bq_count": -1,
+      "fingerprint": "b51a7fcb25bdcae2c5e529497c091813"
+    },
+    "ods_ivr_session": {
+      "status": "LEGACY_OK",
+      "hive_count": 4,
+      "bq_count": -1,
+      "fingerprint": "b8892f06d545a4429baca532194d8cf7"
+    },
+    "dim_program": {
+      "status": "LEGACY_OK",
+      "hive_count": 5,
+      "bq_count": -1,
+      "fingerprint": "0bbc1e6dd5e67e387d4f9df17e11d190"
+    },
+    "dim_queue": {
+      "status": "LEGACY_OK",
+      "hive_count": 5,
+      "bq_count": -1,
+      "fingerprint": "9761ae26e78d029d2f72b2f8f105870a"
+    },
+    "dim_shift": {
+      "status": "LEGACY_OK",
+      "hive_count": 3,
+      "bq_count": -1,
+      "fingerprint": "4fedb4b008f597dbc3f10a2cc5177784"
+    },
+    "dim_org": {
+      "status": "LEGACY_OK",
+      "hive_count": 5,
+      "bq_count": -1,
+      "fingerprint": "44671084f05762600540fe3af2c4bc51"
+    },
+    "dim_disposition": {
+      "status": "LEGACY_OK",
+      "hive_count": 6,
+      "bq_count": -1,
+      "fingerprint": "8a48c969199ce56e93fddd84addd9ae9"
+    },
+    "fact_agent_activity": {
+      "status": "LEGACY_OK",
+      "hive_count": 5,
+      "bq_count": -1,
+      "fingerprint": "9790a89deea758fc126665d79b29e1b5"
+    },
+    "fact_adherence_daily": {
+      "status": "LEGACY_OK",
+      "hive_count": 1,
+      "bq_count": -1,
+      "fingerprint": "3593f71e561331fc0d9f6edb4f86e0ef"
+    },
+    "fact_ivr_path": {
+      "status": "LEGACY_OK",
+      "hive_count": 4,
+      "bq_count": -1,
+      "fingerprint": "677f2d38552c2ff742f383ccbe36fcaa"
+    },
+    "agg_program_monthly": {
+      "status": "LEGACY_OK",
+      "hive_count": 1,
+      "bq_count": -1,
+      "fingerprint": "baf5f6d7b3f177de8c4450d800365c0d"
+    }
+  }
+}

@@ -1,0 +1,323 @@
+{
+  "summary": {
+    "tables_compared": 54,
+    "pass": 4,
+    "fail": 28,
+    "not_exercised": 0,
+    "hive_empty": 22
+  },
+  "tables": {
+    "ods_program": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_contract": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_contract_line": {
+      "status": "FAIL",
+      "hive": 10,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "ods_org_unit": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "ods_queue": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_schedule": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "ods_adherence_event": {
+      "status": "FAIL",
+      "hive": 15,
+      "bq": 15,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_call": {
+      "status": "FAIL",
+      "hive": 30,
+      "bq": 30,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_ivr_session": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_chat_session": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "ods_email_interaction": {
+      "status": "FAIL",
+      "hive": 10,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "ods_survey_response": {
+      "status": "FAIL",
+      "hive": 15,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "ods_qa_evaluation": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "ods_interaction": {
+      "status": "FAIL",
+      "hive": 40,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "ods_dialer_attempt": {
+      "status": "FAIL",
+      "hive": 10,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "ods_timesheet": {
+      "status": "FAIL",
+      "hive": 10,
+      "bq": 10,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_payroll_adjustment": {
+      "status": "FAIL",
+      "hive": 3,
+      "bq": 3,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_sla_credit": {
+      "status": "FAIL",
+      "hive": 3,
+      "bq": 3,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_callback_request": {
+      "status": "FAIL",
+      "hive": 3,
+      "bq": 3,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_shift_swap": {
+      "status": "FAIL",
+      "hive": 3,
+      "bq": 3,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_ticket_worklog": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_attrition_event": {
+      "status": "FAIL",
+      "hive": 3,
+      "bq": 3,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_rate_card": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_agent_scd2": {
+      "status": "FAIL",
+      "hive": 25,
+      "bq": 20,
+      "count_match": false,
+      "fingerprint_match": false
+    },
+    "ods_agent_skill_scd2": {
+      "status": "FAIL",
+      "hive": 10,
+      "bq": 10,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "ods_agent_assignment_scd2": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "ods_client_acid": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "ods_agent_acid": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "ods_ticket_acid": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "ods_invoice_acid": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "dim_agent": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "dim_client": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "dim_program": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "dim_queue": {
+      "status": "PASS",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "dim_site": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "dim_shift": {
+      "status": "PASS",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "dim_org": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "dim_disposition": {
+      "status": "PASS",
+      "hive": 6,
+      "bq": 6,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "fact_interaction": {
+      "status": "FAIL",
+      "hive": 40,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "fact_agent_activity": {
+      "status": "FAIL",
+      "hive": 5,
+      "bq": 30,
+      "count_match": false,
+      "fingerprint_match": false
+    },
+    "fact_queue_interval": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "fact_csat_survey": {
+      "status": "FAIL",
+      "hive": 15,
+      "bq": 0,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "fact_qa_evaluation": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "fact_billing_line": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "fact_adherence_daily": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "fact_ticket": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "fact_ivr_path": {
+      "status": "PASS",
+      "hive": 5,
+      "bq": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "agg_agent_daily": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "agg_agent_weekly": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "agg_program_monthly": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "agg_queue_hourly": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "agg_csat_rollup_monthly": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "agg_billing_monthly": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    },
+    "agg_site_daily": {
+      "status": "HIVE_EMPTY",
+      "hive": 0
+    }
+  }
+}
