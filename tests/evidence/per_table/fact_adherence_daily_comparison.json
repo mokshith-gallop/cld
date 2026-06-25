@@ -1,31 +1,31 @@
 {
   "hive_count": 1,
-  "bq_count": 10,
-  "count_match": false,
-  "fingerprint_match": false,
+  "bq_count": 1,
+  "count_match": true,
+  "fingerprint_match": true,
   "common_cols": 8,
   "hive_fp": "3593f71e561331fc",
-  "bq_fp": "7b5e27dc883d924b",
+  "bq_fp": "3593f71e561331fc",
   "column_aggregates": {
     "adherence_pct": {
       "hive_sum": 99.79,
-      "bq_sum": 983.3599999999999,
-      "match": false
+      "bq_sum": 99.79,
+      "match": true
     },
     "agent_sk": {
       "hive_sum": -1,
-      "bq_sum": -10,
-      "match": false
+      "bq_sum": -1,
+      "match": true
     },
     "date_key": {
       "hive_sum": 20240115,
-      "bq_sum": 202401150,
-      "match": false
+      "bq_sum": 20240115,
+      "match": true
     },
     "exception_minutes": {
       "hive_sum": 10,
-      "bq_sum": 80,
-      "match": false
+      "bq_sum": 10,
+      "match": true
     },
     "occupancy_pct": {
       "hive_sum": 0,
@@ -48,21 +48,11 @@
   "bq_sample": [
     {
       "agent_sk": -1,
-      "scheduled_minutes": 480,
-      "worked_minutes": 480,
+      "scheduled_minutes": 4800,
+      "worked_minutes": 4790,
       "exception_minutes": 10,
-      "timeoff_minutes": 0,
-      "adherence_pct": "97.92",
-      "occupancy_pct": "0",
-      "date_key": 20240115
-    },
-    {
-      "agent_sk": -1,
-      "scheduled_minutes": 480,
-      "worked_minutes": 480,
-      "exception_minutes": 10,
-      "timeoff_minutes": 0,
-      "adherence_pct": "97.92",
+      "timeoff_minutes": 480,
+      "adherence_pct": "99.79",
       "occupancy_pct": "0",
       "date_key": 20240115
     }

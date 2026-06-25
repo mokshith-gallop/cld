@@ -73,51 +73,47 @@
   ],
   "bq_sample": [
     {
-      "call_id": 8,
+      "call_id": 13,
       "queue_id": 3,
-      "agent_id": 8,
+      "agent_id": 3,
       "program_id": 3,
       "direction": "INBOUND",
       "start_ts": {
-        "value": "2024-01-15T00:35:00.000Z"
+        "value": "2024-01-15T01:00:00.000Z"
       },
-      "answer_ts": {
-        "value": "2024-01-15T00:35:15.000Z"
-      },
+      "answer_ts": null,
       "end_ts": {
-        "value": "2024-01-15T00:40:00.000Z"
+        "value": "2024-01-15T01:05:00.000Z"
       },
-      "ring_seconds": 15,
-      "talk_seconds": 0,
-      "hold_seconds": 160,
+      "ring_seconds": 300,
+      "talk_seconds": 80,
+      "hold_seconds": 0,
       "acw_seconds": 0,
-      "abandoned_flag": false,
-      "disposition_code": "D02",
-      "recording_id": "R8",
+      "abandoned_flag": true,
+      "disposition_code": "D01",
+      "recording_id": "R13",
       "call_date": "2024-01-15"
     },
     {
-      "call_id": 2,
+      "call_id": 7,
       "queue_id": 2,
-      "agent_id": 2,
+      "agent_id": 7,
       "program_id": 2,
       "direction": "INBOUND",
       "start_ts": {
-        "value": "2024-01-15T00:05:00.000Z"
+        "value": "2024-01-15T00:30:00.000Z"
       },
-      "answer_ts": {
-        "value": "2024-01-15T00:05:15.000Z"
-      },
+      "answer_ts": null,
       "end_ts": {
-        "value": "2024-01-15T00:10:00.000Z"
+        "value": "2024-01-15T00:35:00.000Z"
       },
-      "ring_seconds": 15,
-      "talk_seconds": 0,
-      "hold_seconds": 160,
+      "ring_seconds": 300,
+      "talk_seconds": 160,
+      "hold_seconds": 0,
       "acw_seconds": 0,
-      "abandoned_flag": false,
-      "disposition_code": "D02",
-      "recording_id": "R2",
+      "abandoned_flag": true,
+      "disposition_code": "D01",
+      "recording_id": "R7",
       "call_date": "2024-01-15"
     }
   ]

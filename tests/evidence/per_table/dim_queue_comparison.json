@@ -39,13 +39,13 @@
       "priority": 1
     },
     {
-      "queue_sk": 5,
-      "queue_id": 5,
-      "queue_code": "Q005",
-      "queue_name": "Queue 5",
-      "program_id": 5,
-      "media_type": "CHAT",
-      "priority": 5
+      "queue_sk": 2,
+      "queue_id": 2,
+      "queue_code": "Q002",
+      "queue_name": "Queue 2",
+      "program_id": 2,
+      "media_type": "VOICE",
+      "priority": 2
     }
   ],
   "bq_sample": [

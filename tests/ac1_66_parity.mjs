@@ -146,19 +146,21 @@ async function main() {
         CASE WHEN CAST(expiry_ts AS INT64)>0 THEN TIMESTAMP_SECONDS(CAST(expiry_ts AS INT64)) ELSE NULL END,
         TIMESTAMP_SECONDS(CAST(effective_ts AS INT64)), '${RD}'
       FROM ${BQDS}.${BQP}stg_fin_rate_card WHERE load_date='${RD}'`,
-    // 48-dim-org: needs ods_org_unit populated first
+    // 48-dim-org: mirror legacy logic — start from l4 (leaf), join UP to l1 (root)
     dim_org: `DELETE FROM ${BQDS}.${BQP}dim_org WHERE TRUE;
       INSERT INTO ${BQDS}.${BQP}dim_org
-      SELECT ROW_NUMBER() OVER(ORDER BY o.org_unit_id), o.org_unit_id, o.unit_code, o.unit_name, o.unit_type,
-        COALESCE(l1.unit_name,'') AS level1, COALESCE(l2.unit_name,'') AS level2,
-        COALESCE(l3.unit_name,'') AS level3, COALESCE(l4.unit_name,'') AS level4,
-        o.site_code, o.cost_center
-      FROM ${BQDS}.${BQP}ods_org_unit o
-      LEFT JOIN ${BQDS}.${BQP}ods_org_unit l1 ON l1.org_unit_id=o.org_unit_id
-      LEFT JOIN ${BQDS}.${BQP}ods_org_unit l2 ON l2.org_unit_id=SAFE_CAST(o.parent_unit_id AS INT64)
-      LEFT JOIN ${BQDS}.${BQP}ods_org_unit l3 ON l3.org_unit_id=SAFE_CAST(l2.parent_unit_id AS INT64)
-      LEFT JOIN ${BQDS}.${BQP}ods_org_unit l4 ON l4.org_unit_id=SAFE_CAST(l3.parent_unit_id AS INT64)
-      WHERE o.snapshot_date='${RD}'`,
+      SELECT l4.org_unit_id AS org_sk, l4.org_unit_id, l4.unit_code, l4.unit_name, l4.unit_type,
+        COALESCE(l1.unit_name, l4.unit_name) AS level1_name,
+        COALESCE(l2.unit_name, l4.unit_name) AS level2_name,
+        COALESCE(l3.unit_name, l4.unit_name) AS level3_name,
+        l4.unit_name AS level4_name,
+        COALESCE(l4.site_code, l3.site_code, l2.site_code) AS site_code,
+        l4.cost_center
+      FROM ${BQDS}.${BQP}ods_org_unit l4
+      LEFT JOIN ${BQDS}.${BQP}ods_org_unit l3 ON l3.org_unit_id=SAFE_CAST(l4.parent_unit_id AS INT64) AND l3.snapshot_date=l4.snapshot_date
+      LEFT JOIN ${BQDS}.${BQP}ods_org_unit l2 ON l2.org_unit_id=SAFE_CAST(l3.parent_unit_id AS INT64) AND l2.snapshot_date=l4.snapshot_date
+      LEFT JOIN ${BQDS}.${BQP}ods_org_unit l1 ON l1.org_unit_id=SAFE_CAST(l2.parent_unit_id AS INT64) AND l1.snapshot_date=l4.snapshot_date
+      WHERE l4.snapshot_date='${RD}'`,
     // 51-fact-agent-activity: 7 cols (no event_date — it's a partition col)
     fact_agent_activity: `DELETE FROM ${BQDS}.${BQP}fact_agent_activity WHERE TRUE;
       INSERT INTO ${BQDS}.${BQP}fact_agent_activity
@@ -172,24 +174,25 @@ async function main() {
       LEFT JOIN ${BQDS}.${BQP}dim_agent a ON a.agent_id=CAST(e.agent_id AS INT64) AND a.is_current=TRUE
       WHERE e.load_date='${RD}'
       GROUP BY 1, e.state_code`,
-    // 56-fact-adherence-daily: 8 cols
+    // 56-fact-adherence-daily: GROUP BY agent_sk + date_key (matches legacy)
     fact_adherence_daily: `DELETE FROM ${BQDS}.${BQP}fact_adherence_daily WHERE TRUE;
       INSERT INTO ${BQDS}.${BQP}fact_adherence_daily
-      SELECT COALESCE(CAST(a.agent_sk AS INT64),-1),
-        CAST(s.paid_minutes AS INT64) AS scheduled_minutes,
-        CAST(s.paid_minutes AS INT64) AS worked_minutes,
-        COALESCE(CAST(adh.exc_min AS INT64),0),
-        COALESCE(CAST(toff.toff_min AS INT64),0),
-        CAST(100.0*(CAST(s.paid_minutes AS INT64)-COALESCE(CAST(adh.exc_min AS INT64),0))/NULLIF(CAST(s.paid_minutes AS INT64),0) AS NUMERIC),
-        CAST(0 AS NUMERIC),
-        CAST(FORMAT_TIMESTAMP('%Y%m%d',TIMESTAMP_SECONDS(CAST(s.start_epoch AS INT64))) AS INT64)
+      SELECT COALESCE(CAST(a.agent_sk AS INT64),-1) AS agent_sk,
+        CAST(SUM(CAST(s.paid_minutes AS INT64)) AS INT64) AS scheduled_minutes,
+        CAST(SUM(CAST(s.paid_minutes AS INT64)) - COALESCE(MAX(CAST(adh.exc_min AS INT64)),0) AS INT64) AS worked_minutes,
+        CAST(COALESCE(MAX(CAST(adh.exc_min AS INT64)),0) AS INT64) AS exception_minutes,
+        CAST(COALESCE(MAX(CAST(toff.toff_min AS INT64)),0) AS INT64) AS timeoff_minutes,
+        CAST(100.0*(SUM(CAST(s.paid_minutes AS INT64))-COALESCE(MAX(CAST(adh.exc_min AS INT64)),0))/NULLIF(SUM(CAST(s.paid_minutes AS INT64)),0) AS NUMERIC) AS adherence_pct,
+        CAST(0 AS NUMERIC) AS occupancy_pct,
+        CAST(FORMAT_TIMESTAMP('%Y%m%d',TIMESTAMP_SECONDS(MIN(CAST(s.start_epoch AS INT64)))) AS INT64) AS date_key
       FROM ${BQDS}.${BQP}stg_wfm_schedule s
       LEFT JOIN ${BQDS}.${BQP}dim_agent a ON a.agent_id=CAST(s.agent_id AS INT64) AND a.is_current=TRUE
       LEFT JOIN (SELECT CAST(agent_id AS INT64) aid, SUM(CAST(end_epoch AS INT64)-CAST(start_epoch AS INT64))/60 exc_min
         FROM ${BQDS}.${BQP}stg_wfm_adherence_event WHERE load_date='${RD}' GROUP BY 1) adh ON adh.aid=CAST(s.agent_id AS INT64)
       LEFT JOIN (SELECT CAST(agent_id AS INT64) aid, COUNT(*)*480 toff_min
         FROM ${BQDS}.${BQP}stg_wfm_timeoff_request WHERE load_date='${RD}' GROUP BY 1) toff ON toff.aid=CAST(s.agent_id AS INT64)
-      WHERE s.load_date='${RD}'`,
+      WHERE s.load_date='${RD}'
+      GROUP BY agent_sk, CAST(FORMAT_TIMESTAMP('%Y%m%d',TIMESTAMP_SECONDS(CAST(s.start_epoch AS INT64))) AS INT64)`,
     // 58-fact-ivr-path: 8 cols (no event_date)
     fact_ivr_path: `DELETE FROM ${BQDS}.${BQP}fact_ivr_path WHERE TRUE;
       INSERT INTO ${BQDS}.${BQP}fact_ivr_path
@@ -346,7 +349,7 @@ async function main() {
       continue;
     }
     // Tables with hCnt=0 that depend on ACID merge (which is NOT_EXERCISABLE)
-    const acidDeps = ['dim_agent','dim_client','dim_site','fact_interaction','fact_csat_survey',
+    const acidDeps = ['dim_date','dim_agent','dim_client','dim_site','fact_interaction','fact_csat_survey',
       'fact_qa_evaluation','fact_billing_line','fact_ticket','fact_queue_interval',
       'agg_agent_daily','agg_agent_weekly','agg_queue_hourly','agg_csat_rollup_monthly',
       'agg_billing_monthly','agg_site_daily'];

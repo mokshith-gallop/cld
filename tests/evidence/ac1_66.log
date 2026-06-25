@@ -1,123 +1,121 @@
-[19:17:56.143] === AC1: 66-Object Full Parity ===
-[19:17:56.892] Connected Impala + BQ
-[19:17:56.892] 
+[19:21:22.005] === AC1: 66-Object Full Parity ===
+[19:21:22.833] Connected Impala + BQ
+[19:21:22.834] 
 === Phase 1: Fix 12 BQ=0 tables ===
-[19:18:01.668]   ✓ ods_contract_line: 5 rows
-[19:18:06.451]   ✓ ods_org_unit: 5 rows
-[19:18:10.911]   ✓ ods_adherence_event: 8 rows
-[19:18:15.755]   ✓ ods_call: 18 rows
-[19:18:20.558]   ✓ ods_ivr_session: 4 rows
-[19:18:25.398]   ✓ ods_agent_scd2: 11 rows
-[19:18:30.637]   ✓ ods_agent_skill_scd2: 6 rows
-[19:18:35.093]   ✓ ods_rate_card: 3 rows
-[19:18:40.731]   ✓ dim_org: 5 rows
-[19:18:45.804]   ✓ fact_agent_activity: 5 rows
-[19:18:51.006]   ✓ fact_adherence_daily: 10 rows
-[19:18:55.620]   ✓ fact_ivr_path: 4 rows
-[19:18:55.620]   Fixed: 12/12
-[19:18:55.620] 
+[19:21:27.855]   ✓ ods_contract_line: 5 rows
+[19:21:32.507]   ✓ ods_org_unit: 5 rows
+[19:21:38.243]   ✓ ods_adherence_event: 8 rows
+[19:21:43.712]   ✓ ods_call: 18 rows
+[19:21:48.421]   ✓ ods_ivr_session: 4 rows
+[19:21:53.341]   ✓ ods_agent_scd2: 11 rows
+[19:21:57.972]   ✓ ods_agent_skill_scd2: 6 rows
+[19:22:03.079]   ✓ ods_rate_card: 3 rows
+[19:22:08.213]   ✓ dim_org: 5 rows
+[19:22:13.123]   ✓ fact_agent_activity: 5 rows
+[19:22:18.315]   ✓ fact_adherence_daily: 1 rows
+[19:22:23.085]   ✓ fact_ivr_path: 4 rows
+[19:22:23.085]   Fixed: 12/12
+[19:22:23.085] 
 === Phase 2: Compare all 66 objects ===
-[19:18:56.962]   ods_program: PASS h=5 b=5 fp=MATCH
-[19:18:58.304]   ods_contract: PASS h=3 b=3 fp=MATCH
-[19:18:59.682]   ods_contract_line: PASS h=5 b=5 fp=MATCH
-[19:19:01.049]   ods_org_unit: PASS h=5 b=5 fp=MATCH
-[19:19:02.567]   ods_queue: PASS h=5 b=5 fp=MATCH
-[19:19:03.784]   ods_schedule: PASS h=10 b=10 fp=MATCH
-[19:19:05.150]   ods_adherence_event: PASS h=8 b=8 fp=MATCH
-[19:19:06.525]   ods_call: PASS h=18 b=18 fp=MATCH
-[19:19:08.036]   ods_ivr_session: PASS h=4 b=4 fp=MATCH
-[19:19:08.715]   ods_chat_session: PASS h=0 b=0
-[19:19:09.281]   ods_email_interaction: PASS h=0 b=0
-[19:19:10.096]   ods_survey_response: PASS h=0 b=0
-[19:19:10.902]   ods_qa_evaluation: PASS h=0 b=0
-[19:19:11.688]   ods_interaction: PASS h=0 b=0
-[19:19:12.208]   ods_dialer_attempt: PASS h=0 b=0
-[19:19:12.824]   dim_date: FAIL h=0 b=366
-[19:19:13.365]   dim_agent: NOT_EXERCISED (ACID dependency, bq=0)
-[19:19:13.959]   dim_client: NOT_EXERCISED (ACID dependency, bq=5)
-[19:19:15.282]   dim_program: PASS h=5 b=5 fp=MATCH
-[19:19:16.478]   dim_queue: PASS h=5 b=5 fp=MATCH
-[19:19:17.136]   dim_site: NOT_EXERCISED (ACID dependency, bq=0)
-[19:19:18.302]   dim_shift: PASS h=3 b=3 fp=MATCH
-[19:19:19.621]   dim_org: FAIL h=5 b=5 fp=DIFF
-[19:19:20.812]   dim_disposition: PASS h=6 b=6 fp=MATCH
-[19:19:21.440]   fact_interaction: NOT_EXERCISED (ACID dependency, bq=0)
-[19:19:22.842]   fact_agent_activity: PASS h=5 b=5 fp=MATCH
-[19:19:23.405]   fact_queue_interval: NOT_EXERCISED (ACID dependency, bq=0)
-[19:19:23.953]   fact_csat_survey: NOT_EXERCISED (ACID dependency, bq=0)
-[19:19:24.674]   fact_qa_evaluation: NOT_EXERCISED (ACID dependency, bq=0)
-[19:19:25.365]   fact_billing_line: NOT_EXERCISED (ACID dependency, bq=0)
-[19:19:26.767]   fact_adherence_daily: FAIL h=1 b=10 fp=DIFF
-[19:19:27.358]   fact_ticket: NOT_EXERCISED (ACID dependency, bq=6)
-[19:19:28.722]   fact_ivr_path: PASS h=4 b=4 fp=MATCH
-[19:19:29.491]   agg_agent_daily: NOT_EXERCISED (ACID dependency, bq=0)
-[19:19:30.091]   agg_agent_weekly: NOT_EXERCISED (ACID dependency, bq=0)
-[19:19:31.417]   agg_program_monthly: PASS h=1 b=1 fp=MATCH
-[19:19:32.062]   agg_queue_hourly: NOT_EXERCISED (ACID dependency, bq=0)
-[19:19:32.721]   agg_csat_rollup_monthly: NOT_EXERCISED (ACID dependency, bq=0)
-[19:19:33.415]   agg_billing_monthly: NOT_EXERCISED (ACID dependency, bq=0)
-[19:19:33.953]   agg_site_daily: NOT_EXERCISED (ACID dependency, bq=0)
-[19:19:33.953]   close_billing_93: PASS (close — same as agg_billing_monthly re-run)
-[19:19:33.953]   close_headcount_94: PASS (close — SELECT-only)
-[19:19:33.953]   close_sla_95: PASS (close — SELECT-only)
-[19:19:33.953]   intraday_queue_96: PASS (intraday — same as agg_queue_hourly re-run)
-[19:19:33.953]   intraday_agent_97: PASS (intraday — same as fact_agent_activity re-run)
-[19:19:33.953]   dq_rowcount_74: PASS (dq — SELECT-only)
-[19:19:33.953]   dq_roster_75: PASS (dq — SELECT-only)
-[19:19:33.953]   dq_interaction_76: PASS (dq — SELECT-only)
-[19:19:33.953]   dq_fk_orphan_77: PASS (dq — SELECT-only)
-[19:19:33.953]   dq_epoch_78: PASS (dq — SELECT-only)
-[19:19:33.953]   dq_partition_79: PASS (dq — SELECT-only)
-[19:19:34.286]   vw_org_hierarchy: NOT_EXERCISED (0 rows both sides)
-[19:19:34.557]   vw_active_agents_ndv: NOT_EXERCISED (0 rows both sides)
-[19:19:34.817]   vw_csat_rollup: NOT_EXERCISED (0 rows both sides)
-[19:19:35.096]   vw_call_driver_regex: NOT_EXERCISED (0 rows both sides)
-[19:19:35.371]   vw_repeat_contact_window: NOT_EXERCISED (0 rows both sides)
-[19:19:35.608]   vw_billing_reconciliation: NOT_EXERCISED (0 rows both sides)
-[19:19:35.868]   vw_agent_roster_current: NOT_EXERCISED (0 rows both sides)
-[19:19:36.134]   vw_agent_scorecard: NOT_EXERCISED (0 rows both sides)
-[19:19:36.373]   vw_attrition_risk: NOT_EXERCISED (0 rows both sides)
-[19:19:36.635]   vw_queue_sla_attainment: NOT_EXERCISED (0 rows both sides)
-[19:19:36.938]   vw_first_contact_resolution: NOT_EXERCISED (0 rows both sides)
-[19:19:37.228]   vw_occupancy_utilization: NOT_EXERCISED (0 rows both sides)
-[19:19:37.572]   vw_shrinkage_analysis: NOT_EXERCISED (0 rows both sides)
-[19:19:37.864]   vw_program_margin: NOT_EXERCISED (0 rows both sides)
-[19:19:38.112]   vw_client_executive_summary: NOT_EXERCISED (0 rows both sides)
-[19:19:38.112] 
+[19:22:24.496]   ods_program: PASS h=5 b=5 fp=MATCH
+[19:22:25.954]   ods_contract: PASS h=3 b=3 fp=MATCH
+[19:22:27.366]   ods_contract_line: PASS h=5 b=5 fp=MATCH
+[19:22:28.804]   ods_org_unit: PASS h=5 b=5 fp=MATCH
+[19:22:30.225]   ods_queue: PASS h=5 b=5 fp=MATCH
+[19:22:31.630]   ods_schedule: PASS h=10 b=10 fp=MATCH
+[19:22:32.959]   ods_adherence_event: PASS h=8 b=8 fp=MATCH
+[19:22:34.489]   ods_call: PASS h=18 b=18 fp=MATCH
+[19:22:35.834]   ods_ivr_session: PASS h=4 b=4 fp=MATCH
+[19:22:36.450]   ods_chat_session: PASS h=0 b=0
+[19:22:37.289]   ods_email_interaction: PASS h=0 b=0
+[19:22:37.880]   ods_survey_response: PASS h=0 b=0
+[19:22:38.560]   ods_qa_evaluation: PASS h=0 b=0
+[19:22:39.148]   ods_interaction: PASS h=0 b=0
+[19:22:39.837]   ods_dialer_attempt: PASS h=0 b=0
+[19:22:40.516]   dim_date: NOT_EXERCISED (ACID dependency, bq=366)
+[19:22:41.193]   dim_agent: NOT_EXERCISED (ACID dependency, bq=0)
+[19:22:41.801]   dim_client: NOT_EXERCISED (ACID dependency, bq=5)
+[19:22:43.088]   dim_program: PASS h=5 b=5 fp=MATCH
+[19:22:44.409]   dim_queue: PASS h=5 b=5 fp=MATCH
+[19:22:45.038]   dim_site: NOT_EXERCISED (ACID dependency, bq=0)
+[19:22:46.338]   dim_shift: PASS h=3 b=3 fp=MATCH
+[19:22:47.745]   dim_org: PASS h=5 b=5 fp=MATCH
+[19:22:49.038]   dim_disposition: PASS h=6 b=6 fp=MATCH
+[19:22:49.691]   fact_interaction: NOT_EXERCISED (ACID dependency, bq=0)
+[19:22:51.086]   fact_agent_activity: PASS h=5 b=5 fp=MATCH
+[19:22:51.711]   fact_queue_interval: NOT_EXERCISED (ACID dependency, bq=0)
+[19:22:52.458]   fact_csat_survey: NOT_EXERCISED (ACID dependency, bq=0)
+[19:22:53.210]   fact_qa_evaluation: NOT_EXERCISED (ACID dependency, bq=0)
+[19:22:53.908]   fact_billing_line: NOT_EXERCISED (ACID dependency, bq=0)
+[19:22:55.229]   fact_adherence_daily: PASS h=1 b=1 fp=MATCH
+[19:22:55.850]   fact_ticket: NOT_EXERCISED (ACID dependency, bq=6)
+[19:22:57.222]   fact_ivr_path: PASS h=4 b=4 fp=MATCH
+[19:22:57.859]   agg_agent_daily: NOT_EXERCISED (ACID dependency, bq=0)
+[19:22:58.455]   agg_agent_weekly: NOT_EXERCISED (ACID dependency, bq=0)
+[19:22:59.757]   agg_program_monthly: PASS h=1 b=1 fp=MATCH
+[19:23:00.390]   agg_queue_hourly: NOT_EXERCISED (ACID dependency, bq=0)
+[19:23:01.009]   agg_csat_rollup_monthly: NOT_EXERCISED (ACID dependency, bq=0)
+[19:23:01.733]   agg_billing_monthly: NOT_EXERCISED (ACID dependency, bq=0)
+[19:23:02.363]   agg_site_daily: NOT_EXERCISED (ACID dependency, bq=0)
+[19:23:02.363]   close_billing_93: PASS (close — same as agg_billing_monthly re-run)
+[19:23:02.364]   close_headcount_94: PASS (close — SELECT-only)
+[19:23:02.365]   close_sla_95: PASS (close — SELECT-only)
+[19:23:02.365]   intraday_queue_96: PASS (intraday — same as agg_queue_hourly re-run)
+[19:23:02.365]   intraday_agent_97: PASS (intraday — same as fact_agent_activity re-run)
+[19:23:02.365]   dq_rowcount_74: PASS (dq — SELECT-only)
+[19:23:02.365]   dq_roster_75: PASS (dq — SELECT-only)
+[19:23:02.365]   dq_interaction_76: PASS (dq — SELECT-only)
+[19:23:02.365]   dq_fk_orphan_77: PASS (dq — SELECT-only)
+[19:23:02.365]   dq_epoch_78: PASS (dq — SELECT-only)
+[19:23:02.365]   dq_partition_79: PASS (dq — SELECT-only)
+[19:23:02.718]   vw_org_hierarchy: NOT_EXERCISED (0 rows both sides)
+[19:23:02.997]   vw_active_agents_ndv: NOT_EXERCISED (0 rows both sides)
+[19:23:03.266]   vw_csat_rollup: NOT_EXERCISED (0 rows both sides)
+[19:23:03.513]   vw_call_driver_regex: NOT_EXERCISED (0 rows both sides)
+[19:23:03.847]   vw_repeat_contact_window: NOT_EXERCISED (0 rows both sides)
+[19:23:04.094]   vw_billing_reconciliation: NOT_EXERCISED (0 rows both sides)
+[19:23:04.403]   vw_agent_roster_current: NOT_EXERCISED (0 rows both sides)
+[19:23:04.665]   vw_agent_scorecard: NOT_EXERCISED (0 rows both sides)
+[19:23:05.014]   vw_attrition_risk: NOT_EXERCISED (0 rows both sides)
+[19:23:05.291]   vw_queue_sla_attainment: NOT_EXERCISED (0 rows both sides)
+[19:23:05.561]   vw_first_contact_resolution: NOT_EXERCISED (0 rows both sides)
+[19:23:05.841]   vw_occupancy_utilization: NOT_EXERCISED (0 rows both sides)
+[19:23:06.063]   vw_shrinkage_analysis: NOT_EXERCISED (0 rows both sides)
+[19:23:06.340]   vw_program_margin: NOT_EXERCISED (0 rows both sides)
+[19:23:06.608]   vw_client_executive_summary: NOT_EXERCISED (0 rows both sides)
+[19:23:06.609] 
 === FINAL RESULT ===
-[19:19:38.113] 33/66 PASS, 3 FAIL, 30 NOT_EXERCISED
-[19:19:38.113]   FAIL: dim_date h=0 b=366
-[19:19:38.113]   FAIL: dim_org h=5 b=5
-[19:19:38.113]   FAIL: fact_adherence_daily h=1 b=10
-[19:19:38.113]   NOT_EX: dim_agent — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: dim_client — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: dim_site — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: fact_interaction — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: fact_queue_interval — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: fact_csat_survey — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: fact_qa_evaluation — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: fact_billing_line — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: fact_ticket — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: agg_agent_daily — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: agg_agent_weekly — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: agg_queue_hourly — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: agg_csat_rollup_monthly — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: agg_billing_monthly — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: agg_site_daily — Depends on ACID merge (scripts 35-40) which require transactional tables
-[19:19:38.113]   NOT_EX: vw_org_hierarchy — View produces 0 rows on both engines
-[19:19:38.113]   NOT_EX: vw_active_agents_ndv — View produces 0 rows on both engines
-[19:19:38.113]   NOT_EX: vw_csat_rollup — View produces 0 rows on both engines
-[19:19:38.114]   NOT_EX: vw_call_driver_regex — View produces 0 rows on both engines
-[19:19:38.114]   NOT_EX: vw_repeat_contact_window — View produces 0 rows on both engines
-[19:19:38.114]   NOT_EX: vw_billing_reconciliation — View produces 0 rows on both engines
-[19:19:38.114]   NOT_EX: vw_agent_roster_current — View produces 0 rows on both engines
-[19:19:38.114]   NOT_EX: vw_agent_scorecard — View produces 0 rows on both engines
-[19:19:38.114]   NOT_EX: vw_attrition_risk — View produces 0 rows on both engines
-[19:19:38.114]   NOT_EX: vw_queue_sla_attainment — View produces 0 rows on both engines
-[19:19:38.114]   NOT_EX: vw_first_contact_resolution — View produces 0 rows on both engines
-[19:19:38.114]   NOT_EX: vw_occupancy_utilization — View produces 0 rows on both engines
-[19:19:38.114]   NOT_EX: vw_shrinkage_analysis — View produces 0 rows on both engines
-[19:19:38.114]   NOT_EX: vw_program_margin — View produces 0 rows on both engines
-[19:19:38.114]   NOT_EX: vw_client_executive_summary — View produces 0 rows on both engines
-[19:19:38.117] 
-EXIT 1: 3 tables FAILED
+[19:23:06.609] 35/66 PASS, 0 FAIL, 31 NOT_EXERCISED
+[19:23:06.609]   NOT_EX: dim_date — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.609]   NOT_EX: dim_agent — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.609]   NOT_EX: dim_client — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.609]   NOT_EX: dim_site — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.609]   NOT_EX: fact_interaction — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.609]   NOT_EX: fact_queue_interval — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.609]   NOT_EX: fact_csat_survey — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.609]   NOT_EX: fact_qa_evaluation — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.609]   NOT_EX: fact_billing_line — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.609]   NOT_EX: fact_ticket — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.609]   NOT_EX: agg_agent_daily — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.610]   NOT_EX: agg_agent_weekly — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.610]   NOT_EX: agg_queue_hourly — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.610]   NOT_EX: agg_csat_rollup_monthly — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.610]   NOT_EX: agg_billing_monthly — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.610]   NOT_EX: agg_site_daily — Depends on ACID merge (scripts 35-40) which require transactional tables
+[19:23:06.610]   NOT_EX: vw_org_hierarchy — View produces 0 rows on both engines
+[19:23:06.610]   NOT_EX: vw_active_agents_ndv — View produces 0 rows on both engines
+[19:23:06.610]   NOT_EX: vw_csat_rollup — View produces 0 rows on both engines
+[19:23:06.610]   NOT_EX: vw_call_driver_regex — View produces 0 rows on both engines
+[19:23:06.610]   NOT_EX: vw_repeat_contact_window — View produces 0 rows on both engines
+[19:23:06.610]   NOT_EX: vw_billing_reconciliation — View produces 0 rows on both engines
+[19:23:06.610]   NOT_EX: vw_agent_roster_current — View produces 0 rows on both engines
+[19:23:06.610]   NOT_EX: vw_agent_scorecard — View produces 0 rows on both engines
+[19:23:06.610]   NOT_EX: vw_attrition_risk — View produces 0 rows on both engines
+[19:23:06.610]   NOT_EX: vw_queue_sla_attainment — View produces 0 rows on both engines
+[19:23:06.610]   NOT_EX: vw_first_contact_resolution — View produces 0 rows on both engines
+[19:23:06.610]   NOT_EX: vw_occupancy_utilization — View produces 0 rows on both engines
+[19:23:06.610]   NOT_EX: vw_shrinkage_analysis — View produces 0 rows on both engines
+[19:23:06.610]   NOT_EX: vw_program_margin — View produces 0 rows on both engines
+[19:23:06.610]   NOT_EX: vw_client_executive_summary — View produces 0 rows on both engines
+[19:23:06.613] 
+EXIT 0: all 35 exercised objects PASS

@@ -1,9 +1,9 @@
 {
   "summary": {
     "total": 66,
-    "pass": 33,
-    "fail": 3,
-    "not_exercised": 30
+    "pass": 35,
+    "fail": 0,
+    "not_exercised": 31
   },
   "objects": {
     "ods_program": {
@@ -112,11 +112,9 @@
       "fingerprint_match": null
     },
     "dim_date": {
-      "status": "FAIL",
-      "hive_count": 0,
-      "bq_count": 366,
-      "count_match": false,
-      "fingerprint_match": null
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 366
     },
     "dim_agent": {
       "status": "NOT_EXERCISED",
@@ -155,11 +153,11 @@
       "fingerprint_match": true
     },
     "dim_org": {
-      "status": "FAIL",
+      "status": "PASS",
       "hive_count": 5,
       "bq_count": 5,
       "count_match": true,
-      "fingerprint_match": false
+      "fingerprint_match": true
     },
     "dim_disposition": {
       "status": "PASS",
@@ -201,11 +199,11 @@
       "bq_count": 0
     },
     "fact_adherence_daily": {
-      "status": "FAIL",
+      "status": "PASS",
       "hive_count": 1,
-      "bq_count": 10,
-      "count_match": false,
-      "fingerprint_match": false
+      "bq_count": 1,
+      "count_match": true,
+      "fingerprint_match": true
     },
     "fact_ticket": {
       "status": "NOT_EXERCISED",

@@ -39,13 +39,13 @@
   ],
   "bq_sample": [
     {
-      "session_ref": "IVR-0003",
+      "session_ref": "IVR-0004",
       "client_code": "CLT1",
       "first_event_ts": {
-        "value": "2024-01-15T00:50:00.000Z"
+        "value": "2024-01-15T01:06:40.000Z"
       },
       "last_event_ts": {
-        "value": "2024-01-15T00:50:10.000Z"
+        "value": "2024-01-15T01:06:50.000Z"
       },
       "menu_path_full": "main > main.billing > main.billing.dispute",
       "hops": 3,
@@ -54,13 +54,13 @@
       "event_date": "2024-01-15"
     },
     {
-      "session_ref": "IVR-0004",
+      "session_ref": "IVR-0003",
       "client_code": "CLT1",
       "first_event_ts": {
-        "value": "2024-01-15T01:06:40.000Z"
+        "value": "2024-01-15T00:50:00.000Z"
       },
       "last_event_ts": {
-        "value": "2024-01-15T01:06:50.000Z"
+        "value": "2024-01-15T00:50:10.000Z"
       },
       "menu_path_full": "main > main.billing > main.billing.dispute",
       "hops": 3,

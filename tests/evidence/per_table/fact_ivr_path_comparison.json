@@ -47,23 +47,23 @@
   ],
   "bq_sample": [
     {
-      "session_ref": "IVR-0003",
+      "session_ref": "IVR-0001",
       "client_code": "CLT1",
-      "menu_path_full": "main > main.billing > main.billing.dispute",
-      "hops": 3,
+      "menu_path_full": "main > main.billing > main.billing.dispute > main.support",
+      "hops": 4,
       "contained_flag": true,
-      "exit_key": "3",
-      "duration_seconds": 10,
+      "exit_key": "4",
+      "duration_seconds": 15,
       "date_key": 20240115
     },
     {
-      "session_ref": "IVR-0004",
+      "session_ref": "IVR-0002",
       "client_code": "CLT1",
-      "menu_path_full": "main > main.billing > main.billing.dispute",
-      "hops": 3,
+      "menu_path_full": "main > main.billing > main.billing.dispute > main.support",
+      "hops": 4,
       "contained_flag": true,
-      "exit_key": "3",
-      "duration_seconds": 10,
+      "exit_key": "4",
+      "duration_seconds": 15,
       "date_key": 20240115
     }
   ]

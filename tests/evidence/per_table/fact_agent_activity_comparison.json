@@ -64,14 +64,14 @@
     },
     {
       "agent_sk": -1,
-      "state_code": "READY",
+      "state_code": "HOLD",
       "state_seconds": 900,
       "occurrence_count": 3,
       "first_state_ts": {
-        "value": "2024-01-15T00:30:00.000Z"
+        "value": "2024-01-15T00:10:00.000Z"
       },
       "last_state_ts": {
-        "value": "2024-01-15T02:15:00.000Z"
+        "value": "2024-01-15T01:55:00.000Z"
       },
       "date_key": 20240115
     }

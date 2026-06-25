@@ -31,19 +31,6 @@
       "snapshot_date": "2024-01-15"
     },
     {
-      "org_unit_id": 4,
-      "parent_unit_id": 3,
-      "unit_code": "P1",
-      "unit_name": "Pod 1",
-      "unit_type": "POD",
-      "site_code": "MNL1",
-      "cost_center": "CC4",
-      "created_ts": "2023-07-22 04:26:40",
-      "snapshot_date": "2024-01-15"
-    }
-  ],
-  "bq_sample": [
-    {
       "org_unit_id": 1,
       "parent_unit_id": null,
       "unit_code": "CORP",
@@ -51,6 +38,19 @@
       "unit_type": "COMPANY",
       "site_code": "MNL1",
       "cost_center": "CC1",
+      "created_ts": "2023-07-22 04:26:40",
+      "snapshot_date": "2024-01-15"
+    }
+  ],
+  "bq_sample": [
+    {
+      "org_unit_id": 3,
+      "parent_unit_id": 2,
+      "unit_code": "TMA",
+      "unit_name": "Team A",
+      "unit_type": "TEAM",
+      "site_code": "MNL1",
+      "cost_center": "CC3",
       "created_ts": {
         "value": "2023-07-22T04:26:40.000Z"
       },
