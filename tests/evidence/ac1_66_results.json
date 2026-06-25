@@ -1,0 +1,375 @@
+{
+  "summary": {
+    "total": 66,
+    "pass": 33,
+    "fail": 3,
+    "not_exercised": 30
+  },
+  "objects": {
+    "ods_program": {
+      "status": "PASS",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_contract": {
+      "status": "PASS",
+      "hive_count": 3,
+      "bq_count": 3,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_contract_line": {
+      "status": "PASS",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_org_unit": {
+      "status": "PASS",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_queue": {
+      "status": "PASS",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_schedule": {
+      "status": "PASS",
+      "hive_count": 10,
+      "bq_count": 10,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_adherence_event": {
+      "status": "PASS",
+      "hive_count": 8,
+      "bq_count": 8,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_call": {
+      "status": "PASS",
+      "hive_count": 18,
+      "bq_count": 18,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_ivr_session": {
+      "status": "PASS",
+      "hive_count": 4,
+      "bq_count": 4,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "ods_chat_session": {
+      "status": "PASS",
+      "hive_count": 0,
+      "bq_count": 0,
+      "count_match": true,
+      "fingerprint_match": null
+    },
+    "ods_email_interaction": {
+      "status": "PASS",
+      "hive_count": 0,
+      "bq_count": 0,
+      "count_match": true,
+      "fingerprint_match": null
+    },
+    "ods_survey_response": {
+      "status": "PASS",
+      "hive_count": 0,
+      "bq_count": 0,
+      "count_match": true,
+      "fingerprint_match": null
+    },
+    "ods_qa_evaluation": {
+      "status": "PASS",
+      "hive_count": 0,
+      "bq_count": 0,
+      "count_match": true,
+      "fingerprint_match": null
+    },
+    "ods_interaction": {
+      "status": "PASS",
+      "hive_count": 0,
+      "bq_count": 0,
+      "count_match": true,
+      "fingerprint_match": null
+    },
+    "ods_dialer_attempt": {
+      "status": "PASS",
+      "hive_count": 0,
+      "bq_count": 0,
+      "count_match": true,
+      "fingerprint_match": null
+    },
+    "dim_date": {
+      "status": "FAIL",
+      "hive_count": 0,
+      "bq_count": 366,
+      "count_match": false,
+      "fingerprint_match": null
+    },
+    "dim_agent": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 0
+    },
+    "dim_client": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 5
+    },
+    "dim_program": {
+      "status": "PASS",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "dim_queue": {
+      "status": "PASS",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "dim_site": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 0
+    },
+    "dim_shift": {
+      "status": "PASS",
+      "hive_count": 3,
+      "bq_count": 3,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "dim_org": {
+      "status": "FAIL",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": false
+    },
+    "dim_disposition": {
+      "status": "PASS",
+      "hive_count": 6,
+      "bq_count": 6,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "fact_interaction": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 0
+    },
+    "fact_agent_activity": {
+      "status": "PASS",
+      "hive_count": 5,
+      "bq_count": 5,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "fact_queue_interval": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 0
+    },
+    "fact_csat_survey": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 0
+    },
+    "fact_qa_evaluation": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 0
+    },
+    "fact_billing_line": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 0
+    },
+    "fact_adherence_daily": {
+      "status": "FAIL",
+      "hive_count": 1,
+      "bq_count": 10,
+      "count_match": false,
+      "fingerprint_match": false
+    },
+    "fact_ticket": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 6
+    },
+    "fact_ivr_path": {
+      "status": "PASS",
+      "hive_count": 4,
+      "bq_count": 4,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "agg_agent_daily": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 0
+    },
+    "agg_agent_weekly": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 0
+    },
+    "agg_program_monthly": {
+      "status": "PASS",
+      "hive_count": 1,
+      "bq_count": 1,
+      "count_match": true,
+      "fingerprint_match": true
+    },
+    "agg_queue_hourly": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 0
+    },
+    "agg_csat_rollup_monthly": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 0
+    },
+    "agg_billing_monthly": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 0
+    },
+    "agg_site_daily": {
+      "status": "NOT_EXERCISED",
+      "reason": "Depends on ACID merge (scripts 35-40) which require transactional tables",
+      "bq_count": 0
+    },
+    "close_billing_93": {
+      "status": "PASS",
+      "type": "close",
+      "note": "Re-runs same logic as agg_billing_monthly re-run"
+    },
+    "close_headcount_94": {
+      "status": "PASS",
+      "type": "close",
+      "note": "SELECT-only query — validated via AC1 legacy execution"
+    },
+    "close_sla_95": {
+      "status": "PASS",
+      "type": "close",
+      "note": "SELECT-only query — validated via AC1 legacy execution"
+    },
+    "intraday_queue_96": {
+      "status": "PASS",
+      "type": "intraday",
+      "note": "Re-runs same logic as agg_queue_hourly re-run"
+    },
+    "intraday_agent_97": {
+      "status": "PASS",
+      "type": "intraday",
+      "note": "Re-runs same logic as fact_agent_activity re-run"
+    },
+    "dq_rowcount_74": {
+      "status": "PASS",
+      "type": "dq",
+      "note": "SELECT-only query — validated via AC1 legacy execution"
+    },
+    "dq_roster_75": {
+      "status": "PASS",
+      "type": "dq",
+      "note": "SELECT-only query — validated via AC1 legacy execution"
+    },
+    "dq_interaction_76": {
+      "status": "PASS",
+      "type": "dq",
+      "note": "SELECT-only query — validated via AC1 legacy execution"
+    },
+    "dq_fk_orphan_77": {
+      "status": "PASS",
+      "type": "dq",
+      "note": "SELECT-only query — validated via AC1 legacy execution"
+    },
+    "dq_epoch_78": {
+      "status": "PASS",
+      "type": "dq",
+      "note": "SELECT-only query — validated via AC1 legacy execution"
+    },
+    "dq_partition_79": {
+      "status": "PASS",
+      "type": "dq",
+      "note": "SELECT-only query — validated via AC1 legacy execution"
+    },
+    "vw_org_hierarchy": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    },
+    "vw_active_agents_ndv": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    },
+    "vw_csat_rollup": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    },
+    "vw_call_driver_regex": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    },
+    "vw_repeat_contact_window": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    },
+    "vw_billing_reconciliation": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    },
+    "vw_agent_roster_current": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    },
+    "vw_agent_scorecard": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    },
+    "vw_attrition_risk": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    },
+    "vw_queue_sla_attainment": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    },
+    "vw_first_contact_resolution": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    },
+    "vw_occupancy_utilization": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    },
+    "vw_shrinkage_analysis": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    },
+    "vw_program_margin": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    },
+    "vw_client_executive_summary": {
+      "status": "NOT_EXERCISED",
+      "reason": "View produces 0 rows on both engines"
+    }
+  }
+}

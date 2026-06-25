@@ -1,0 +1,72 @@
+{
+  "hive_count": 4,
+  "bq_count": 4,
+  "count_match": true,
+  "fingerprint_match": true,
+  "common_cols": 9,
+  "hive_fp": "4a729fb680885450",
+  "bq_fp": "4a729fb680885450",
+  "column_aggregates": {
+    "hops": {
+      "hive_sum": 14,
+      "bq_sum": 14,
+      "match": true
+    }
+  },
+  "hive_sample": [
+    {
+      "session_ref": "IVR-0003",
+      "client_code": "CLT1",
+      "first_event_ts": "2024-01-15 00:50:00",
+      "last_event_ts": "2024-01-15 00:50:10",
+      "menu_path_full": "main.billing.dispute > main.billing > main",
+      "hops": 3,
+      "contained_flag": true,
+      "exit_key": "3",
+      "event_date": "2024-01-15"
+    },
+    {
+      "session_ref": "IVR-0001",
+      "client_code": "CLT1",
+      "first_event_ts": "2024-01-15 00:16:40",
+      "last_event_ts": "2024-01-15 00:16:55",
+      "menu_path_full": "main.support > main.billing.dispute > main.billing > main",
+      "hops": 4,
+      "contained_flag": true,
+      "exit_key": "4",
+      "event_date": "2024-01-15"
+    }
+  ],
+  "bq_sample": [
+    {
+      "session_ref": "IVR-0003",
+      "client_code": "CLT1",
+      "first_event_ts": {
+        "value": "2024-01-15T00:50:00.000Z"
+      },
+      "last_event_ts": {
+        "value": "2024-01-15T00:50:10.000Z"
+      },
+      "menu_path_full": "main > main.billing > main.billing.dispute",
+      "hops": 3,
+      "contained_flag": true,
+      "exit_key": "3",
+      "event_date": "2024-01-15"
+    },
+    {
+      "session_ref": "IVR-0004",
+      "client_code": "CLT1",
+      "first_event_ts": {
+        "value": "2024-01-15T01:06:40.000Z"
+      },
+      "last_event_ts": {
+        "value": "2024-01-15T01:06:50.000Z"
+      },
+      "menu_path_full": "main > main.billing > main.billing.dispute",
+      "hops": 3,
+      "contained_flag": true,
+      "exit_key": "3",
+      "event_date": "2024-01-15"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "hive_count": 5,
+  "bq_count": 5,
+  "count_match": true,
+  "fingerprint_match": false,
+  "common_cols": 11,
+  "hive_fp": "44671084f0576260",
+  "bq_fp": "78560bab089aac62",
+  "column_aggregates": {
+    "org_sk": {
+      "hive_sum": 15,
+      "bq_sum": 15,
+      "match": true
+    },
+    "org_unit_id": {
+      "hive_sum": 15,
+      "bq_sum": 15,
+      "match": true
+    }
+  },
+  "hive_sample": [
+    {
+      "org_sk": 2,
+      "org_unit_id": 2,
+      "unit_code": "OPS",
+      "unit_name": "Operations",
+      "unit_type": "DIV",
+      "level1_name": "Operations",
+      "level2_name": "Operations",
+      "level3_name": "Corporation",
+      "level4_name": "Operations",
+      "site_code": "MNL1",
+      "cost_center": "CC2"
+    },
+    {
+      "org_sk": 4,
+      "org_unit_id": 4,
+      "unit_code": "P1",
+      "unit_name": "Pod 1",
+      "unit_type": "POD",
+      "level1_name": "Corporation",
+      "level2_name": "Operations",
+      "level3_name": "Team A",
+      "level4_name": "Pod 1",
+      "site_code": "MNL1",
+      "cost_center": "CC4"
+    }
+  ],
+  "bq_sample": [
+    {
+      "org_sk": 4,
+      "org_unit_id": 4,
+      "unit_code": "P1",
+      "unit_name": "Pod 1",
+      "unit_type": "POD",
+      "level1_name": "Pod 1",
+      "level2_name": "Team A",
+      "level3_name": "Operations",
+      "level4_name": "Corporation",
+      "site_code": "MNL1",
+      "cost_center": "CC4"
+    },
+    {
+      "org_sk": 1,
+      "org_unit_id": 1,
+      "unit_code": "CORP",
+      "unit_name": "Corporation",
+      "unit_type": "COMPANY",
+      "level1_name": "Corporation",
+      "level2_name": "",
+      "level3_name": "",
+      "level4_name": "",
+      "site_code": "MNL1",
+      "cost_center": "CC1"
+    }
+  ]
+}

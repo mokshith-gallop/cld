@@ -1,0 +1,48 @@
+{
+  "hive_count": 6,
+  "bq_count": 6,
+  "count_match": true,
+  "fingerprint_match": true,
+  "common_cols": 5,
+  "hive_fp": "e0cf826efdceab5c",
+  "bq_fp": "e0cf826efdceab5c",
+  "column_aggregates": {
+    "disposition_sk": {
+      "hive_sum": 21,
+      "bq_sum": 21,
+      "match": true
+    }
+  },
+  "hive_sample": [
+    {
+      "disposition_sk": 1,
+      "disposition_code": "D01",
+      "disposition_desc": "Billing dispute - invoice charge",
+      "category": "BILLING",
+      "billable_flag": true
+    },
+    {
+      "disposition_sk": 2,
+      "disposition_code": "D02",
+      "disposition_desc": "Password reset locked account",
+      "category": "ACCESS",
+      "billable_flag": false
+    }
+  ],
+  "bq_sample": [
+    {
+      "disposition_sk": 2,
+      "disposition_code": "D02",
+      "disposition_desc": "Password reset locked account",
+      "category": "ACCESS",
+      "billable_flag": false
+    },
+    {
+      "disposition_sk": 6,
+      "disposition_code": "D06",
+      "disposition_desc": "Other - miscellaneous",
+      "category": "OTHER",
+      "billable_flag": false
+    }
+  ]
+}

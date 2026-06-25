@@ -1,0 +1,87 @@
+{
+  "hive_count": 5,
+  "bq_count": 5,
+  "count_match": true,
+  "fingerprint_match": true,
+  "common_cols": 11,
+  "hive_fp": "0bbc1e6dd5e67e38",
+  "bq_fp": "0bbc1e6dd5e67e38",
+  "column_aggregates": {
+    "client_id": {
+      "hive_sum": 9,
+      "bq_sum": 9,
+      "match": true
+    },
+    "go_live_date_key": {
+      "hive_sum": 101153610,
+      "bq_sum": 101153610,
+      "match": true
+    },
+    "program_id": {
+      "hive_sum": 15,
+      "bq_sum": 15,
+      "match": true
+    },
+    "program_sk": {
+      "hive_sum": 15,
+      "bq_sum": 15,
+      "match": true
+    }
+  },
+  "hive_sample": [
+    {
+      "program_sk": 2,
+      "program_id": 2,
+      "program_code": "PRG2",
+      "program_name": "Program 2",
+      "client_id": 2,
+      "line_of_business": "SUPPORT",
+      "channel_mix": "VOICE",
+      "site_code": "BLR2",
+      "billing_model": "PER_FTE",
+      "status": "ACTIVE",
+      "go_live_date_key": 20230722
+    },
+    {
+      "program_sk": 4,
+      "program_id": 4,
+      "program_code": "PRG4",
+      "program_name": "Program 4",
+      "client_id": 1,
+      "line_of_business": "SUPPORT",
+      "channel_mix": "VOICE",
+      "site_code": "MNL1",
+      "billing_model": "PER_FTE",
+      "status": "ACTIVE",
+      "go_live_date_key": 20230722
+    }
+  ],
+  "bq_sample": [
+    {
+      "program_sk": 5,
+      "program_id": 5,
+      "program_code": "PRG5",
+      "program_name": "Program 5",
+      "client_id": 2,
+      "line_of_business": "SUPPORT",
+      "channel_mix": "VOICE",
+      "site_code": "BLR2",
+      "billing_model": "PER_FTE",
+      "status": "ACTIVE",
+      "go_live_date_key": 20230722
+    },
+    {
+      "program_sk": 2,
+      "program_id": 2,
+      "program_code": "PRG2",
+      "program_name": "Program 2",
+      "client_id": 2,
+      "line_of_business": "SUPPORT",
+      "channel_mix": "VOICE",
+      "site_code": "BLR2",
+      "billing_model": "PER_FTE",
+      "status": "ACTIVE",
+      "go_live_date_key": 20230722
+    }
+  ]
+}

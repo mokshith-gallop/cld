@@ -1,0 +1,65 @@
+{
+  "hive_count": 3,
+  "bq_count": 3,
+  "count_match": true,
+  "fingerprint_match": true,
+  "common_cols": 8,
+  "hive_fp": "4fdacd749b15628f",
+  "bq_fp": "4fdacd749b15628f",
+  "column_aggregates": {
+    "shift_id": {
+      "hive_sum": 6,
+      "bq_sum": 6,
+      "match": true
+    },
+    "shift_sk": {
+      "hive_sum": 6,
+      "bq_sum": 6,
+      "match": true
+    }
+  },
+  "hive_sample": [
+    {
+      "shift_sk": 2,
+      "shift_id": 2,
+      "shift_code": "SH2",
+      "shift_name": "Shift 2",
+      "start_hhmm": "0800",
+      "end_hhmm": "1700",
+      "overnight_flag": false,
+      "site_code": "BLR2"
+    },
+    {
+      "shift_sk": 1,
+      "shift_id": 1,
+      "shift_code": "SH1",
+      "shift_name": "Shift 1",
+      "start_hhmm": "0800",
+      "end_hhmm": "1700",
+      "overnight_flag": false,
+      "site_code": "MNL1"
+    }
+  ],
+  "bq_sample": [
+    {
+      "shift_sk": 3,
+      "shift_id": 3,
+      "shift_code": "SH3",
+      "shift_name": "Shift 3",
+      "start_hhmm": "0800",
+      "end_hhmm": "1700",
+      "overnight_flag": false,
+      "site_code": "MTY3"
+    },
+    {
+      "shift_sk": 1,
+      "shift_id": 1,
+      "shift_code": "SH1",
+      "shift_name": "Shift 1",
+      "start_hhmm": "0800",
+      "end_hhmm": "1700",
+      "overnight_flag": false,
+      "site_code": "MNL1"
+    }
+  ]
+}

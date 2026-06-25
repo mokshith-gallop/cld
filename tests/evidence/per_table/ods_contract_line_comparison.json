@@ -1,0 +1,88 @@
+{
+  "hive_count": 5,
+  "bq_count": 5,
+  "count_match": true,
+  "fingerprint_match": true,
+  "common_cols": 9,
+  "hive_fp": "f85fd43988106299",
+  "bq_fp": "f85fd43988106299",
+  "column_aggregates": {
+    "contract_id": {
+      "hive_sum": 9,
+      "bq_sum": 9,
+      "match": true
+    },
+    "contract_line_id": {
+      "hive_sum": 15,
+      "bq_sum": 15,
+      "match": true
+    },
+    "line_no": {
+      "hive_sum": 15,
+      "bq_sum": 15,
+      "match": true
+    },
+    "min_commit": {
+      "hive_sum": 5000,
+      "bq_sum": 5000,
+      "match": true
+    },
+    "unit_rate": {
+      "hive_sum": 1.85,
+      "bq_sum": 1.85,
+      "match": true
+    }
+  },
+  "hive_sample": [
+    {
+      "contract_line_id": 4,
+      "contract_id": 1,
+      "line_no": 4,
+      "service_code": "SVC0",
+      "uom": "MINUTES",
+      "unit_rate": 0.38,
+      "min_commit": 1000,
+      "effective_ts": "2023-01-01 00:00:00",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "contract_line_id": 1,
+      "contract_id": 1,
+      "line_no": 1,
+      "service_code": "SVC0",
+      "uom": "MINUTES",
+      "unit_rate": 0.35,
+      "min_commit": 1000,
+      "effective_ts": "2023-01-01 00:00:00",
+      "snapshot_date": "2024-01-15"
+    }
+  ],
+  "bq_sample": [
+    {
+      "contract_line_id": 4,
+      "contract_id": 1,
+      "line_no": 4,
+      "service_code": "SVC0",
+      "uom": "MINUTES",
+      "unit_rate": "0.38",
+      "min_commit": "1000",
+      "effective_ts": {
+        "value": "2023-01-01T00:00:00.000Z"
+      },
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "contract_line_id": 1,
+      "contract_id": 1,
+      "line_no": 1,
+      "service_code": "SVC0",
+      "uom": "MINUTES",
+      "unit_rate": "0.35",
+      "min_commit": "1000",
+      "effective_ts": {
+        "value": "2023-01-01T00:00:00.000Z"
+      },
+      "snapshot_date": "2024-01-15"
+    }
+  ]
+}

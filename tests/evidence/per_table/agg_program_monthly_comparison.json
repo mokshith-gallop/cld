@@ -1,0 +1,47 @@
+{
+  "hive_count": 1,
+  "bq_count": 1,
+  "count_match": true,
+  "fingerprint_match": true,
+  "common_cols": 9,
+  "hive_fp": "baf5f6d7b3f177de",
+  "bq_fp": "baf5f6d7b3f177de",
+  "column_aggregates": {
+    "grouping_level": {
+      "hive_sum": 3,
+      "bq_sum": 3,
+      "match": true
+    },
+    "interactions": {
+      "hive_sum": 0,
+      "bq_sum": 0,
+      "match": true
+    }
+  },
+  "hive_sample": [
+    {
+      "client_sk": null,
+      "program_sk": null,
+      "line_of_business": null,
+      "interactions": 0,
+      "avg_handle_seconds": null,
+      "avg_csat": null,
+      "billed_amount": null,
+      "grouping_level": 3,
+      "period_month": "2024-01"
+    }
+  ],
+  "bq_sample": [
+    {
+      "client_sk": null,
+      "program_sk": null,
+      "line_of_business": null,
+      "interactions": 0,
+      "avg_handle_seconds": null,
+      "avg_csat": null,
+      "billed_amount": null,
+      "grouping_level": 3,
+      "period_month": "2024-01"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "hive_count": 8,
+  "bq_count": 8,
+  "count_match": true,
+  "fingerprint_match": true,
+  "common_cols": 9,
+  "hive_fp": "0e828200dda90eaa",
+  "bq_fp": "0e828200dda90eaa",
+  "column_aggregates": {
+    "adherence_event_id": {
+      "hive_sum": 36,
+      "bq_sum": 36,
+      "match": true
+    },
+    "agent_id": {
+      "hive_sum": 36,
+      "bq_sum": 36,
+      "match": true
+    },
+    "exception_minutes": {
+      "hive_sum": 80,
+      "bq_sum": 80,
+      "match": true
+    },
+    "schedule_id": {
+      "hive_sum": 36,
+      "bq_sum": 36,
+      "match": true
+    }
+  },
+  "hive_sample": [
+    {
+      "adherence_event_id": 2,
+      "agent_id": 2,
+      "schedule_id": 2,
+      "exception_type": "EARLY",
+      "start_ts": "2024-01-15 00:16:40",
+      "end_ts": "2024-01-15 00:26:40",
+      "exception_minutes": 10,
+      "approved_flag": false,
+      "event_date": "2024-01-15"
+    },
+    {
+      "adherence_event_id": 7,
+      "agent_id": 7,
+      "schedule_id": 7,
+      "exception_type": "LATE",
+      "start_ts": "2024-01-15 01:40:00",
+      "end_ts": "2024-01-15 01:50:00",
+      "exception_minutes": 10,
+      "approved_flag": true,
+      "event_date": "2024-01-15"
+    }
+  ],
+  "bq_sample": [
+    {
+      "adherence_event_id": 6,
+      "agent_id": 6,
+      "schedule_id": 6,
+      "exception_type": "ABSENT",
+      "start_ts": {
+        "value": "2024-01-15T01:23:20.000Z"
+      },
+      "end_ts": {
+        "value": "2024-01-15T01:33:20.000Z"
+      },
+      "exception_minutes": 10,
+      "approved_flag": false,
+      "event_date": "2024-01-15"
+    },
+    {
+      "adherence_event_id": 4,
+      "agent_id": 4,
+      "schedule_id": 4,
+      "exception_type": "LATE",
+      "start_ts": {
+        "value": "2024-01-15T00:50:00.000Z"
+      },
+      "end_ts": {
+        "value": "2024-01-15T01:00:00.000Z"
+      },
+      "exception_minutes": 10,
+      "approved_flag": false,
+      "event_date": "2024-01-15"
+    }
+  ]
+}

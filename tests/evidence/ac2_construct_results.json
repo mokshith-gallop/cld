@@ -111,28 +111,28 @@
       "details": [
         {
           "ref": "IVR-0001",
-          "hive_path": "main.support > main.billing.dispute > main.billing > main",
+          "hive_path": "main.billing.dispute > main > main.support > main.billing",
           "bq_path": "main > main.billing > main.billing.dispute > main.support",
           "canonical_match": true,
           "hops_match": true
         },
         {
           "ref": "IVR-0002",
-          "hive_path": "main > main.support > main.billing > main.billing.dispute",
+          "hive_path": "main.billing.dispute > main > main.billing > main.support",
           "bq_path": "main > main.billing > main.billing.dispute > main.support",
           "canonical_match": true,
           "hops_match": true
         },
         {
           "ref": "IVR-0003",
-          "hive_path": "main.billing.dispute > main > main.billing",
+          "hive_path": "main.billing.dispute > main.billing > main",
           "bq_path": "main > main.billing > main.billing.dispute",
           "canonical_match": true,
           "hops_match": true
         },
         {
           "ref": "IVR-0004",
-          "hive_path": "main.billing.dispute > main > main.billing",
+          "hive_path": "main.billing > main > main.billing.dispute",
           "bq_path": "main > main.billing > main.billing.dispute",
           "canonical_match": true,
           "hops_match": true

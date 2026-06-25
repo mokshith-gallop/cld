@@ -1,0 +1,71 @@
+{
+  "hive_count": 5,
+  "bq_count": 5,
+  "count_match": true,
+  "fingerprint_match": true,
+  "common_cols": 7,
+  "hive_fp": "9761ae26e78d029d",
+  "bq_fp": "9761ae26e78d029d",
+  "column_aggregates": {
+    "priority": {
+      "hive_sum": 15,
+      "bq_sum": 15,
+      "match": true
+    },
+    "program_id": {
+      "hive_sum": 15,
+      "bq_sum": 15,
+      "match": true
+    },
+    "queue_id": {
+      "hive_sum": 15,
+      "bq_sum": 15,
+      "match": true
+    },
+    "queue_sk": {
+      "hive_sum": 15,
+      "bq_sum": 15,
+      "match": true
+    }
+  },
+  "hive_sample": [
+    {
+      "queue_sk": 1,
+      "queue_id": 1,
+      "queue_code": "Q001",
+      "queue_name": "Queue 1",
+      "program_id": 1,
+      "media_type": "VOICE",
+      "priority": 1
+    },
+    {
+      "queue_sk": 5,
+      "queue_id": 5,
+      "queue_code": "Q005",
+      "queue_name": "Queue 5",
+      "program_id": 5,
+      "media_type": "CHAT",
+      "priority": 5
+    }
+  ],
+  "bq_sample": [
+    {
+      "queue_sk": 4,
+      "queue_id": 4,
+      "queue_code": "Q004",
+      "queue_name": "Queue 4",
+      "program_id": 4,
+      "media_type": "CHAT",
+      "priority": 4
+    },
+    {
+      "queue_sk": 5,
+      "queue_id": 5,
+      "queue_code": "Q005",
+      "queue_name": "Queue 5",
+      "program_id": 5,
+      "media_type": "CHAT",
+      "priority": 5
+    }
+  ]
+}

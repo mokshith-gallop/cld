@@ -1,0 +1,85 @@
+{
+  "hive_count": 5,
+  "bq_count": 5,
+  "count_match": true,
+  "fingerprint_match": true,
+  "common_cols": 11,
+  "hive_fp": "a53fe6f4f0506b2a",
+  "bq_fp": "a53fe6f4f0506b2a",
+  "column_aggregates": {
+    "client_id": {
+      "hive_sum": 9,
+      "bq_sum": 9,
+      "match": true
+    },
+    "program_id": {
+      "hive_sum": 15,
+      "bq_sum": 15,
+      "match": true
+    }
+  },
+  "hive_sample": [
+    {
+      "program_id": 3,
+      "client_id": 3,
+      "program_code": "PRG3",
+      "program_name": "Program 3",
+      "line_of_business": "SUPPORT",
+      "channel_mix": "VOICE",
+      "site_code": "MTY3",
+      "status": "ACTIVE",
+      "go_live_ts": "2023-07-22 05:00:00",
+      "updated_ts": "2023-11-14 22:30:00",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "program_id": 2,
+      "client_id": 2,
+      "program_code": "PRG2",
+      "program_name": "Program 2",
+      "line_of_business": "SUPPORT",
+      "channel_mix": "VOICE",
+      "site_code": "BLR2",
+      "status": "ACTIVE",
+      "go_live_ts": "2023-07-22 04:43:20",
+      "updated_ts": "2023-11-14 22:21:40",
+      "snapshot_date": "2024-01-15"
+    }
+  ],
+  "bq_sample": [
+    {
+      "program_id": 5,
+      "client_id": 2,
+      "program_code": "PRG5",
+      "program_name": "Program 5",
+      "line_of_business": "SUPPORT",
+      "channel_mix": "VOICE",
+      "site_code": "BLR2",
+      "status": "ACTIVE",
+      "go_live_ts": {
+        "value": "2023-07-22T05:33:20.000Z"
+      },
+      "updated_ts": {
+        "value": "2023-11-14T22:46:40.000Z"
+      },
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "program_id": 2,
+      "client_id": 2,
+      "program_code": "PRG2",
+      "program_name": "Program 2",
+      "line_of_business": "SUPPORT",
+      "channel_mix": "VOICE",
+      "site_code": "BLR2",
+      "status": "ACTIVE",
+      "go_live_ts": {
+        "value": "2023-07-22T04:43:20.000Z"
+      },
+      "updated_ts": {
+        "value": "2023-11-14T22:21:40.000Z"
+      },
+      "snapshot_date": "2024-01-15"
+    }
+  ]
+}

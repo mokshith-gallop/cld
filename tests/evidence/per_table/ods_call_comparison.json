@@ -1,0 +1,124 @@
+{
+  "hive_count": 18,
+  "bq_count": 18,
+  "count_match": true,
+  "fingerprint_match": true,
+  "common_cols": 16,
+  "hive_fp": "95d13a1049f811b1",
+  "bq_fp": "95d13a1049f811b1",
+  "column_aggregates": {
+    "acw_seconds": {
+      "hive_sum": 800,
+      "bq_sum": 800,
+      "match": true
+    },
+    "agent_id": {
+      "hive_sum": 91,
+      "bq_sum": 91,
+      "match": true
+    },
+    "call_id": {
+      "hive_sum": 171,
+      "bq_sum": 171,
+      "match": true
+    },
+    "hold_seconds": {
+      "hive_sum": 800,
+      "bq_sum": 800,
+      "match": true
+    },
+    "program_id": {
+      "hive_sum": 51,
+      "bq_sum": 51,
+      "match": true
+    }
+  },
+  "hive_sample": [
+    {
+      "call_id": 1,
+      "queue_id": 1,
+      "agent_id": 1,
+      "program_id": 1,
+      "direction": "INBOUND",
+      "start_ts": "2024-01-15 00:00:00",
+      "answer_ts": null,
+      "end_ts": "2024-01-15 00:05:00",
+      "ring_seconds": 300,
+      "talk_seconds": 160,
+      "hold_seconds": 0,
+      "acw_seconds": 0,
+      "abandoned_flag": true,
+      "disposition_code": "D01",
+      "recording_id": "R1",
+      "call_date": "2024-01-15"
+    },
+    {
+      "call_id": 4,
+      "queue_id": 4,
+      "agent_id": 4,
+      "program_id": 4,
+      "direction": "INBOUND",
+      "start_ts": "2024-01-15 00:15:00",
+      "answer_ts": "2024-01-15 00:15:15",
+      "end_ts": "2024-01-15 00:20:00",
+      "ring_seconds": 15,
+      "talk_seconds": 160,
+      "hold_seconds": 0,
+      "acw_seconds": 0,
+      "abandoned_flag": false,
+      "disposition_code": "D04",
+      "recording_id": "R4",
+      "call_date": "2024-01-15"
+    }
+  ],
+  "bq_sample": [
+    {
+      "call_id": 8,
+      "queue_id": 3,
+      "agent_id": 8,
+      "program_id": 3,
+      "direction": "INBOUND",
+      "start_ts": {
+        "value": "2024-01-15T00:35:00.000Z"
+      },
+      "answer_ts": {
+        "value": "2024-01-15T00:35:15.000Z"
+      },
+      "end_ts": {
+        "value": "2024-01-15T00:40:00.000Z"
+      },
+      "ring_seconds": 15,
+      "talk_seconds": 0,
+      "hold_seconds": 160,
+      "acw_seconds": 0,
+      "abandoned_flag": false,
+      "disposition_code": "D02",
+      "recording_id": "R8",
+      "call_date": "2024-01-15"
+    },
+    {
+      "call_id": 2,
+      "queue_id": 2,
+      "agent_id": 2,
+      "program_id": 2,
+      "direction": "INBOUND",
+      "start_ts": {
+        "value": "2024-01-15T00:05:00.000Z"
+      },
+      "answer_ts": {
+        "value": "2024-01-15T00:05:15.000Z"
+      },
+      "end_ts": {
+        "value": "2024-01-15T00:10:00.000Z"
+      },
+      "ring_seconds": 15,
+      "talk_seconds": 0,
+      "hold_seconds": 160,
+      "acw_seconds": 0,
+      "abandoned_flag": false,
+      "disposition_code": "D02",
+      "recording_id": "R2",
+      "call_date": "2024-01-15"
+    }
+  ]
+}

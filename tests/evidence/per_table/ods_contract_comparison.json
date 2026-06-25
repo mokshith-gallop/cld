@@ -1,0 +1,94 @@
+{
+  "hive_count": 3,
+  "bq_count": 3,
+  "count_match": true,
+  "fingerprint_match": true,
+  "common_cols": 11,
+  "hive_fp": "8324dbbe928dd970",
+  "bq_fp": "8324dbbe928dd970",
+  "column_aggregates": {
+    "client_id": {
+      "hive_sum": 6,
+      "bq_sum": 6,
+      "match": true
+    },
+    "contract_id": {
+      "hive_sum": 6,
+      "bq_sum": 6,
+      "match": true
+    },
+    "program_id": {
+      "hive_sum": 6,
+      "bq_sum": 6,
+      "match": true
+    }
+  },
+  "hive_sample": [
+    {
+      "contract_id": 1,
+      "client_id": 1,
+      "program_id": 1,
+      "contract_no": "C-1",
+      "start_ts": "2023-01-01 00:00:00",
+      "end_ts": "2025-12-31 23:59:59",
+      "billing_model": "PER_UNIT",
+      "currency": "USD",
+      "signed_ts": "2022-12-15 12:00:00",
+      "status": "ACTIVE",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "contract_id": 3,
+      "client_id": 3,
+      "program_id": 3,
+      "contract_no": "C-3",
+      "start_ts": "2023-01-01 00:00:00",
+      "end_ts": "2025-12-31 23:59:59",
+      "billing_model": "PER_UNIT",
+      "currency": "USD",
+      "signed_ts": "2022-12-15 12:00:00",
+      "status": "ACTIVE",
+      "snapshot_date": "2024-01-15"
+    }
+  ],
+  "bq_sample": [
+    {
+      "contract_id": 3,
+      "client_id": 3,
+      "program_id": 3,
+      "contract_no": "C-3",
+      "start_ts": {
+        "value": "2023-01-01T00:00:00.000Z"
+      },
+      "end_ts": {
+        "value": "2025-12-31T23:59:59.000Z"
+      },
+      "billing_model": "PER_UNIT",
+      "currency": "USD",
+      "signed_ts": {
+        "value": "2022-12-15T12:00:00.000Z"
+      },
+      "status": "ACTIVE",
+      "snapshot_date": "2024-01-15"
+    },
+    {
+      "contract_id": 2,
+      "client_id": 2,
+      "program_id": 2,
+      "contract_no": "C-2",
+      "start_ts": {
+        "value": "2023-01-01T00:00:00.000Z"
+      },
+      "end_ts": {
+        "value": "2025-12-31T23:59:59.000Z"
+      },
+      "billing_model": "PER_UNIT",
+      "currency": "USD",
+      "signed_ts": {
+        "value": "2022-12-15T12:00:00.000Z"
+      },
+      "status": "ACTIVE",
+      "snapshot_date": "2024-01-15"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "hive_count": 5,
+  "bq_count": 5,
+  "count_match": true,
+  "fingerprint_match": true,
+  "common_cols": 7,
+  "hive_fp": "9790a89deea758fc",
+  "bq_fp": "9790a89deea758fc",
+  "column_aggregates": {
+    "agent_sk": {
+      "hive_sum": -5,
+      "bq_sum": -5,
+      "match": true
+    },
+    "date_key": {
+      "hive_sum": 101200575,
+      "bq_sum": 101200575,
+      "match": true
+    },
+    "occurrence_count": {
+      "hive_sum": 15,
+      "bq_sum": 15,
+      "match": true
+    },
+    "state_seconds": {
+      "hive_sum": 4500,
+      "bq_sum": 4500,
+      "match": true
+    }
+  },
+  "hive_sample": [
+    {
+      "agent_sk": -1,
+      "state_code": "READY",
+      "state_seconds": 900,
+      "occurrence_count": 3,
+      "first_state_ts": "2024-01-15 00:30:00",
+      "last_state_ts": "2024-01-15 02:15:00",
+      "date_key": 20240115
+    },
+    {
+      "agent_sk": -1,
+      "state_code": "AUX_BREAK",
+      "state_seconds": 900,
+      "occurrence_count": 3,
+      "first_state_ts": "2024-01-15 00:40:00",
+      "last_state_ts": "2024-01-15 02:25:00",
+      "date_key": 20240115
+    }
+  ],
+  "bq_sample": [
+    {
+      "agent_sk": -1,
+      "state_code": "AUX_BREAK",
+      "state_seconds": 900,
+      "occurrence_count": 3,
+      "first_state_ts": {
+        "value": "2024-01-15T00:40:00.000Z"
+      },
+      "last_state_ts": {
+        "value": "2024-01-15T02:25:00.000Z"
+      },
+      "date_key": 20240115
+    },
+    {
+      "agent_sk": -1,
+      "state_code": "READY",
+      "state_seconds": 900,
+      "occurrence_count": 3,
+      "first_state_ts": {
+        "value": "2024-01-15T00:30:00.000Z"
+      },
+      "last_state_ts": {
+        "value": "2024-01-15T02:15:00.000Z"
+      },
+      "date_key": 20240115
+    }
+  ]
+}
